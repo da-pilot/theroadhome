@@ -1,0 +1,26 @@
+[
+  {
+    "idx": 0,
+    "filename": "00-mediathon-donation-logo.svg",
+    "src": "https://theroadhome.org/wp-content/themes/theroadhome/assets/images/mediathon-donation-logo.svg",
+    "alt": "banner"
+  },
+  {
+    "idx": 1,
+    "filename": "01-logo-2.png",
+    "src": "https://theroadhome.org/wp-content/themes/theroadhome/assets/images/logo-2.png",
+    "alt": "logo"
+  },
+  {
+    "idx": 2,
+    "filename": "02-en-us.svg",
+    "src": "https://theroadhome.org/wp-content/plugins/gtranslate/flags/svg/en-us.svg",
+    "alt": "en"
+  },
+  {
+    "idx": 3,
+    "filename": "03-mediathon-donation-bg.jpg",
+    "src": "https://theroadhome.org/wp-content/themes/theroadhome/assets/images/mediathon-donation-bg.jpg",
+    "alt": ""
+  }
+]

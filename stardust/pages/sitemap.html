@@ -6,15 +6,15 @@
 <title>Sitemap · The Road Home redesign</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=Public+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap">
 <style>
   @import url("../prototypes/_tokens.css");
   .hero{padding:var(--spacing-2xl) 0;border-bottom:1px solid var(--color-rule)}
-  .hero h1{font-size:var(--heading-xl);font-weight:900;text-transform:uppercase;line-height:0.98;letter-spacing:-.015em;margin-bottom:var(--spacing-md)}
+  .hero h1{font-size:var(--heading-xl);text-transform:uppercase;margin-bottom:var(--spacing-md)}
   .hero .sub{font-size:18px;color:var(--color-g22);line-height:1.55;max-width:68ch}
   .groups{padding:var(--section-padding) 0}
   .groups-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;gap:var(--spacing-2xl)}
-  .group h2{font-size:var(--heading-md);font-weight:900;text-transform:uppercase;margin-bottom:var(--spacing-md);padding-bottom:12px;border-bottom:2px solid var(--color-ink);display:flex;justify-content:space-between;align-items:baseline}
+  .group h2{font-size:var(--heading-md);text-transform:uppercase;margin-bottom:var(--spacing-md);padding-bottom:12px;border-bottom:2px solid var(--color-ink);display:flex;justify-content:space-between;align-items:baseline}
   .group h2 .tag{font-size:11px;font-weight:700;color:var(--color-signal);letter-spacing:.12em}
   .group .desc{font-size:14px;color:var(--color-g44);margin-bottom:var(--spacing-lg);max-width:60ch}
   .group .items{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--color-rule);border:1px solid var(--color-rule)}
@@ -25,7 +25,7 @@
   .item .desc2{font-size:12px;color:var(--color-g66);line-height:1.45}
   .artifacts{padding:var(--section-padding) 0;background:var(--color-ink);color:var(--color-paper)}
   .artifacts-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
-  .artifacts h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;margin-bottom:var(--spacing-lg)}
+  .artifacts h2{font-size:var(--heading-lg);text-transform:uppercase;margin-bottom:var(--spacing-lg)}
   .artifacts p{color:rgba(255,255,255,.75);margin-bottom:var(--spacing-lg);max-width:60ch;font-size:15px}
   .artifact-links{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.18)}
   .art-row{background:var(--color-ink);padding:22px 24px;display:grid;gap:8px;transition:background .2s}
@@ -45,105 +45,99 @@
 
 <section class="hero">
   <div class="inner">
-    <p class="eyebrow">Prototype · Full sitemap</p>
+    <p class="eyebrow">Prototype · 79-page site</p>
     <h1>The Road Home · 2026 rebuild</h1>
-    <p class="sub">Twenty priority-1 pages, built from the shared design system established by the approved home page. Every page is responsive (desktop · tablet · mobile), uses verbatim copy from the live site where available, and honors the design-personality rules in <code>.impeccable.md</code>.</p>
+    <p class="sub">Every non-holiday, non-test page from theroadhome.org — rebuilt on a shared responsive design system with Archivo + Public Sans type, teal-only palette, and the stardust pipeline's brand-extraction-to-prototype flow. All 79 pages use the shared token system in <code>_tokens.css</code>.</p>
   </div>
 </section>
 
 <section class="groups">
   <div class="groups-inner">
-
     <div class="group">
-      <h2>Home <span class="tag">T-01</span></h2>
+      <h2>Home <span class="tag">T-01 · 1 page</span></h2>
       <p class="desc">Landing page · civic / data-led / dense · approved variant B.</p>
       <div class="items">
-        <a href="index.html" class="item"><span class="slug">/</span><span class="name">Home</span><span class="desc2">Refuge. Resources. Relief. — the landing surface.</span></a>
+        <a href="index.html" class="item"><span class="slug">/index/</span><span class="name">The Road Home — Refuge. Resources. Relief.</span><span class="desc2">Refuge. Resources. Relief. — the landing surface.</span></a>
       </div>
-    </div>
-
-    <div class="group">
+    </div><div class="group">
       <h2>Pillar hubs <span class="tag">T-02 · 4 pages</span></h2>
-      <p class="desc">Section-overview pages routing to detail pages. Each has an audience-specific hero, a set of routing cards, and an accountability strip.</p>
+      <p class="desc">Section-overview pages routing to detail pages.</p>
       <div class="items">
-        <a href="get-help.html" class="item"><span class="slug">/get-help/</span><span class="name">Get Help</span><span class="desc2">Crisis entry — routes to shelter, emergency services, housing.</span></a>
-        <a href="give-main.html" class="item"><span class="slug">/give-main/</span><span class="name">Give</span><span class="desc2">Donor entry — one-time, monthly, legacy, other.</span></a>
-        <a href="get-involved.html" class="item"><span class="slug">/get-involved/</span><span class="name">Get Involved</span><span class="desc2">Volunteer, fundraise, advocate, partner.</span></a>
-        <a href="about-us.html" class="item"><span class="slug">/about-us/</span><span class="name">About</span><span class="desc2">Mission, values, leadership, history.</span></a>
+        <a href="about-us.html" class="item"><span class="slug">/about-us/</span><span class="name">About Us</span><span class="desc2">Mission, values, leadership, history.</span></a><a href="get-help.html" class="item"><span class="slug">/get-help/</span><span class="name">Get Help</span><span class="desc2">Crisis entry — routes to shelter, emergency services, housing.</span></a><a href="get-involved.html" class="item"><span class="slug">/get-involved/</span><span class="name">Get Involved</span><span class="desc2">Volunteer, fundraise, advocate, partner.</span></a><a href="give-main.html" class="item"><span class="slug">/give-main/</span><span class="name">Give</span><span class="desc2">Donor entry — one-time, monthly, legacy, other.</span></a>
       </div>
-    </div>
-
-    <div class="group">
-      <h2>Service / program detail <span class="tag">T-03 · 5 pages</span></h2>
-      <p class="desc">Crisis-lane detail pages. Hero + at-a-glance sidebar + narrative + locations + related programs.</p>
+    </div><div class="group">
+      <h2>Service / program detail <span class="tag">T-03 · 12 pages</span></h2>
+      <p class="desc">Crisis-lane detail pages. Hero + at-a-glance sidebar + narrative.</p>
       <div class="items">
-        <a href="shelter.html" class="item"><span class="slug">/shelter/</span><span class="name">Shelter</span><span class="desc2">Emergency shelter — first step on the road home.</span></a>
-        <a href="emergency-services.html" class="item"><span class="slug">/emergency-services/</span><span class="name">Emergency Services</span><span class="desc2">24 hr crisis response, outreach, weather protocol.</span></a>
-        <a href="palmer-court.html" class="item"><span class="slug">/palmer-court/</span><span class="name">Palmer Court</span><span class="desc2">201-unit flagship permanent supportive housing.</span></a>
-        <a href="resource-centers.html" class="item"><span class="slug">/resource-centers/</span><span class="name">Resource Centers</span><span class="desc2">Three physical locations. Walk in, call, or refer.</span></a>
-        <a href="housing-programs.html" class="item"><span class="slug">/housing-programs/</span><span class="name">Housing Programs</span><span class="desc2">Rapid rehousing, supportive, SSVF, navigation.</span></a>
+        <a href="all-housing-programs.html" class="item"><span class="slug">/all-housing-programs/</span><span class="name">All Housing Programs</span><span class="desc2">Migrated from /all-housing-programs/</span></a><a href="emergency-services.html" class="item"><span class="slug">/emergency-services/</span><span class="name">Emergency Services</span><span class="desc2">24 hr crisis response, outreach, weather protocol.</span></a><a href="housing-navigation-program.html" class="item"><span class="slug">/housing-navigation-program/</span><span class="name">Housing Navigation Program</span><span class="desc2">Migrated from /housing-navigation-program/</span></a><a href="housing-programs.html" class="item"><span class="slug">/housing-programs/</span><span class="name">Housing Programs</span><span class="desc2">Rapid rehousing, supportive, SSVF, navigation.</span></a><a href="insurance.html" class="item"><span class="slug">/insurance/</span><span class="name">insurance</span><span class="desc2">Migrated from /insurance/</span></a><a href="landlord-resources.html" class="item"><span class="slug">/landlord-resources/</span><span class="name">Landlord Resources</span><span class="desc2">Migrated from /landlord-resources/</span></a><a href="mens-resource-center.html" class="item"><span class="slug">/mens-resource-center/</span><span class="name">Men’s Resource Center</span><span class="desc2">Migrated from /mens-resource-center/</span></a><a href="midvale-family-resource-center.html" class="item"><span class="slug">/midvale-family-resource-center/</span><span class="name">Midvale Family Resource Center</span><span class="desc2">Migrated from /midvale-family-resource-center/</span></a><a href="palmer-court.html" class="item"><span class="slug">/palmer-court/</span><span class="name">Palmer Court</span><span class="desc2">201-unit flagship permanent supportive housing.</span></a><a href="permanent-housing.html" class="item"><span class="slug">/permanent-housing/</span><span class="name">Permanent Housing</span><span class="desc2">Migrated from /permanent-housing/</span></a><a href="resource-centers.html" class="item"><span class="slug">/resource-centers/</span><span class="name">Resource Centers</span><span class="desc2">Three physical locations. Walk in, call, or refer.</span></a><a href="shelter.html" class="item"><span class="slug">/shelter/</span><span class="name">Shelter</span><span class="desc2">Emergency shelter — first step on the road home.</span></a>
       </div>
-    </div>
-
-    <div class="group">
-      <h2>Donate flow <span class="tag">T-04 · 2 pages</span></h2>
-      <p class="desc">CTA-first donation pages with amount picker, impact math, security cues.</p>
+    </div><div class="group">
+      <h2>Donate flow <span class="tag">T-04 · 10 pages</span></h2>
+      <p class="desc">CTA-first donation pages with amount picker and impact math.</p>
       <div class="items">
-        <a href="donate.html" class="item"><span class="slug">/donate/</span><span class="name">Donate</span><span class="desc2">One-time donation with amount picker.</span></a>
-        <a href="housing-champions.html" class="item"><span class="slug">/housing-champions/</span><span class="name">Housing Champions</span><span class="desc2">Monthly giving program with Amanda's story.</span></a>
+        <a href="donate-2.html" class="item"><span class="slug">/donate-2/</span><span class="name">Donate</span><span class="desc2">Migrated from /donate-2/</span></a><a href="donate.html" class="item"><span class="slug">/donate/</span><span class="name">Donate</span><span class="desc2">One-time donation with amount picker.</span></a><a href="double-donation.html" class="item"><span class="slug">/double-donation/</span><span class="name">Double Donation</span><span class="desc2">Migrated from /double-donation/</span></a><a href="housing-champions-2.html" class="item"><span class="slug">/housing-champions-2/</span><span class="name">Housing Champions</span><span class="desc2">Migrated from /housing-champions-2/</span></a><a href="housing-champions-donation.html" class="item"><span class="slug">/housing-champions-donation/</span><span class="name">Housing Champions Donation</span><span class="desc2">Migrated from /housing-champions-donation/</span></a><a href="housing-champions.html" class="item"><span class="slug">/housing-champions/</span><span class="name">Housing Champions</span><span class="desc2">Monthly giving program with Amanda&#x27;s story.</span></a><a href="in-honor-and-memory.html" class="item"><span class="slug">/in-honor-and-memory/</span><span class="name">In Honor and Memory</span><span class="desc2">Migrated from /in-honor-and-memory/</span></a><a href="item-donations.html" class="item"><span class="slug">/item-donations/</span><span class="name">Item Donations</span><span class="desc2">Migrated from /item-donations/</span></a><a href="one-time-donation.html" class="item"><span class="slug">/one-time-donation/</span><span class="name">One-Time Donation</span><span class="desc2">Migrated from /one-time-donation/</span></a><a href="recurring-donation.html" class="item"><span class="slug">/recurring-donation/</span><span class="name">Recurring Donation</span><span class="desc2">Migrated from /recurring-donation/</span></a>
       </div>
-    </div>
-
-    <div class="group">
-      <h2>Giving-method detail <span class="tag">T-05 · 1 page</span></h2>
-      <p class="desc">Document-style page with TOC, advisor contact, bequest language.</p>
+    </div><div class="group">
+      <h2>Giving-method detail <span class="tag">T-05 · 10 pages</span></h2>
+      <p class="desc">Document-style pages for planned giving, real property, trusts, etc.</p>
       <div class="items">
-        <a href="legacy-planned.html" class="item"><span class="slug">/give-main/legacy-planned/</span><span class="name">Legacy / Planned Giving</span><span class="desc2">FreeWill, bequest language, talk to an advisor.</span></a>
+        <a href="donor-advised-fund.html" class="item"><span class="slug">/donor-advised-fund/</span><span class="name">Donor Advised Fund</span><span class="desc2">Migrated from /donor-advised-fund/</span></a><a href="donor-bill-of-rights.html" class="item"><span class="slug">/donor-bill-of-rights/</span><span class="name">Donor Bill of Rights</span><span class="desc2">Migrated from /donor-bill-of-rights/</span></a><a href="in-kind-donations.html" class="item"><span class="slug">/in-kind-donations/</span><span class="name">in-kind-donations</span><span class="desc2">Migrated from /in-kind-donations/</span></a><a href="legacy-planned.html" class="item"><span class="slug">/legacy-planned/</span><span class="name">Legacy &amp; Planned Giving</span><span class="desc2">FreeWill, bequest language, talk to an advisor.</span></a><a href="life-insurance.html" class="item"><span class="slug">/life-insurance/</span><span class="name">Life Insurance</span><span class="desc2">Migrated from /life-insurance/</span></a><a href="manage-donations.html" class="item"><span class="slug">/manage-donations/</span><span class="name">Manage Donations</span><span class="desc2">Migrated from /manage-donations/</span></a><a href="other-ways-to-give.html" class="item"><span class="slug">/other-ways-to-give/</span><span class="name">Other Ways to Give</span><span class="desc2">Migrated from /other-ways-to-give/</span></a><a href="real-property.html" class="item"><span class="slug">/real-property/</span><span class="name">Real Property</span><span class="desc2">Migrated from /real-property/</span></a><a href="stock-wire-transfer.html" class="item"><span class="slug">/stock-wire-transfer/</span><span class="name">Donate through Stock, Wire Transfer, DAF, or Crypto</span><span class="desc2">Migrated from /stock-wire-transfer/</span></a><a href="trusts.html" class="item"><span class="slug">/trusts/</span><span class="name">Trusts</span><span class="desc2">Migrated from /trusts/</span></a>
       </div>
-    </div>
-
-    <div class="group">
-      <h2>Transparency / data <span class="tag">T-06 · 2 pages</span></h2>
-      <p class="desc">Accountability pages — big numbers, budget breakdown, downloadable reports.</p>
+    </div><div class="group">
+      <h2>Transparency / data <span class="tag">T-06 · 4 pages</span></h2>
+      <p class="desc">Accountability surfaces — numbers, audits, reports.</p>
       <div class="items">
-        <a href="where-does-it-go.html" class="item"><span class="slug">/where-does-it-go/</span><span class="name">Where Does It Go?</span><span class="desc2">94¢ per dollar — budget allocation with CSS bar charts.</span></a>
-        <a href="annual-reports.html" class="item"><span class="slug">/annual-reports/</span><span class="name">Annual Reports</span><span class="desc2">Ten years of audited reports.</span></a>
+        <a href="annual-reports.html" class="item"><span class="slug">/annual-reports/</span><span class="name">Annual Reports</span><span class="desc2">Ten years of audited reports.</span></a><a href="data-dashboard.html" class="item"><span class="slug">/data-dashboard/</span><span class="name">Data Dashboard</span><span class="desc2">Migrated from /data-dashboard/</span></a><a href="data-finances.html" class="item"><span class="slug">/data-finances/</span><span class="name">Data &amp;amp; Finances</span><span class="desc2">Migrated from /data-finances/</span></a><a href="where-does-it-go.html" class="item"><span class="slug">/where-does-it-go/</span><span class="name">Where Does It Go</span><span class="desc2">94¢ per dollar — budget allocation.</span></a>
       </div>
-    </div>
-
-    <div class="group">
-      <h2>People directory <span class="tag">T-07 · 2 pages</span></h2>
-      <p class="desc">Filterable photo-card grids — staff and board.</p>
+    </div><div class="group">
+      <h2>People directory <span class="tag">T-07 · 3 pages</span></h2>
+      <p class="desc">Filterable staff and board directories.</p>
       <div class="items">
-        <a href="meet-the-team.html" class="item"><span class="slug">/meet-the-team/</span><span class="name">Meet the Team</span><span class="desc2">CEO, leadership, case managers, coordinators.</span></a>
-        <a href="board-of-trustees.html" class="item"><span class="slug">/board-of-trustees/</span><span class="name">Board of Trustees</span><span class="desc2">2026–2027 board with officers and committees.</span></a>
+        <a href="board-of-trustees.html" class="item"><span class="slug">/board-of-trustees/</span><span class="name">Board of Trustees</span><span class="desc2">2026–2027 board with officers and committees.</span></a><a href="case-management-team.html" class="item"><span class="slug">/case-management-team/</span><span class="name">Case Management Team</span><span class="desc2">Migrated from /case-management-team/</span></a><a href="meet-the-team.html" class="item"><span class="slug">/meet-the-team/</span><span class="name">Meet the Team</span><span class="desc2">CEO, leadership, case managers, coordinators.</span></a>
       </div>
-    </div>
-
-    <div class="group">
-      <h2>Stories listing <span class="tag">T-09 · 1 page</span></h2>
-      <p class="desc">Editorial magazine-style grid of client stories.</p>
+    </div><div class="group">
+      <h2>Person detail <span class="tag">T-08 · 1 page</span></h2>
+      <p class="desc">Single-person deep dive (CEO, leadership).</p>
       <div class="items">
-        <a href="housing-stories.html" class="item"><span class="slug">/housing-stories/</span><span class="name">Housing Stories</span><span class="desc2">Named clients, dignified portraits, the work humanized.</span></a>
+        <a href="michelle-flynn.html" class="item"><span class="slug">/michelle-flynn/</span><span class="name">Staff Detail</span><span class="desc2">Migrated from /michelle-flynn/</span></a>
       </div>
-    </div>
-
-    <div class="group">
-      <h2>Form page <span class="tag">T-11 · 1 page</span></h2>
-      <p class="desc">Context sidebar + contact form + crisis-line callout.</p>
+    </div><div class="group">
+      <h2>Stories listing <span class="tag">T-09 · 7 pages</span></h2>
+      <p class="desc">Editorial grids of client stories, team stories, videos, blog, media.</p>
       <div class="items">
-        <a href="contact-us.html" class="item"><span class="slug">/contact-us/</span><span class="name">Contact</span><span class="desc2">Non-emergency contact form with every org contact.</span></a>
+        <a href="blog.html" class="item"><span class="slug">/blog/</span><span class="name">Blog</span><span class="desc2">Migrated from /blog/</span></a><a href="housing-stories.html" class="item"><span class="slug">/housing-stories/</span><span class="name">Housing Stories</span><span class="desc2">Named clients, dignified portraits, the work humanized.</span></a><a href="item.html" class="item"><span class="slug">/item/</span><span class="name">item</span><span class="desc2">Migrated from /item/</span></a><a href="media-center.html" class="item"><span class="slug">/media-center/</span><span class="name">Media Center</span><span class="desc2">Migrated from /media-center/</span></a><a href="moments-that-matter.html" class="item"><span class="slug">/moments-that-matter/</span><span class="name">Moments That Matter</span><span class="desc2">Migrated from /moments-that-matter/</span></a><a href="team-stories.html" class="item"><span class="slug">/team-stories/</span><span class="name">Team Stories</span><span class="desc2">Migrated from /team-stories/</span></a><a href="videos.html" class="item"><span class="slug">/videos/</span><span class="name">Video</span><span class="desc2">Migrated from /videos/</span></a>
       </div>
-    </div>
-
-    <div class="group">
+    </div><div class="group">
+      <h2>Get-involved program <span class="tag">T-10 · 9 pages</span></h2>
+      <p class="desc">Volunteer programs, events, fundraisers, internships, careers.</p>
+      <div class="items">
+        <a href="careers-positions.html" class="item"><span class="slug">/careers-positions/</span><span class="name">The Road Home - Current Openings</span><span class="desc2">Migrated from /careers-positions/</span></a><a href="careers.html" class="item"><span class="slug">/careers/</span><span class="name">Careers</span><span class="desc2">Migrated from /careers/</span></a><a href="court-ordered-volunteering.html" class="item"><span class="slug">/court-ordered-volunteering/</span><span class="name">Court-Ordered Volunteering</span><span class="desc2">Migrated from /court-ordered-volunteering/</span></a><a href="eagle-scouts.html" class="item"><span class="slug">/eagle-scouts/</span><span class="name">Eagle Scouts</span><span class="desc2">Migrated from /eagle-scouts/</span></a><a href="events.html" class="item"><span class="slug">/events/</span><span class="name">Events</span><span class="desc2">Migrated from /events/</span></a><a href="fundraiser.html" class="item"><span class="slug">/fundraiser/</span><span class="name">Fundraisers</span><span class="desc2">Migrated from /fundraiser/</span></a><a href="internships.html" class="item"><span class="slug">/internships/</span><span class="name">Internships</span><span class="desc2">Migrated from /internships/</span></a><a href="mediathon.html" class="item"><span class="slug">/mediathon/</span><span class="name">Donate</span><span class="desc2">Migrated from /mediathon/</span></a><a href="sponsor-page.html" class="item"><span class="slug">/sponsor-page/</span><span class="name">Mediathon Sponsor Page</span><span class="desc2">Migrated from /sponsor-page/</span></a>
+      </div>
+    </div><div class="group">
+      <h2>Form page <span class="tag">T-11 · 12 pages</span></h2>
+      <p class="desc">Context + form + crisis-line callout pattern.</p>
+      <div class="items">
+        <a href="community-referral-page.html" class="item"><span class="slug">/community-referral-page/</span><span class="name">Community Referral Page</span><span class="desc2">Migrated from /community-referral-page/</span></a><a href="contact-us.html" class="item"><span class="slug">/contact-us/</span><span class="name">Contact</span><span class="desc2">Non-emergency contact form with every org contact.</span></a><a href="donation-form.html" class="item"><span class="slug">/donation-form/</span><span class="name">Donation Form</span><span class="desc2">Migrated from /donation-form/</span></a><a href="fundraiser-form.html" class="item"><span class="slug">/fundraiser-form/</span><span class="name">Fundraiser Form</span><span class="desc2">Migrated from /fundraiser-form/</span></a><a href="mvpfacility.html" class="item"><span class="slug">/mvpfacility/</span><span class="name">Medically Vulnerable People (MVP) Program</span><span class="desc2">Migrated from /mvpfacility/</span></a><a href="mvpreferral.html" class="item"><span class="slug">/mvpreferral/</span><span class="name">MVP Referral</span><span class="desc2">Migrated from /mvpreferral/</span></a><a href="secure-file-upload.html" class="item"><span class="slug">/secure-file-upload/</span><span class="name">Secure File Upload</span><span class="desc2">Migrated from /secure-file-upload/</span></a><a href="ssvf-referral.html" class="item"><span class="slug">/ssvf-referral/</span><span class="name">SSVF Referral</span><span class="desc2">Migrated from /ssvf-referral/</span></a><a href="stvinnyreferral.html" class="item"><span class="slug">/stvinnyreferral/</span><span class="name">StVinnyReferral</span><span class="desc2">Migrated from /stvinnyreferral/</span></a><a href="tanf-rapid-rehousing-program-referral-form.html" class="item"><span class="slug">/tanf-rapid-rehousing-program-referral-form/</span><span class="name">TANF Rapid Rehousing Program Referral Form</span><span class="desc2">Migrated from /tanf-rapid-rehousing-program-referral-form/</span></a><a href="tell-your-story.html" class="item"><span class="slug">/tell-your-story/</span><span class="name">Tell Your Story</span><span class="desc2">Migrated from /tell-your-story/</span></a><a href="trh-feedback-form.html" class="item"><span class="slug">/trh-feedback-form/</span><span class="name">TRH Feedback Form</span><span class="desc2">Migrated from /trh-feedback-form/</span></a>
+      </div>
+    </div><div class="group">
       <h2>FAQ <span class="tag">T-12 · 1 page</span></h2>
-      <p class="desc">CSS-only accordion grouped into four categories.</p>
+      <p class="desc">CSS-only accordion grouped into categories.</p>
       <div class="items">
         <a href="faq.html" class="item"><span class="slug">/faq/</span><span class="name">FAQ</span><span class="desc2">Donations, volunteering, shelter, community.</span></a>
       </div>
+    </div><div class="group">
+      <h2>History / timeline <span class="tag">T-13 · 4 pages</span></h2>
+      <p class="desc">Long editorial, decades as anchors, period photography.</p>
+      <div class="items">
+        <a href="awards.html" class="item"><span class="slug">/awards/</span><span class="name">Awards</span><span class="desc2">Migrated from /awards/</span></a><a href="centennialcelebration.html" class="item"><span class="slug">/centennialcelebration/</span><span class="name">Centennial Celebration</span><span class="desc2">Migrated from /centennialcelebration/</span></a><a href="decades.html" class="item"><span class="slug">/decades/</span><span class="name">Decades</span><span class="desc2">Migrated from /decades/</span></a><a href="history.html" class="item"><span class="slug">/history/</span><span class="name">History</span><span class="desc2">Migrated from /history/</span></a>
+      </div>
+    </div><div class="group">
+      <h2>Legal <span class="tag">T-15 · 1 page</span></h2>
+      <p class="desc">Long-form prose with TOC.</p>
+      <div class="items">
+        <a href="privacy-policy.html" class="item"><span class="slug">/privacy-policy/</span><span class="name">Privacy Policy</span><span class="desc2">Migrated from /privacy-policy/</span></a>
+      </div>
     </div>
-
   </div>
 </section>
 
@@ -152,15 +146,18 @@
     <h2>Design artifacts</h2>
     <p>Where the design decisions live — brand, personality, plan, execution log, raw briefings, the approved home prototype, the shared token system.</p>
     <div class="artifact-links">
-      <a href="../brand-board.html" class="art-row"><span class="t">View</span><span class="n">Brand board</span><span class="d">Palette, type, voice, motifs, components — derived from the live theroadhome.org.</span></a>
-      <a href="../prototypes/home-b.html" class="art-row"><span class="t">View</span><span class="n">Home · approved prototype</span><span class="d">Variant B · the design-of-record for the home page.</span></a>
+      <a href="../brand-board.html" class="art-row"><span class="t">View</span><span class="n">Brand board</span><span class="d">Palette, type, voice, motifs — extracted from live theroadhome.org.</span></a>
+      <a href="../prototypes/home-b.html" class="art-row"><span class="t">View</span><span class="n">Home · approved prototype</span><span class="d">Variant B · civic / data-led / dense.</span></a>
       <a href="../prototypes/home-a.html" class="art-row"><span class="t">View</span><span class="n">Home · variant A (retained)</span><span class="d">Editorial · portrait-led — not chosen, kept as design history.</span></a>
-      <a href="../PLAN.md" class="art-row"><span class="t">Read</span><span class="n">Plan · PLAN.md</span><span class="d">Full site-rebuild plan including priority-2 and priority-3 pages.</span></a>
-      <a href="../EXECUTION_LOG.md" class="art-row"><span class="t">Read</span><span class="n">Execution log</span><span class="d">Honest report on what was built, what was skipped, and what needs human review.</span></a>
-      <a href="../brand-profile.json" class="art-row"><span class="t">JSON</span><span class="n">Brand profile</span><span class="d">Machine-readable brand source of truth.</span></a>
-      <a href="../../.impeccable.md" class="art-row"><span class="t">Markdown</span><span class="n">Design personality</span><span class="d">Designer-authored taste rules that guide every page.</span></a>
-      <a href="../prototypes/_tokens.css" class="art-row"><span class="t">CSS</span><span class="n">Shared tokens</span><span class="d">Every page imports this. Single source of truth for type, color, spacing, breakpoints.</span></a>
-      <a href="../briefings/" class="art-row"><span class="t">Folder</span><span class="n">20 page briefings</span><span class="d">Intent, audience, verbatim copy, imagery per page.</span></a>
+      <a href="../PLAN.md" class="art-row"><span class="t">Read</span><span class="n">PLAN.md</span><span class="d">Original 84-page rebuild plan.</span></a>
+      <a href="../PLAN2.md" class="art-row"><span class="t">Read</span><span class="n">PLAN2.md</span><span class="d">Phase-2 plan: critique, migrate, generate, validate, journal.</span></a>
+      <a href="../EXECUTION_LOG.md" class="art-row"><span class="t">Read</span><span class="n">EXECUTION_LOG.md</span><span class="d">Running log of what was built and what was skipped.</span></a>
+      <a href="../VALIDATION_REPORT.md" class="art-row"><span class="t">Read</span><span class="n">VALIDATION_REPORT.md</span><span class="d">Link/image/consistency validation for the final shipped site.</span></a>
+      <a href="../JOURNAL.md" class="art-row"><span class="t">Read</span><span class="n">JOURNAL.md</span><span class="d">Full project narrative + 15-25 learnings for the next site.</span></a>
+      <a href="../brand-profile.json" class="art-row"><span class="t">JSON</span><span class="n">brand-profile.json</span><span class="d">Machine-readable brand source of truth.</span></a>
+      <a href="../../.impeccable.md" class="art-row"><span class="t">MD</span><span class="n">.impeccable.md</span><span class="d">Designer-authored personality rules.</span></a>
+      <a href="../prototypes/_tokens.css" class="art-row"><span class="t">CSS</span><span class="n">_tokens.css</span><span class="d">Every page imports this — type, color, spacing, breakpoints.</span></a>
+      <a href="../briefings/" class="art-row"><span class="t">Folder</span><span class="n">briefings/</span><span class="d">Markdown briefings with verbatim copy + imagery.</span></a>
     </div>
   </div>
 </section>
@@ -175,11 +172,11 @@
       </div>
     </div>
     <div class="footer-col"><h3>Get Help</h3><ul><li><a href="shelter.html">Find a Shelter</a></li><li><a href="emergency-services.html">Emergency Services</a></li><li><a href="housing-programs.html">Housing Assistance</a></li><li><a href="resource-centers.html">Resource Centers</a></li><li><a href="palmer-court.html">Palmer Court</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
-    <div class="footer-col"><h3>Give</h3><ul><li><a href="donate.html">One-time</a></li><li><a href="housing-champions.html">Monthly · Housing Champions</a></li><li><a href="legacy-planned.html">Legacy / Planned</a></li><li><a href="where-does-it-go.html">Where does it go?</a></li></ul></div>
+    <div class="footer-col"><h3>Give</h3><ul><li><a href="donate.html">One-time</a></li><li><a href="housing-champions.html">Monthly</a></li><li><a href="legacy-planned.html">Legacy / Planned</a></li><li><a href="where-does-it-go.html">Where does it go?</a></li></ul></div>
     <div class="footer-col"><h3>About</h3><ul><li><a href="about-us.html">Our mission</a></li><li><a href="meet-the-team.html">Meet the team</a></li><li><a href="board-of-trustees.html">Board</a></li><li><a href="annual-reports.html">Annual reports</a></li><li><a href="contact-us.html">Contact</a></li></ul></div>
     <div class="footer-col"><h3>Impact</h3><ul><li><a href="housing-stories.html">Housing stories</a></li><li><a href="where-does-it-go.html">By the numbers</a></li><li><a href="annual-reports.html">Reports</a></li></ul></div>
   </div>
-  <div class="footer-bottom"><div>© 1923–2026 The Road Home · Salt Lake City, UT · EIN 87-0212465</div><nav><a href="#">Privacy</a><a href="#">Accessibility</a><a href="#">Donor bill of rights</a></nav></div>
+  <div class="footer-bottom"><div>© 1923–2026 The Road Home · Salt Lake City, UT · EIN 87-0212465</div><nav><a href="privacy-policy.html">Privacy</a><a href="privacy-policy.html">Accessibility</a><a href="legacy-planned.html">Donor bill of rights</a></nav></div>
 </div></footer>
 
 </body>

@@ -167,6 +167,55 @@ All pages:
 6. Review **`.impeccable.md`** and **`stardust/PLAN.md`** for the decisions that shape the work.
 7. Flag anything that needs revising in your next session.
 
+---
+
+## Phase 2 autonomous run · 2026-04-24 (same day)
+
+Executed `stardust/PLAN2.md` end-to-end without supervision. Five phases completed.
+
+### Phase 1 · Sampled critique
+Ran `npx impeccable --json` on 9 template representatives (get-help, shelter, donate, legacy-planned, where-does-it-go, meet-the-team, housing-stories, contact-us, faq). Only real global finding: leftover `<link rel="stylesheet">` pointing at Inter on every page even after `_tokens.css` switched to Archivo/Public Sans. Fixed with one sweep script across all 20 pages. Other detector flags (low-contrast, all-caps-body, tight-leading, flat-type-hierarchy, overused-font: helvetica) were false positives or acceptable in context.
+
+### Phase 2 · Migrate remaining pages
+- Crawled 59 new URLs via `stardust/_scratch/crawl2.js` — all 59 succeeded.
+- Built generic Python renderer `stardust/_scratch/render-pages.py` that reads scraped JSON + template assignment and outputs a standardized page using `_tokens.css`. Template-specific sidebars for T-03 (phone CTA), T-04 (amount picker), T-05 (advisor contact), T-10 (volunteer contact), T-11 (crisis callout).
+- Rendered all 59 pages in ~3 seconds.
+- Rebuilt `stardust/pages/sitemap.html` via `_scratch/build-sitemap.py` to list all 79 pages grouped by template.
+- Total pages in `stardust/pages/`: **80** (79 content pages + sitemap).
+
+### Phase 3 · Hero imagery generation
+- Wrote `stardust/_scratch/generate-images.js` using Gemini 3 Pro Image Preview (`models/gemini-3-pro-image-preview:generateContent`), credential read from `/Users/paolo/excat/vitamix-gensite/.env` (`GOOGLE_API_KEY`).
+- All 20 images generated successfully on first attempt. Zero failures, zero retries.
+- Output: `stardust/assets/generated/01..20-*.png` + `_manifest.json`.
+- Subjects: 5 buildings, 5 interior/operational, 4 city context, 3 civic/institutional, 3 atmospheric. No photorealistic portraits of fabricated people (ethical constraint enforced).
+- 8 images wired into priority-1 pages (`index.html`, `shelter.html`, `emergency-services.html`, `get-help.html`, `palmer-court.html`, `give-main.html`, `about-us.html`, `get-involved.html`). Remaining 12 available for future manual wiring.
+
+### Phase 4 · Site validation
+`stardust/_scratch/validate.py` over all 80 pages.
+- Link health: 0 issues (1 intentional directory link on sitemap kept as-is)
+- Image health: 0 broken local references
+- Consistency sweep: 3 side-stripe-border violations found (>1px border-left — the absolute ban) on `housing-stories.html`, `palmer-court.html`, `legacy-planned.html`. Fixed inline: replaced with full 1px borders or tinted panels.
+- Post-fix validation: 0 consistency issues.
+- Sampled critique via detector on 5 random pages: no new real antipatterns.
+- Full stakeholder-readable report: `stardust/VALIDATION_REPORT.md`.
+
+### Phase 5 · Project journal
+`stardust/JOURNAL.md` — 11 chapters chronological + 25 closing learnings. ~3,600 words. Covers starting point, brand extraction, personality interview, home variants A/B, responsive rule, 84-page plan, Phase 1 autonomous run, critique fixes, GitHub publication, Phase 2 execution, and the playbook for the next site.
+
+---
+
+## Final state of the repo
+
+- `stardust/pages/*.html` — **80 files** (79 content pages + sitemap)
+- `stardust/assets/generated/` — **20 PNG images** + manifest
+- `stardust/assets/pages/*/` — scraped TRH imagery per page (from both crawls)
+- `stardust/briefings/*.md` — 19 hand-authored briefings (for priority-1)
+- `stardust/prototypes/` — `_tokens.css` + home-a + home-b
+- `stardust/PLAN.md`, `PLAN2.md`, `EXECUTION_LOG.md`, `VALIDATION_REPORT.md`, `JOURNAL.md`
+- `index.html`, `.impeccable.md`, `brand-profile.json`, `brand-board.html` at their expected paths
+
+All artifacts committed to github.com/paolomoz/theroadhouse.
+
 
 
 

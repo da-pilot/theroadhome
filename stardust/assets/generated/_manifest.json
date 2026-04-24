@@ -1,0 +1,202 @@
+[
+  {
+    "id": "01",
+    "subject": "palmer-court-exterior",
+    "aspect": "16:9",
+    "filename": "01-palmer-court-exterior.png",
+    "prompt_hash": "f599702adeaf",
+    "cached": false,
+    "generated_at": "2026-04-24T19:20:56.789Z",
+    "size_bytes": 781753
+  },
+  {
+    "id": "02",
+    "subject": "mens-resource-center-exterior",
+    "aspect": "4:5",
+    "filename": "02-mens-resource-center-exterior.png",
+    "prompt_hash": "226d8a609120",
+    "cached": false,
+    "generated_at": "2026-04-24T19:21:15.806Z",
+    "size_bytes": 969634
+  },
+  {
+    "id": "03",
+    "subject": "midvale-family-resource-center-exterior",
+    "aspect": "4:5",
+    "filename": "03-midvale-family-resource-center-exterior.png",
+    "prompt_hash": "ea8326f2cba5",
+    "cached": false,
+    "generated_at": "2026-04-24T19:21:34.799Z",
+    "size_bytes": 943266
+  },
+  {
+    "id": "04",
+    "subject": "gail-miller-entrance",
+    "aspect": "16:9",
+    "filename": "04-gail-miller-entrance.png",
+    "prompt_hash": "272f5397ad49",
+    "cached": false,
+    "generated_at": "2026-04-24T19:21:51.969Z",
+    "size_bytes": 785974
+  },
+  {
+    "id": "05",
+    "subject": "warehouse-sort",
+    "aspect": "16:9",
+    "filename": "05-warehouse-sort.png",
+    "prompt_hash": "0dd4a04e4d28",
+    "cached": false,
+    "generated_at": "2026-04-24T19:22:12.849Z",
+    "size_bytes": 860136
+  },
+  {
+    "id": "06",
+    "subject": "intake-desk",
+    "aspect": "3:2",
+    "filename": "06-intake-desk.png",
+    "prompt_hash": "5e1d2802587c",
+    "cached": false,
+    "generated_at": "2026-04-24T19:22:30.509Z",
+    "size_bytes": 627337
+  },
+  {
+    "id": "07",
+    "subject": "dining-hall",
+    "aspect": "16:9",
+    "filename": "07-dining-hall.png",
+    "prompt_hash": "4f9f42924138",
+    "cached": false,
+    "generated_at": "2026-04-24T19:22:48.061Z",
+    "size_bytes": 791616
+  },
+  {
+    "id": "08",
+    "subject": "kids-reading-room",
+    "aspect": "4:3",
+    "filename": "08-kids-reading-room.png",
+    "prompt_hash": "446b58ebf9df",
+    "cached": false,
+    "generated_at": "2026-04-24T19:23:06.330Z",
+    "size_bytes": 814554
+  },
+  {
+    "id": "09",
+    "subject": "housing-navigator-desk",
+    "aspect": "3:2",
+    "filename": "09-housing-navigator-desk.png",
+    "prompt_hash": "d76962c456dc",
+    "cached": false,
+    "generated_at": "2026-04-24T19:23:24.938Z",
+    "size_bytes": 732214
+  },
+  {
+    "id": "10",
+    "subject": "meal-tray-bowl",
+    "aspect": "1:1",
+    "filename": "10-meal-tray-bowl.png",
+    "prompt_hash": "bb323b9e569c",
+    "cached": false,
+    "generated_at": "2026-04-24T19:23:42.377Z",
+    "size_bytes": 670112
+  },
+  {
+    "id": "11",
+    "subject": "slc-dusk-wasatch",
+    "aspect": "16:9",
+    "filename": "11-slc-dusk-wasatch.png",
+    "prompt_hash": "e83f3bfa8721",
+    "cached": false,
+    "generated_at": "2026-04-24T19:23:59.087Z",
+    "size_bytes": 779054
+  },
+  {
+    "id": "12",
+    "subject": "rio-grande-winter",
+    "aspect": "16:9",
+    "filename": "12-rio-grande-winter.png",
+    "prompt_hash": "1b8d91dedfa1",
+    "cached": false,
+    "generated_at": "2026-04-24T19:24:17.989Z",
+    "size_bytes": 978333
+  },
+  {
+    "id": "13",
+    "subject": "utah-winter-street",
+    "aspect": "16:9",
+    "filename": "13-utah-winter-street.png",
+    "prompt_hash": "f1e7967e8ad1",
+    "cached": false,
+    "generated_at": "2026-04-24T19:24:38.596Z",
+    "size_bytes": 897831
+  },
+  {
+    "id": "14",
+    "subject": "doorway-threshold",
+    "aspect": "4:5",
+    "filename": "14-doorway-threshold.png",
+    "prompt_hash": "b081031aeb65",
+    "cached": false,
+    "generated_at": "2026-04-24T19:24:57.952Z",
+    "size_bytes": 845755
+  },
+  {
+    "id": "15",
+    "subject": "annual-report-open",
+    "aspect": "3:2",
+    "filename": "15-annual-report-open.png",
+    "prompt_hash": "2f6f17263b4f",
+    "cached": false,
+    "generated_at": "2026-04-24T19:25:16.608Z",
+    "size_bytes": 852656
+  },
+  {
+    "id": "16",
+    "subject": "board-room",
+    "aspect": "16:9",
+    "filename": "16-board-room.png",
+    "prompt_hash": "215fb18f42ed",
+    "cached": false,
+    "generated_at": "2026-04-24T19:25:33.917Z",
+    "size_bytes": 743601
+  },
+  {
+    "id": "17",
+    "subject": "centennial-cornerstone",
+    "aspect": "1:1",
+    "filename": "17-centennial-cornerstone.png",
+    "prompt_hash": "b4b90a0ad600",
+    "cached": false,
+    "generated_at": "2026-04-24T19:25:52.793Z",
+    "size_bytes": 842570
+  },
+  {
+    "id": "18",
+    "subject": "keys-in-hand-home",
+    "aspect": "1:1",
+    "filename": "18-keys-in-hand-home.png",
+    "prompt_hash": "5659d9d2bead",
+    "cached": false,
+    "generated_at": "2026-04-24T19:26:09.980Z",
+    "size_bytes": 704620
+  },
+  {
+    "id": "19",
+    "subject": "coat-on-hook",
+    "aspect": "4:5",
+    "filename": "19-coat-on-hook.png",
+    "prompt_hash": "45a6a98fb43d",
+    "cached": false,
+    "generated_at": "2026-04-24T19:26:28.895Z",
+    "size_bytes": 724651
+  },
+  {
+    "id": "20",
+    "subject": "impact-typography-94",
+    "aspect": "16:9",
+    "filename": "20-impact-typography-94.png",
+    "prompt_hash": "85ec2cd1e3d1",
+    "cached": false,
+    "generated_at": "2026-04-24T19:26:47.960Z",
+    "size_bytes": 786554
+  }
+]
