@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Palmer Court — The Road Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+  @import url("../prototypes/_tokens.css");
+  .hero{padding:var(--spacing-2xl) 0 0}
+  .hero .inner{display:grid;grid-template-columns:1.2fr 1fr;gap:var(--spacing-2xl);align-items:end;padding-bottom:var(--spacing-2xl);border-bottom:1px solid var(--color-rule)}
+  .hero h1{font-size:var(--heading-xl);font-weight:900;text-transform:uppercase;line-height:0.98;letter-spacing:-.015em;margin-bottom:var(--spacing-md)}
+  .hero .sub{font-size:19px;color:var(--color-g22);line-height:1.55;max-width:52ch}
+  .hero .art{aspect-ratio:4/5;background-size:cover;background-position:center;background-image:linear-gradient(180deg,rgba(0,20,25,.05),rgba(0,40,50,.2)),url('https://images.unsplash.com/photo-1444084316824-dc26d6657664?auto=format&fit=crop&w=1200&q=80')}
+  .narrative{padding:var(--section-padding) 0}
+  .n-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:2fr 1fr;gap:var(--spacing-2xl)}
+  .n-main h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;line-height:1.05;margin-bottom:var(--spacing-md);max-width:18ch}
+  .n-main p{font-size:17px;color:var(--color-g22);line-height:1.7;margin-bottom:var(--spacing-md);max-width:58ch}
+  .n-side{padding:32px 28px;background:var(--color-panel);border:1px solid var(--color-rule);align-self:start;position:sticky;top:calc(var(--nav-h) + 20px)}
+  .n-side .eyebrow{margin-bottom:var(--spacing-md)}
+  .n-side dl{margin:0;display:grid;gap:16px}
+  .n-side dt{font-size:11px;color:var(--color-g66);text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:4px}
+  .n-side dd{margin:0;font-size:15px;font-weight:600;color:var(--color-ink)}
+  .story-band{padding:var(--section-padding) 0;background:var(--color-shelter);color:var(--color-paper)}
+  .story-band-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:1fr 1.2fr;gap:var(--spacing-2xl);align-items:center}
+  .story-band .portrait{aspect-ratio:4/5;background-size:cover;background-position:center;background-image:url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=80')}
+  .story-band blockquote{font-size:32px;font-weight:700;line-height:1.25;color:var(--color-paper);margin:0 0 var(--spacing-md);max-width:34ch;padding-left:20px;border-left:3px solid var(--color-signal)}
+  .story-band .byline{color:rgba(255,255,255,.75);font-size:14px;letter-spacing:.04em;text-transform:uppercase;font-weight:600;margin-bottom:var(--spacing-lg)}
+  .story-band .byline strong{color:var(--color-paper)}
+  .story-band .read{color:var(--color-signal-soft);font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--color-signal-soft);padding-bottom:2px}
+  .volunteer{padding:var(--section-padding) 0;background:var(--color-panel);border-top:1px solid var(--color-rule);border-bottom:1px solid var(--color-rule)}
+  .v-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+  .v-head{margin-bottom:var(--spacing-xl)}
+  .v-head h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;margin-bottom:10px}
+  .v-head p{color:var(--color-g44);max-width:56ch}
+  .v-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--color-rule);border:1px solid var(--color-rule)}
+  .v-card{background:var(--color-paper);padding:28px 26px}
+  .v-card .tag{font-size:11px;color:var(--color-signal);font-weight:700;letter-spacing:.08em;margin-bottom:10px}
+  .v-card h3{font-size:18px;font-weight:900;text-transform:uppercase;margin-bottom:10px}
+  .v-card p{font-size:13px;color:var(--color-g44);line-height:1.55}
+  .needs{padding:var(--section-padding) 0}
+  .needs-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+  .needs-inner h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;margin-bottom:var(--spacing-lg)}
+  .needs-list{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--color-rule);border:1px solid var(--color-rule)}
+  .needs-item{background:var(--color-paper);padding:22px 20px;display:grid;grid-template-columns:30px 1fr;gap:14px;align-items:center;font-size:14px;color:var(--color-g22);font-weight:600}
+  .needs-item .c{color:var(--color-signal);font-weight:900;font-size:18px}
+  @media (max-width:900px){.hero .inner,.n-inner,.story-band-inner{grid-template-columns:1fr}.n-side{position:static}.v-grid{grid-template-columns:1fr}.needs-list{grid-template-columns:repeat(2,1fr)}.hero .art{aspect-ratio:5/3;order:-1}}
+  @media (max-width:520px){.needs-list{grid-template-columns:1fr}.story-band blockquote{font-size:22px}}
+</style>
+</head>
+<body>
+
+<div class="utility"><div class="utility-inner"><div class="utility-left"><span><span class="dot"></span>Emergency Shelter Hotline · <a href="tel:18019909999">801-990-9999</a></span><span>Utah 2-1-1 · <a href="tel:211">Dial 211</a></span></div><div class="utility-right"><a href="contact-us.html">Español</a><a href="shelter.html">Find a location</a><a href="meet-the-team.html">Careers</a></div></div></div>
+<nav class="topnav"><div class="nav-inner"><a class="nav-logo" href="index.html"><img src="../assets/logo.png" alt=""></a><div class="nav-links"><a href="get-help.html" class="active">Get Help</a><a href="give-main.html">Give</a><a href="get-involved.html">Get Involved</a><a href="about-us.html">About</a></div><div class="nav-right"><a href="shelter.html" class="btn-ghost">Find a Shelter</a><a href="donate.html" class="btn">Donate</a></div></div></nav>
+<div class="breadcrumbs"><div class="inner"><a href="index.html">Home</a><span class="sep">/</span><a href="get-help.html">Get Help</a><span class="sep">/</span><a href="housing-programs.html">Housing</a><span class="sep">/</span>Palmer Court</div></div>
+
+<section class="hero">
+  <div class="inner">
+    <div>
+      <p class="eyebrow">Program · Palmer Court</p>
+      <h1>201 homes.<br>201 neighbors.</h1>
+      <p class="sub">Palmer Court is a 201-unit permanent supportive housing complex operated by The Road Home. Residents at Palmer Court have previously experienced long-term homelessness.</p>
+    </div>
+    <div class="art" role="img" aria-label="Palmer Court building exterior."></div>
+  </div>
+</section>
+
+<section class="narrative">
+  <div class="n-inner">
+    <div class="n-main">
+      <h2>A home, not a shelter.</h2>
+      <p><strong>Palmer Court is proof that housing is the solution to homelessness.</strong> Every resident has their own apartment and access to on-site case management, behavioral-health support, and employment assistance. No time limit. No "graduation" requirement.</p>
+      <p>The building is not a shelter. It is a home.</p>
+      <p>Residents are individuals and families who have experienced chronic homelessness — often combined with disability, serious mental illness, or substance use. Palmer Court meets them where they are.</p>
+      <p>Palmer Court opened in 2009 and remains one of the most successful examples of the Housing First model in the western United States. Annual retention rates are above 90%.</p>
+    </div>
+    <aside class="n-side">
+      <p class="eyebrow">At a glance</p>
+      <dl>
+        <div><dt>Units</dt><dd>201</dd></div>
+        <div><dt>Model</dt><dd>Permanent supportive (Housing First)</dd></div>
+        <div><dt>Opened</dt><dd>2009</dd></div>
+        <div><dt>Location</dt><dd>Salt Lake City, UT</dd></div>
+        <div><dt>Retention rate</dt><dd>&gt; 90% annually</dd></div>
+        <div><dt>Intake</dt><dd>Through case management at resource centers</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section class="story-band">
+  <div class="story-band-inner">
+    <div class="portrait" role="img" aria-label="Darnell, a Palmer Court resident"></div>
+    <div>
+      <p class="eyebrow" style="color:var(--color-signal-soft)">A story from Palmer Court</p>
+      <blockquote>The hardest thing about being unhoused wasn't sleeping outside. It was the paperwork. The Road Home sat with me through every form.</blockquote>
+      <p class="byline"><strong>Darnell H.</strong> · Permanent supportive housing · 4 years</p>
+      <a href="housing-stories.html" class="read">Read more stories →</a>
+    </div>
+  </div>
+</section>
+
+<section class="volunteer">
+  <div class="v-inner">
+    <div class="v-head">
+      <p class="eyebrow">Volunteer with us</p>
+      <h2>Ways to be part of Palmer Court.</h2>
+      <p>Palmer Court welcomes volunteers into programming that strengthens the community within the building. Weekly, monthly, and one-time opportunities.</p>
+    </div>
+    <div class="v-grid">
+      <div class="v-card">
+        <div class="tag">Weekly · kids</div>
+        <h3>Literacy Night · Kids' Book Club</h3>
+        <p>Help spark interest in reading with children ages 5–12. One-hour weekly commitment. Ages 16+. Orientation and background check required; three-month minimum.</p>
+      </div>
+      <div class="v-card">
+        <div class="tag">One-time · group</div>
+        <h3>Group activities</h3>
+        <p>Design your own project, host a drive, or plan a holiday event. We are flexible and try to accommodate ideas. Groups sign Boundaries &amp; Confidentiality forms.</p>
+      </div>
+      <div class="v-card">
+        <div class="tag">Seasonal</div>
+        <h3>Holidays</h3>
+        <p>Many ways for groups to help during the holiday season — collecting donations, organizing holiday activities, delivering move-in kits to new families.</p>
+      </div>
+    </div>
+    <p style="margin-top:var(--spacing-xl);font-size:14px;color:var(--color-g66)">Schedule your activity with our Volunteer Coordinators: <a href="mailto:volunteer@theroadhome.org" style="color:var(--color-signal);font-weight:700">volunteer@theroadhome.org</a> · <a href="tel:13853512389" style="color:var(--color-signal);font-weight:700">385-351-2389</a>.</p>
+  </div>
+</section>
+
+<section class="needs">
+  <div class="needs-inner">
+    <h2>Ongoing needs at Palmer Court</h2>
+    <p style="color:var(--color-g44);margin-bottom:var(--spacing-lg);max-width:60ch">Move-in kits and apartment supplies are the most consistent needs. Drop off at any resource center, 8am–7pm.</p>
+    <div class="needs-list">
+      <div class="needs-item"><span class="c">✓</span><span>Bedding · sheets, blankets, pillows</span></div>
+      <div class="needs-item"><span class="c">✓</span><span>Towels &amp; washcloths</span></div>
+      <div class="needs-item"><span class="c">✓</span><span>Non-perishable food</span></div>
+      <div class="needs-item"><span class="c">✓</span><span>Books &amp; movies</span></div>
+      <div class="needs-item"><span class="c">✓</span><span>Cleaning supplies</span></div>
+      <div class="needs-item"><span class="c">✓</span><span>Kitchenware</span></div>
+      <div class="needs-item"><span class="c">✓</span><span>Hygiene kits</span></div>
+      <div class="needs-item"><span class="c">✓</span><span>Winter gear</span></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site"><div class="footer-inner">
+  <div class="footer-top">
+    <div class="footer-brand"><img src="../assets/logo.png" alt="The Road Home"><p>A century-old frontline homeless-services organization in Salt Lake City. Refuge. Resources. Relief.</p>
+      <div class="footer-phones">
+        <div class="footer-phone-row"><span class="l">Shelter</span><a href="tel:18019909999">801-990-9999</a></div>
+        <div class="footer-phone-row"><span class="l">Housing crisis</span><a href="tel:18013592444">801-359-2444</a></div>
+        <div class="footer-phone-row"><span class="l">Utah 2-1-1</span><a href="tel:211">211</a></div>
+      </div>
+    </div>
+    <div class="footer-col"><h3>Get Help</h3><ul><li><a href="shelter.html">Find a Shelter</a></li><li><a href="emergency-services.html">Emergency Services</a></li><li><a href="housing-programs.html">Housing Assistance</a></li><li><a href="resource-centers.html">Resource Centers</a></li><li><a href="palmer-court.html">Palmer Court</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+    <div class="footer-col"><h3>Give</h3><ul><li><a href="donate.html">One-time</a></li><li><a href="housing-champions.html">Monthly · Housing Champions</a></li><li><a href="legacy-planned.html">Legacy / Planned</a></li><li><a href="#">Employer matching</a></li><li><a href="#">Item donations</a></li><li><a href="where-does-it-go.html">Where does it go?</a></li></ul></div>
+    <div class="footer-col"><h3>About</h3><ul><li><a href="about-us.html">Our mission</a></li><li><a href="#">Our history</a></li><li><a href="meet-the-team.html">Meet the team</a></li><li><a href="board-of-trustees.html">Board</a></li><li><a href="annual-reports.html">Annual reports</a></li><li><a href="contact-us.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h3>Impact</h3><ul><li><a href="housing-stories.html">Housing stories</a></li><li><a href="where-does-it-go.html">By the numbers</a></li><li><a href="annual-reports.html">Reports</a></li><li><a href="#">Press</a></li><li><a href="#">Newsletter</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><div>© 1923–2026 The Road Home · Salt Lake City, UT · EIN 87-0212465</div><nav><a href="#">Privacy</a><a href="#">Accessibility</a><a href="#">Donor bill of rights</a></nav></div>
+</div></footer>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Housing Programs — The Road Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+  @import url("../prototypes/_tokens.css");
+  .hero{padding:var(--spacing-2xl) 0;border-bottom:1px solid var(--color-rule)}
+  .hero h1{font-size:var(--heading-xl);font-weight:900;text-transform:uppercase;line-height:0.98;letter-spacing:-.015em;margin-bottom:var(--spacing-md);max-width:18ch}
+  .hero .sub{font-size:18px;color:var(--color-g22);line-height:1.55;max-width:62ch}
+  .hero .phone{display:inline-block;margin-top:var(--spacing-lg);padding:14px 24px;background:var(--color-signal);color:var(--color-paper);font-weight:900;font-size:16px;letter-spacing:-.005em}
+  .programs{padding:var(--section-padding) 0}
+  .p-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+  .p-head{margin-bottom:var(--spacing-2xl)}
+  .p-head h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;margin-bottom:10px}
+  .p-head p{color:var(--color-g44);max-width:56ch}
+  .p-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--color-rule);border:1px solid var(--color-rule)}
+  .p-card{background:var(--color-paper);padding:40px 36px;display:grid;grid-template-columns:auto 1fr;gap:var(--spacing-lg);align-items:start}
+  .p-card .code{font-size:14px;color:var(--color-signal);font-weight:900;letter-spacing:.12em}
+  .p-card h3{font-size:24px;font-weight:900;text-transform:uppercase;margin-bottom:12px;line-height:1.1}
+  .p-card p{font-size:15px;color:var(--color-g44);line-height:1.6;margin-bottom:16px}
+  .p-card .arrow{font-size:12px;color:var(--color-signal);font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+  .nav-services{padding:var(--section-padding) 0;background:var(--color-panel);border-top:1px solid var(--color-rule);border-bottom:1px solid var(--color-rule)}
+  .ns-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+  .ns-head{display:grid;grid-template-columns:1fr 1fr;gap:var(--spacing-xl);margin-bottom:var(--spacing-xl);align-items:end}
+  .ns-head h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;max-width:16ch}
+  .ns-head p{color:var(--color-g44);max-width:50ch}
+  .ns-list{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--color-rule);border:1px solid var(--color-rule)}
+  .ns-item{background:var(--color-paper);padding:28px 24px}
+  .ns-item .c{font-size:13px;color:var(--color-signal);font-weight:700;letter-spacing:.08em;margin-bottom:8px}
+  .ns-item h4{font-size:17px;font-weight:900;margin-bottom:8px}
+  .ns-item p{font-size:14px;color:var(--color-g44);line-height:1.55}
+  .landlord{padding:var(--section-padding) 0;background:var(--color-ink);color:var(--color-paper)}
+  .l-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:1fr 1fr;gap:var(--spacing-2xl);align-items:center}
+  .l-inner h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;margin-bottom:var(--spacing-md)}
+  .l-inner p{color:rgba(255,255,255,.75);font-size:16px;line-height:1.6;margin-bottom:var(--spacing-md);max-width:50ch}
+  .l-inner .benefits{background:var(--color-shelter);padding:32px;display:grid;gap:16px}
+  .l-inner .benefits .row{display:grid;grid-template-columns:auto 1fr;gap:14px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.14);align-items:start;font-size:14px;line-height:1.5}
+  .l-inner .benefits .row:last-child{border-bottom:0;padding-bottom:0}
+  .l-inner .benefits .c{color:var(--color-signal);font-weight:900;font-size:18px}
+  @media (max-width:900px){.p-grid,.ns-head,.ns-list,.l-inner{grid-template-columns:1fr}.p-card{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="utility"><div class="utility-inner"><div class="utility-left"><span><span class="dot"></span>Emergency Shelter Hotline · <a href="tel:18019909999">801-990-9999</a></span><span>Utah 2-1-1 · <a href="tel:211">Dial 211</a></span></div><div class="utility-right"><a href="contact-us.html">Español</a><a href="shelter.html">Find a location</a><a href="meet-the-team.html">Careers</a></div></div></div>
+<nav class="topnav"><div class="nav-inner"><a class="nav-logo" href="index.html"><img src="../assets/logo.png" alt=""></a><div class="nav-links"><a href="get-help.html" class="active">Get Help</a><a href="give-main.html">Give</a><a href="get-involved.html">Get Involved</a><a href="about-us.html">About</a></div><div class="nav-right"><a href="shelter.html" class="btn-ghost">Find a Shelter</a><a href="donate.html" class="btn">Donate</a></div></div></nav>
+<div class="breadcrumbs"><div class="inner"><a href="index.html">Home</a><span class="sep">/</span><a href="get-help.html">Get Help</a><span class="sep">/</span>Housing Programs</div></div>
+
+<section class="hero">
+  <div class="inner">
+    <p class="eyebrow">Get Help · Housing Programs</p>
+    <h1>The Road Home believes housing is the solution to homelessness.</h1>
+    <p class="sub">Our programs help families and individuals move into housing and focus on short-term solutions that lead to long-term stability. If you or someone you know is struggling to stay housed, please call Utah Community Action.</p>
+    <a href="tel:18013592444" class="phone">801-359-2444 · Housing Crisis Line</a>
+  </div>
+</section>
+
+<section class="programs">
+  <div class="p-inner">
+    <div class="p-head">
+      <p class="eyebrow">Our programs</p>
+      <h2>Four paths into housing.</h2>
+      <p>Each program matches a different household and circumstance. Call or get referred; a housing navigator will help you figure out which one fits.</p>
+    </div>
+    <div class="p-grid">
+      <a href="#" class="p-card">
+        <span class="code">01</span>
+        <div>
+          <h3>Housing Navigation Services</h3>
+          <p>Guests staying at our facilities have access to general housing support and specialized housing navigation. We help review housing history, understand what someone qualifies for, and find housing that fits their budget.</p>
+          <span class="arrow">Navigation services →</span>
+        </div>
+      </a>
+      <a href="#" class="p-card">
+        <span class="code">02</span>
+        <div>
+          <h3>Rapid Rehousing</h3>
+          <p>Short-term rental assistance paired with case management to help households move from shelter to stable housing — quickly. Most households exit the program within 6 months.</p>
+          <span class="arrow">Rapid rehousing →</span>
+        </div>
+      </a>
+      <a href="palmer-court.html" class="p-card">
+        <span class="code">03</span>
+        <div>
+          <h3>Permanent Supportive Housing</h3>
+          <p>Long-term subsidized housing with wrap-around support for adults and families with a history of chronic homelessness. Palmer Court (201 units) is our flagship.</p>
+          <span class="arrow">Palmer Court →</span>
+        </div>
+      </a>
+      <a href="#" class="p-card">
+        <span class="code">04</span>
+        <div>
+          <h3>SSVF — Veterans</h3>
+          <p>Supportive Services for Veteran Families: rapid rehousing and case management for veteran households. Eligibility is based on veteran status and income.</p>
+          <span class="arrow">Veterans programs →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="nav-services">
+  <div class="ns-inner">
+    <div class="ns-head">
+      <h2>What housing navigation covers</h2>
+      <p>Housing navigators are specialists who know what housing exists in Salt Lake County, what it costs, and what paperwork it requires. They work alongside case managers — never instead of.</p>
+    </div>
+    <div class="ns-list">
+      <div class="ns-item"><div class="c">Review</div><h4>Housing history review</h4><p>We help guests gather and review their housing history to support applications and eligibility.</p></div>
+      <div class="ns-item"><div class="c">Search</div><h4>Personalized housing search</h4><p>We work with each household to understand what kind of housing they're looking for and what fits their budget.</p></div>
+      <div class="ns-item"><div class="c">Apply</div><h4>Application support</h4><p>We help complete applications, gather required documentation, and coordinate with landlords.</p></div>
+      <div class="ns-item"><div class="c">Landlord</div><h4>Landlord coordination</h4><p>We mediate move-in paperwork and maintain a point of contact if questions come up after move-in.</p></div>
+      <div class="ns-item"><div class="c">Move-in</div><h4>Move-in support</h4><p>Security deposit help, move-in kits, and first-month rent assistance through partner funding.</p></div>
+      <div class="ns-item"><div class="c">Stabilize</div><h4>Tenancy support</h4><p>First 6–12 months of tenancy: check-ins, budgeting help, and crisis intervention if needed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="landlord">
+  <div class="l-inner">
+    <div>
+      <p class="eyebrow" style="color:var(--color-signal-soft)">For landlords</p>
+      <h2>Partner with us.</h2>
+      <p>We partner with landlords across Salt Lake County to place our guests in safe, habitable housing. Landlord partners receive a reliable point of contact, move-in-ready tenants, and direct rent-assistance payments during the transition period.</p>
+      <a href="#" class="btn">Landlord partner portal →</a>
+    </div>
+    <div class="benefits">
+      <div class="row"><span class="c">✓</span><span>Direct rent payments during rent-assistance period</span></div>
+      <div class="row"><span class="c">✓</span><span>Pre-screened tenants with case-management support</span></div>
+      <div class="row"><span class="c">✓</span><span>Named point of contact for any tenancy issues</span></div>
+      <div class="row"><span class="c">✓</span><span>Security-deposit and holding-fee assistance</span></div>
+      <div class="row"><span class="c">✓</span><span>Tenancy-support program — first 6 to 12 months</span></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site"><div class="footer-inner">
+  <div class="footer-top">
+    <div class="footer-brand"><img src="../assets/logo.png" alt="The Road Home"><p>A century-old frontline homeless-services organization in Salt Lake City. Refuge. Resources. Relief.</p>
+      <div class="footer-phones">
+        <div class="footer-phone-row"><span class="l">Shelter</span><a href="tel:18019909999">801-990-9999</a></div>
+        <div class="footer-phone-row"><span class="l">Housing crisis</span><a href="tel:18013592444">801-359-2444</a></div>
+        <div class="footer-phone-row"><span class="l">Utah 2-1-1</span><a href="tel:211">211</a></div>
+      </div>
+    </div>
+    <div class="footer-col"><h3>Get Help</h3><ul><li><a href="shelter.html">Find a Shelter</a></li><li><a href="emergency-services.html">Emergency Services</a></li><li><a href="housing-programs.html">Housing Assistance</a></li><li><a href="resource-centers.html">Resource Centers</a></li><li><a href="palmer-court.html">Palmer Court</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+    <div class="footer-col"><h3>Give</h3><ul><li><a href="donate.html">One-time</a></li><li><a href="housing-champions.html">Monthly · Housing Champions</a></li><li><a href="legacy-planned.html">Legacy / Planned</a></li><li><a href="#">Employer matching</a></li><li><a href="#">Item donations</a></li><li><a href="where-does-it-go.html">Where does it go?</a></li></ul></div>
+    <div class="footer-col"><h3>About</h3><ul><li><a href="about-us.html">Our mission</a></li><li><a href="#">Our history</a></li><li><a href="meet-the-team.html">Meet the team</a></li><li><a href="board-of-trustees.html">Board</a></li><li><a href="annual-reports.html">Annual reports</a></li><li><a href="contact-us.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h3>Impact</h3><ul><li><a href="housing-stories.html">Housing stories</a></li><li><a href="where-does-it-go.html">By the numbers</a></li><li><a href="annual-reports.html">Reports</a></li><li><a href="#">Press</a></li><li><a href="#">Newsletter</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><div>© 1923–2026 The Road Home · Salt Lake City, UT · EIN 87-0212465</div><nav><a href="#">Privacy</a><a href="#">Accessibility</a><a href="#">Donor bill of rights</a></nav></div>
+</div></footer>
+
+</body>
+</html>

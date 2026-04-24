@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Annual Reports — The Road Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+  @import url("../prototypes/_tokens.css");
+  .hero{padding:var(--spacing-2xl) 0;border-bottom:1px solid var(--color-rule)}
+  .hero h1{font-size:var(--heading-xl);font-weight:900;text-transform:uppercase;line-height:0.98;letter-spacing:-.015em;margin-bottom:var(--spacing-md);max-width:18ch}
+  .hero .sub{font-size:18px;color:var(--color-g22);line-height:1.55;max-width:62ch}
+  .badges{padding:var(--spacing-xl) 0;background:var(--color-panel);border-bottom:1px solid var(--color-rule)}
+  .badges-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:repeat(4,1fr);gap:var(--spacing-xl);align-items:center}
+  .badges-inner div{text-align:center}
+  .badges-inner .big{font-size:28px;font-weight:900;color:var(--color-shelter);letter-spacing:-.01em;line-height:1;margin-bottom:6px}
+  .badges-inner .l{font-size:11px;color:var(--color-g66);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+  .reports{padding:var(--section-padding) 0}
+  .reports-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+  .reports-head{margin-bottom:var(--spacing-xl)}
+  .reports-head h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;margin-bottom:10px}
+  .reports-head p{color:var(--color-g44);max-width:56ch}
+  .reports-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--spacing-lg)}
+  .report-card{background:var(--color-paper);border:1px solid var(--color-rule);padding:0 0 24px;transition:border-color .2s;display:flex;flex-direction:column}
+  .report-card:hover{border-color:var(--color-signal)}
+  .report-cover{aspect-ratio:8.5/11;background:linear-gradient(135deg,var(--color-shelter),var(--color-dusk));color:var(--color-paper);display:flex;flex-direction:column;justify-content:space-between;padding:28px 24px;position:relative}
+  .report-cover .year{font-size:72px;font-weight:900;letter-spacing:-.03em;line-height:1}
+  .report-cover .brand-line{font-size:11px;text-transform:uppercase;letter-spacing:.2em;font-weight:700;color:var(--color-signal-soft)}
+  .report-cover .mission{font-size:14px;font-weight:600;line-height:1.35;max-width:18ch}
+  .report-card .meta{padding:20px 24px 0}
+  .report-card .title{font-size:16px;font-weight:900;margin-bottom:6px}
+  .report-card .desc{font-size:13px;color:var(--color-g66)}
+  .report-card .download{margin:16px 24px 0;padding:12px 20px;background:var(--color-ink);color:var(--color-paper);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;text-align:center}
+  .report-card .download:hover{background:var(--color-signal)}
+  .docs{padding:var(--section-padding) 0;background:var(--color-ink);color:var(--color-paper)}
+  .docs-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+  .docs h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;margin-bottom:var(--spacing-lg);color:var(--color-paper)}
+  .docs p{color:rgba(255,255,255,.75);margin-bottom:var(--spacing-xl);max-width:54ch;font-size:16px;line-height:1.6}
+  .docs-list{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.18)}
+  .doc-row{background:var(--color-ink);padding:22px 24px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:16px;transition:background .2s}
+  .doc-row:hover{background:#0d0d0d}
+  .doc-row .t{font-size:11px;color:var(--color-signal);font-weight:700;letter-spacing:.12em}
+  .doc-row .n{font-size:15px;font-weight:700;color:var(--color-paper)}
+  .doc-row .arrow{color:var(--color-signal);font-size:20px;font-weight:900}
+  @media (max-width:900px){.badges-inner{grid-template-columns:repeat(2,1fr)}.reports-grid{grid-template-columns:repeat(2,1fr)}.docs-list{grid-template-columns:1fr}}
+  @media (max-width:520px){.reports-grid{grid-template-columns:1fr}.badges-inner{grid-template-columns:1fr 1fr;gap:var(--spacing-lg)}}
+</style>
+</head>
+<body>
+
+<div class="utility"><div class="utility-inner"><div class="utility-left"><span><span class="dot"></span>Emergency Shelter Hotline · <a href="tel:18019909999">801-990-9999</a></span><span>Utah 2-1-1 · <a href="tel:211">Dial 211</a></span></div><div class="utility-right"><a href="contact-us.html">Español</a><a href="shelter.html">Find a location</a><a href="meet-the-team.html">Careers</a></div></div></div>
+<nav class="topnav"><div class="nav-inner"><a class="nav-logo" href="index.html"><img src="../assets/logo.png" alt=""></a><div class="nav-links"><a href="get-help.html">Get Help</a><a href="give-main.html">Give</a><a href="get-involved.html">Get Involved</a><a href="about-us.html" class="active">About</a></div><div class="nav-right"><a href="shelter.html" class="btn-ghost">Find a Shelter</a><a href="donate.html" class="btn">Donate</a></div></div></nav>
+<div class="breadcrumbs"><div class="inner"><a href="index.html">Home</a><span class="sep">/</span><a href="about-us.html">About</a><span class="sep">/</span>Annual Reports</div></div>
+
+<section class="hero">
+  <div class="inner">
+    <p class="eyebrow">Accountability · Annual Reports</p>
+    <h1>A decade of annual reports.</h1>
+    <p class="sub">The Road Home is proudly ranked as a Four Star Charity by Charity Navigator for our organization's transparency and efficiency. A Four Star rating assures you of the responsible way in which your contributions will be put to work helping the people we serve.</p>
+  </div>
+</section>
+
+<section class="badges">
+  <div class="badges-inner">
+    <div><div class="big">★★★★</div><div class="l">Charity Navigator · 8 yr</div></div>
+    <div><div class="big">A+</div><div class="l">CharityWatch · top rated</div></div>
+    <div><div class="big">501(c)(3)</div><div class="l">Public charity</div></div>
+    <div><div class="big">87-0212465</div><div class="l">EIN · federal</div></div>
+  </div>
+</section>
+
+<section class="reports">
+  <div class="reports-inner">
+    <div class="reports-head">
+      <p class="eyebrow">Download</p>
+      <h2>Ten years of reports.</h2>
+      <p>Each report summarizes the fiscal year — programs, finances, outcomes, and a letter from our CEO and Board President. Every PDF is the audited version.</p>
+    </div>
+    <div class="reports-grid">
+      <a href="#" class="report-card"><div class="report-cover"><div class="brand-line">The Road Home · 2022</div><div class="year">2022</div><div class="mission">Refuge. Resources. Relief.</div></div><div class="meta"><div class="title">2022 Annual Report</div><div class="desc">Centennial year — 100 years of service.</div></div><span class="download">Download PDF ↓</span></a>
+      <a href="#" class="report-card"><div class="report-cover"><div class="brand-line">The Road Home · 2021</div><div class="year">2021</div><div class="mission">Refuge. Resources. Relief.</div></div><div class="meta"><div class="title">2021 Annual Report</div><div class="desc">Pandemic recovery &amp; housing expansion.</div></div><span class="download">Download PDF ↓</span></a>
+      <a href="#" class="report-card"><div class="report-cover"><div class="brand-line">The Road Home · 2020</div><div class="year">2020</div><div class="mission">Refuge. Resources. Relief.</div></div><div class="meta"><div class="title">2020 Annual Report</div><div class="desc">Pandemic response year.</div></div><span class="download">Download PDF ↓</span></a>
+      <a href="#" class="report-card"><div class="report-cover"><div class="brand-line">The Road Home · 2019</div><div class="year">2019</div><div class="mission">Refuge. Resources. Relief.</div></div><div class="meta"><div class="title">2019 Annual Report</div><div class="desc">New Pamela Atkinson Men's Resource Center.</div></div><span class="download">Download PDF ↓</span></a>
+      <a href="#" class="report-card"><div class="report-cover"><div class="brand-line">The Road Home · 2018</div><div class="year">2018</div><div class="mission">Refuge. Resources. Relief.</div></div><div class="meta"><div class="title">2018 Annual Report</div><div class="desc">Housing-First expansion.</div></div><span class="download">Download PDF ↓</span></a>
+      <a href="#" class="report-card"><div class="report-cover"><div class="brand-line">The Road Home · 2017</div><div class="year">2017</div><div class="mission">Refuge. Resources. Relief.</div></div><div class="meta"><div class="title">2017 Annual Report</div><div class="desc">95th anniversary year.</div></div><span class="download">Download PDF ↓</span></a>
+      <a href="#" class="report-card"><div class="report-cover"><div class="brand-line">The Road Home · 2016</div><div class="year">2016</div><div class="mission">Refuge. Resources. Relief.</div></div><div class="meta"><div class="title">2016 Annual Report</div><div class="desc">Midvale Family Resource Center launch.</div></div><span class="download">Download PDF ↓</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="docs">
+  <div class="docs-inner">
+    <h2>Core financial documents</h2>
+    <p>Everything you need for due diligence. Form 990, audited financials, and the IRS determination letter are updated each fiscal year.</p>
+    <div class="docs-list">
+      <a href="#" class="doc-row"><span class="t">PDF · FY25</span><span class="n">Full financial statement · 2025</span><span class="arrow">↓</span></a>
+      <a href="#" class="doc-row"><span class="t">PDF · FY25</span><span class="n">IRS Form 990 · 2025</span><span class="arrow">↓</span></a>
+      <a href="#" class="doc-row"><span class="t">PDF · FY24</span><span class="n">Full financial statement · 2024</span><span class="arrow">↓</span></a>
+      <a href="#" class="doc-row"><span class="t">PDF · FY24</span><span class="n">IRS Form 990 · 2024</span><span class="arrow">↓</span></a>
+      <a href="#" class="doc-row"><span class="t">PDF · IRS</span><span class="n">IRS Determination Letter</span><span class="arrow">↓</span></a>
+      <a href="where-does-it-go.html" class="doc-row"><span class="t">Website</span><span class="n">Where does it go? · live</span><span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="site"><div class="footer-inner">
+  <div class="footer-top">
+    <div class="footer-brand"><img src="../assets/logo.png" alt="The Road Home"><p>A century-old frontline homeless-services organization in Salt Lake City. Refuge. Resources. Relief.</p>
+      <div class="footer-phones">
+        <div class="footer-phone-row"><span class="l">Shelter</span><a href="tel:18019909999">801-990-9999</a></div>
+        <div class="footer-phone-row"><span class="l">Housing crisis</span><a href="tel:18013592444">801-359-2444</a></div>
+        <div class="footer-phone-row"><span class="l">Utah 2-1-1</span><a href="tel:211">211</a></div>
+      </div>
+    </div>
+    <div class="footer-col"><h3>Get Help</h3><ul><li><a href="shelter.html">Find a Shelter</a></li><li><a href="emergency-services.html">Emergency Services</a></li><li><a href="housing-programs.html">Housing Assistance</a></li><li><a href="resource-centers.html">Resource Centers</a></li><li><a href="palmer-court.html">Palmer Court</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+    <div class="footer-col"><h3>Give</h3><ul><li><a href="donate.html">One-time</a></li><li><a href="housing-champions.html">Monthly · Housing Champions</a></li><li><a href="legacy-planned.html">Legacy / Planned</a></li><li><a href="#">Employer matching</a></li><li><a href="#">Item donations</a></li><li><a href="where-does-it-go.html">Where does it go?</a></li></ul></div>
+    <div class="footer-col"><h3>About</h3><ul><li><a href="about-us.html">Our mission</a></li><li><a href="#">Our history</a></li><li><a href="meet-the-team.html">Meet the team</a></li><li><a href="board-of-trustees.html">Board</a></li><li><a href="annual-reports.html">Annual reports</a></li><li><a href="contact-us.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h3>Impact</h3><ul><li><a href="housing-stories.html">Housing stories</a></li><li><a href="where-does-it-go.html">By the numbers</a></li><li><a href="annual-reports.html">Reports</a></li><li><a href="#">Press</a></li><li><a href="#">Newsletter</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><div>© 1923–2026 The Road Home · Salt Lake City, UT · EIN 87-0212465</div><nav><a href="#">Privacy</a><a href="#">Accessibility</a><a href="#">Donor bill of rights</a></nav></div>
+</div></footer>
+
+</body>
+</html>

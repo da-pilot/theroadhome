@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sitemap · The Road Home redesign</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+  @import url("../prototypes/_tokens.css");
+  .hero{padding:var(--spacing-2xl) 0;border-bottom:1px solid var(--color-rule)}
+  .hero h1{font-size:var(--heading-xl);font-weight:900;text-transform:uppercase;line-height:0.98;letter-spacing:-.015em;margin-bottom:var(--spacing-md)}
+  .hero .sub{font-size:18px;color:var(--color-g22);line-height:1.55;max-width:68ch}
+  .groups{padding:var(--section-padding) 0}
+  .groups-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;gap:var(--spacing-2xl)}
+  .group h2{font-size:var(--heading-md);font-weight:900;text-transform:uppercase;margin-bottom:var(--spacing-md);padding-bottom:12px;border-bottom:2px solid var(--color-ink);display:flex;justify-content:space-between;align-items:baseline}
+  .group h2 .tag{font-size:11px;font-weight:700;color:var(--color-signal);letter-spacing:.12em}
+  .group .desc{font-size:14px;color:var(--color-g44);margin-bottom:var(--spacing-lg);max-width:60ch}
+  .group .items{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--color-rule);border:1px solid var(--color-rule)}
+  .item{background:var(--color-paper);padding:22px 20px;transition:background .2s;display:flex;flex-direction:column;gap:8px}
+  .item:hover{background:var(--color-tint)}
+  .item .slug{font-size:11px;color:var(--color-signal);font-weight:700;letter-spacing:.06em;font-family:SFMono-Regular,Menlo,monospace}
+  .item .name{font-size:15px;font-weight:900;color:var(--color-ink);text-transform:uppercase;letter-spacing:-.005em}
+  .item .desc2{font-size:12px;color:var(--color-g66);line-height:1.45}
+  .artifacts{padding:var(--section-padding) 0;background:var(--color-ink);color:var(--color-paper)}
+  .artifacts-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+  .artifacts h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;margin-bottom:var(--spacing-lg)}
+  .artifacts p{color:rgba(255,255,255,.75);margin-bottom:var(--spacing-lg);max-width:60ch;font-size:15px}
+  .artifact-links{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.18)}
+  .art-row{background:var(--color-ink);padding:22px 24px;display:grid;gap:8px;transition:background .2s}
+  .art-row:hover{background:#0d0d0d}
+  .art-row .t{font-size:11px;color:var(--color-signal);font-weight:700;letter-spacing:.12em}
+  .art-row .n{font-size:17px;font-weight:900;color:var(--color-paper)}
+  .art-row .d{font-size:12px;color:rgba(255,255,255,.6);line-height:1.45}
+  @media (max-width:1100px){.group .items{grid-template-columns:repeat(2,1fr)}.artifact-links{grid-template-columns:1fr}}
+  @media (max-width:520px){.group .items{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="utility"><div class="utility-inner"><div class="utility-left"><span><span class="dot"></span>Emergency Shelter Hotline · <a href="tel:18019909999">801-990-9999</a></span><span>Utah 2-1-1 · <a href="tel:211">Dial 211</a></span></div><div class="utility-right"><a href="contact-us.html">Español</a><a href="shelter.html">Find a location</a><a href="meet-the-team.html">Careers</a></div></div></div>
+<nav class="topnav"><div class="nav-inner"><a class="nav-logo" href="index.html"><img src="../assets/logo.png" alt=""></a><div class="nav-links"><a href="get-help.html">Get Help</a><a href="give-main.html">Give</a><a href="get-involved.html">Get Involved</a><a href="about-us.html">About</a></div><div class="nav-right"><a href="shelter.html" class="btn-ghost">Find a Shelter</a><a href="donate.html" class="btn">Donate</a></div></div></nav>
+<div class="breadcrumbs"><div class="inner"><a href="index.html">Home</a><span class="sep">/</span>Sitemap</div></div>
+
+<section class="hero">
+  <div class="inner">
+    <p class="eyebrow">Prototype · Full sitemap</p>
+    <h1>The Road Home · 2026 rebuild</h1>
+    <p class="sub">Twenty priority-1 pages, built from the shared design system established by the approved home page. Every page is responsive (desktop · tablet · mobile), uses verbatim copy from the live site where available, and honors the design-personality rules in <code>.impeccable.md</code>.</p>
+  </div>
+</section>
+
+<section class="groups">
+  <div class="groups-inner">
+
+    <div class="group">
+      <h2>Home <span class="tag">T-01</span></h2>
+      <p class="desc">Landing page · civic / data-led / dense · approved variant B.</p>
+      <div class="items">
+        <a href="index.html" class="item"><span class="slug">/</span><span class="name">Home</span><span class="desc2">Refuge. Resources. Relief. — the landing surface.</span></a>
+      </div>
+    </div>
+
+    <div class="group">
+      <h2>Pillar hubs <span class="tag">T-02 · 4 pages</span></h2>
+      <p class="desc">Section-overview pages routing to detail pages. Each has an audience-specific hero, a set of routing cards, and an accountability strip.</p>
+      <div class="items">
+        <a href="get-help.html" class="item"><span class="slug">/get-help/</span><span class="name">Get Help</span><span class="desc2">Crisis entry — routes to shelter, emergency services, housing.</span></a>
+        <a href="give-main.html" class="item"><span class="slug">/give-main/</span><span class="name">Give</span><span class="desc2">Donor entry — one-time, monthly, legacy, other.</span></a>
+        <a href="get-involved.html" class="item"><span class="slug">/get-involved/</span><span class="name">Get Involved</span><span class="desc2">Volunteer, fundraise, advocate, partner.</span></a>
+        <a href="about-us.html" class="item"><span class="slug">/about-us/</span><span class="name">About</span><span class="desc2">Mission, values, leadership, history.</span></a>
+      </div>
+    </div>
+
+    <div class="group">
+      <h2>Service / program detail <span class="tag">T-03 · 5 pages</span></h2>
+      <p class="desc">Crisis-lane detail pages. Hero + at-a-glance sidebar + narrative + locations + related programs.</p>
+      <div class="items">
+        <a href="shelter.html" class="item"><span class="slug">/shelter/</span><span class="name">Shelter</span><span class="desc2">Emergency shelter — first step on the road home.</span></a>
+        <a href="emergency-services.html" class="item"><span class="slug">/emergency-services/</span><span class="name">Emergency Services</span><span class="desc2">24 hr crisis response, outreach, weather protocol.</span></a>
+        <a href="palmer-court.html" class="item"><span class="slug">/palmer-court/</span><span class="name">Palmer Court</span><span class="desc2">201-unit flagship permanent supportive housing.</span></a>
+        <a href="resource-centers.html" class="item"><span class="slug">/resource-centers/</span><span class="name">Resource Centers</span><span class="desc2">Three physical locations. Walk in, call, or refer.</span></a>
+        <a href="housing-programs.html" class="item"><span class="slug">/housing-programs/</span><span class="name">Housing Programs</span><span class="desc2">Rapid rehousing, supportive, SSVF, navigation.</span></a>
+      </div>
+    </div>
+
+    <div class="group">
+      <h2>Donate flow <span class="tag">T-04 · 2 pages</span></h2>
+      <p class="desc">CTA-first donation pages with amount picker, impact math, security cues.</p>
+      <div class="items">
+        <a href="donate.html" class="item"><span class="slug">/donate/</span><span class="name">Donate</span><span class="desc2">One-time donation with amount picker.</span></a>
+        <a href="housing-champions.html" class="item"><span class="slug">/housing-champions/</span><span class="name">Housing Champions</span><span class="desc2">Monthly giving program with Amanda's story.</span></a>
+      </div>
+    </div>
+
+    <div class="group">
+      <h2>Giving-method detail <span class="tag">T-05 · 1 page</span></h2>
+      <p class="desc">Document-style page with TOC, advisor contact, bequest language.</p>
+      <div class="items">
+        <a href="legacy-planned.html" class="item"><span class="slug">/give-main/legacy-planned/</span><span class="name">Legacy / Planned Giving</span><span class="desc2">FreeWill, bequest language, talk to an advisor.</span></a>
+      </div>
+    </div>
+
+    <div class="group">
+      <h2>Transparency / data <span class="tag">T-06 · 2 pages</span></h2>
+      <p class="desc">Accountability pages — big numbers, budget breakdown, downloadable reports.</p>
+      <div class="items">
+        <a href="where-does-it-go.html" class="item"><span class="slug">/where-does-it-go/</span><span class="name">Where Does It Go?</span><span class="desc2">94¢ per dollar — budget allocation with CSS bar charts.</span></a>
+        <a href="annual-reports.html" class="item"><span class="slug">/annual-reports/</span><span class="name">Annual Reports</span><span class="desc2">Ten years of audited reports.</span></a>
+      </div>
+    </div>
+
+    <div class="group">
+      <h2>People directory <span class="tag">T-07 · 2 pages</span></h2>
+      <p class="desc">Filterable photo-card grids — staff and board.</p>
+      <div class="items">
+        <a href="meet-the-team.html" class="item"><span class="slug">/meet-the-team/</span><span class="name">Meet the Team</span><span class="desc2">CEO, leadership, case managers, coordinators.</span></a>
+        <a href="board-of-trustees.html" class="item"><span class="slug">/board-of-trustees/</span><span class="name">Board of Trustees</span><span class="desc2">2026–2027 board with officers and committees.</span></a>
+      </div>
+    </div>
+
+    <div class="group">
+      <h2>Stories listing <span class="tag">T-09 · 1 page</span></h2>
+      <p class="desc">Editorial magazine-style grid of client stories.</p>
+      <div class="items">
+        <a href="housing-stories.html" class="item"><span class="slug">/housing-stories/</span><span class="name">Housing Stories</span><span class="desc2">Named clients, dignified portraits, the work humanized.</span></a>
+      </div>
+    </div>
+
+    <div class="group">
+      <h2>Form page <span class="tag">T-11 · 1 page</span></h2>
+      <p class="desc">Context sidebar + contact form + crisis-line callout.</p>
+      <div class="items">
+        <a href="contact-us.html" class="item"><span class="slug">/contact-us/</span><span class="name">Contact</span><span class="desc2">Non-emergency contact form with every org contact.</span></a>
+      </div>
+    </div>
+
+    <div class="group">
+      <h2>FAQ <span class="tag">T-12 · 1 page</span></h2>
+      <p class="desc">CSS-only accordion grouped into four categories.</p>
+      <div class="items">
+        <a href="faq.html" class="item"><span class="slug">/faq/</span><span class="name">FAQ</span><span class="desc2">Donations, volunteering, shelter, community.</span></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="artifacts">
+  <div class="artifacts-inner">
+    <h2>Design artifacts</h2>
+    <p>Where the design decisions live — brand, personality, plan, execution log, raw briefings, the approved home prototype, the shared token system.</p>
+    <div class="artifact-links">
+      <a href="../brand-board.html" class="art-row"><span class="t">View</span><span class="n">Brand board</span><span class="d">Palette, type, voice, motifs, components — derived from the live theroadhome.org.</span></a>
+      <a href="../prototypes/home-b.html" class="art-row"><span class="t">View</span><span class="n">Home · approved prototype</span><span class="d">Variant B · the design-of-record for the home page.</span></a>
+      <a href="../prototypes/home-a.html" class="art-row"><span class="t">View</span><span class="n">Home · variant A (retained)</span><span class="d">Editorial · portrait-led — not chosen, kept as design history.</span></a>
+      <a href="../PLAN.md" class="art-row"><span class="t">Read</span><span class="n">Plan · PLAN.md</span><span class="d">Full site-rebuild plan including priority-2 and priority-3 pages.</span></a>
+      <a href="../EXECUTION_LOG.md" class="art-row"><span class="t">Read</span><span class="n">Execution log</span><span class="d">Honest report on what was built, what was skipped, and what needs human review.</span></a>
+      <a href="../brand-profile.json" class="art-row"><span class="t">JSON</span><span class="n">Brand profile</span><span class="d">Machine-readable brand source of truth.</span></a>
+      <a href="../../.impeccable.md" class="art-row"><span class="t">Markdown</span><span class="n">Design personality</span><span class="d">Designer-authored taste rules that guide every page.</span></a>
+      <a href="../prototypes/_tokens.css" class="art-row"><span class="t">CSS</span><span class="n">Shared tokens</span><span class="d">Every page imports this. Single source of truth for type, color, spacing, breakpoints.</span></a>
+      <a href="../briefings/" class="art-row"><span class="t">Folder</span><span class="n">20 page briefings</span><span class="d">Intent, audience, verbatim copy, imagery per page.</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="site"><div class="footer-inner">
+  <div class="footer-top">
+    <div class="footer-brand"><img src="../assets/logo.png" alt="The Road Home"><p>A century-old frontline homeless-services organization in Salt Lake City. Refuge. Resources. Relief.</p>
+      <div class="footer-phones">
+        <div class="footer-phone-row"><span class="l">Shelter</span><a href="tel:18019909999">801-990-9999</a></div>
+        <div class="footer-phone-row"><span class="l">Housing crisis</span><a href="tel:18013592444">801-359-2444</a></div>
+        <div class="footer-phone-row"><span class="l">Utah 2-1-1</span><a href="tel:211">211</a></div>
+      </div>
+    </div>
+    <div class="footer-col"><h3>Get Help</h3><ul><li><a href="shelter.html">Find a Shelter</a></li><li><a href="emergency-services.html">Emergency Services</a></li><li><a href="housing-programs.html">Housing Assistance</a></li><li><a href="resource-centers.html">Resource Centers</a></li><li><a href="palmer-court.html">Palmer Court</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+    <div class="footer-col"><h3>Give</h3><ul><li><a href="donate.html">One-time</a></li><li><a href="housing-champions.html">Monthly · Housing Champions</a></li><li><a href="legacy-planned.html">Legacy / Planned</a></li><li><a href="where-does-it-go.html">Where does it go?</a></li></ul></div>
+    <div class="footer-col"><h3>About</h3><ul><li><a href="about-us.html">Our mission</a></li><li><a href="meet-the-team.html">Meet the team</a></li><li><a href="board-of-trustees.html">Board</a></li><li><a href="annual-reports.html">Annual reports</a></li><li><a href="contact-us.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h3>Impact</h3><ul><li><a href="housing-stories.html">Housing stories</a></li><li><a href="where-does-it-go.html">By the numbers</a></li><li><a href="annual-reports.html">Reports</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><div>© 1923–2026 The Road Home · Salt Lake City, UT · EIN 87-0212465</div><nav><a href="#">Privacy</a><a href="#">Accessibility</a><a href="#">Donor bill of rights</a></nav></div>
+</div></footer>
+
+</body>
+</html>

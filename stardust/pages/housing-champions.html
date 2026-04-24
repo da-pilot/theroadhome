@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Housing Champions — The Road Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+  @import url("../prototypes/_tokens.css");
+  .hero{padding:var(--spacing-2xl) 0 0}
+  .hero .inner{display:grid;grid-template-columns:1.1fr 1fr;gap:var(--spacing-2xl);align-items:start;padding-bottom:var(--spacing-2xl);border-bottom:1px solid var(--color-rule)}
+  .hero h1{font-size:var(--heading-xl);font-weight:900;text-transform:uppercase;line-height:0.98;letter-spacing:-.015em;margin-bottom:var(--spacing-md)}
+  .hero .sub{font-size:18px;color:var(--color-g22);line-height:1.6;max-width:52ch;margin-bottom:var(--spacing-xl)}
+  .impact{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--color-rule);border:1px solid var(--color-rule)}
+  .impact div{background:var(--color-paper);padding:20px 24px}
+  .impact .n{font-size:22px;font-weight:900;color:var(--color-shelter)}
+  .impact .l{font-size:13px;color:var(--color-g44);margin-top:6px}
+  .picker{background:var(--color-paper);border:1px solid var(--color-rule);padding:32px 32px 28px;box-shadow:0 2px 0 var(--color-rule)}
+  .picker .badge{display:inline-block;background:var(--color-shelter);color:var(--color-paper);padding:8px 14px;font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
+  .picker h3{font-size:20px;font-weight:900;text-transform:uppercase;margin-bottom:8px}
+  .picker p{font-size:14px;color:var(--color-g66);margin-bottom:20px}
+  .picker .amt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+  .picker .amt{padding:18px 8px;text-align:center;border:1px solid var(--color-rule);background:var(--color-paper);font-weight:900;font-size:16px;cursor:pointer}
+  .picker .amt small{display:block;font-size:11px;color:var(--color-g66);font-weight:500;margin-top:4px}
+  .picker .amt:hover{border-color:var(--color-signal);color:var(--color-signal)}
+  .picker .amt.selected{background:var(--color-signal);color:var(--color-paper);border-color:var(--color-signal)}
+  .picker .amt.selected small{color:rgba(255,255,255,.85)}
+  .picker .amt.other{grid-column:span 3;padding:14px;font-weight:700;font-size:14px}
+  .picker .fields{display:grid;gap:10px}
+  .picker label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--color-g66)}
+  .picker input{width:100%;padding:14px;border:1px solid var(--color-rule);border-radius:0;font-family:inherit;font-size:15px}
+  .picker .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .picker .submit{width:100%;margin-top:16px;padding:18px;background:var(--color-signal);color:var(--color-paper);font-weight:900;font-size:14px;letter-spacing:.08em;text-transform:uppercase;border:0;cursor:pointer}
+  .why{padding:var(--section-padding) 0;background:var(--color-panel);border-top:1px solid var(--color-rule);border-bottom:1px solid var(--color-rule)}
+  .why-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+  .why h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;margin-bottom:var(--spacing-xl)}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--color-rule);border:1px solid var(--color-rule)}
+  .why-card{background:var(--color-paper);padding:36px 32px}
+  .why-card .n{font-size:42px;font-weight:900;color:var(--color-signal);letter-spacing:-.02em;line-height:1;margin-bottom:18px}
+  .why-card h3{font-size:20px;font-weight:900;text-transform:uppercase;margin-bottom:10px}
+  .why-card p{font-size:14px;color:var(--color-g44);line-height:1.6}
+  .amanda{padding:var(--section-padding) 0}
+  .amanda-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:1fr 1.3fr;gap:var(--spacing-2xl);align-items:center}
+  .amanda .portrait{aspect-ratio:4/5;background-size:cover;background-position:center;background-image:url('https://images.unsplash.com/photo-1541823709867-1b206113eafd?auto=format&fit=crop&w=1200&q=80')}
+  .amanda h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;line-height:1.05;margin-bottom:var(--spacing-md);max-width:16ch}
+  .amanda p{font-size:16px;color:var(--color-g22);line-height:1.7;margin-bottom:var(--spacing-md);max-width:50ch}
+  .amanda .sig{font-size:13px;color:var(--color-g66);letter-spacing:.04em;text-transform:uppercase;font-weight:600;margin-top:var(--spacing-lg)}
+  .amanda .sig strong{color:var(--color-ink)}
+  .phone-alt{padding:var(--section-padding) 0;background:var(--color-ink);color:var(--color-paper);text-align:center}
+  .phone-alt-inner{max-width:800px;margin:0 auto;padding:0 var(--gutter)}
+  .phone-alt h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;margin-bottom:var(--spacing-md)}
+  .phone-alt p{color:rgba(255,255,255,.75);font-size:17px;margin-bottom:var(--spacing-lg)}
+  .phone-alt .contact{display:inline-flex;gap:24px;align-items:baseline;font-weight:700;font-size:17px}
+  .phone-alt .contact a{color:var(--color-signal-soft)}
+  @media (max-width:900px){.hero .inner{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr}.amanda-inner{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="utility"><div class="utility-inner"><div class="utility-left"><span><span class="dot"></span>Emergency Shelter Hotline · <a href="tel:18019909999">801-990-9999</a></span><span>Utah 2-1-1 · <a href="tel:211">Dial 211</a></span></div><div class="utility-right"><a href="contact-us.html">Español</a><a href="shelter.html">Find a location</a><a href="meet-the-team.html">Careers</a></div></div></div>
+<nav class="topnav"><div class="nav-inner"><a class="nav-logo" href="index.html"><img src="../assets/logo.png" alt=""></a><div class="nav-links"><a href="get-help.html">Get Help</a><a href="give-main.html" class="active">Give</a><a href="get-involved.html">Get Involved</a><a href="about-us.html">About</a></div><div class="nav-right"><a href="shelter.html" class="btn-ghost">Find a Shelter</a><a href="donate.html" class="btn">Donate</a></div></div></nav>
+<div class="breadcrumbs"><div class="inner"><a href="index.html">Home</a><span class="sep">/</span><a href="give-main.html">Give</a><span class="sep">/</span>Housing Champions</div></div>
+
+<section class="hero">
+  <div class="inner">
+    <div>
+      <p class="eyebrow">Give · Monthly Giving</p>
+      <h1>Become a Housing Champion.</h1>
+      <p class="sub">When you join our Housing Champions monthly giving program, you become part of a special group of donors. You provide critical funding that will help the most vulnerable among us find permanent and stable housing.</p>
+      <div class="impact">
+        <div><div class="n">$10/mo</div><div class="l">One meal a week for a family</div></div>
+        <div><div class="n">$25/mo</div><div class="l">Warm coats each winter</div></div>
+        <div><div class="n">$50/mo</div><div class="l">Case-management for one household</div></div>
+        <div><div class="n">$100/mo</div><div class="l">Rental-assistance runway</div></div>
+      </div>
+    </div>
+    <form class="picker" onsubmit="return false">
+      <span class="badge">Monthly · Recurring</span>
+      <h3>Pick your monthly gift</h3>
+      <p>You can change or cancel anytime. You'll receive quarterly program updates from Michelle Flynn, our CEO.</p>
+      <div class="amt-grid">
+        <div class="amt">$10<small>a meal / week</small></div>
+        <div class="amt selected">$25<small>warm coat</small></div>
+        <div class="amt">$50<small>case mgmt</small></div>
+        <div class="amt">$100<small>rental runway</small></div>
+        <div class="amt">$250<small>family fund</small></div>
+        <div class="amt">$500<small>champion</small></div>
+        <div class="amt other">Other monthly amount $_____</div>
+      </div>
+      <div class="fields">
+        <div class="row"><label>First name<input type="text"></label><label>Last name<input type="text"></label></div>
+        <label>Email<input type="email"></label>
+        <label>Card number<input type="text" placeholder="•••• •••• •••• ••••"></label>
+      </div>
+      <button class="submit" type="submit">Start monthly gift · $25/mo →</button>
+    </form>
+  </div>
+</section>
+
+<section class="why">
+  <div class="why-inner">
+    <h2>Why monthly matters</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="n">01</div>
+        <h3>Predictable help</h3>
+        <p>Recurring gifts let us plan housing placements months in advance. Stability at the organization becomes stability for the resident.</p>
+      </div>
+      <div class="why-card">
+        <div class="n">02</div>
+        <h3>Lower overhead</h3>
+        <p>Monthly donations cost less to process — more of each dollar reaches services. Less on bank fees, more on beds.</p>
+      </div>
+      <div class="why-card">
+        <div class="n">03</div>
+        <h3>Community</h3>
+        <p>Housing Champions receive quarterly program updates from our CEO and invitations to Palmer Court tours. You see the work up close.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="amanda">
+  <div class="amanda-inner">
+    <div class="portrait" role="img" aria-label="Amanda, a Housing Champions impact story"></div>
+    <div>
+      <p class="eyebrow">A story of impact</p>
+      <h2>Amanda found refuge.</h2>
+      <p><strong>Housing Champions make it possible</strong> for us to provide assistance and support from the moment an individual or family seeks shelter to the moment they move into a home of their own.</p>
+      <p>When you become a Housing Champion you'll be helping people like Amanda change their lives and create connections to the community that will last a lifetime.</p>
+      <p>Amanda had fled an abusive relationship with her children. With nowhere else to turn, Amanda found refuge at the Midvale Family Resource Center. Through case management and rental assistance funded by Housing Champions, Amanda and her children moved into permanent housing within four months.</p>
+      <p class="sig"><strong>Amanda</strong> · Midvale Family Resource Center</p>
+    </div>
+  </div>
+</section>
+
+<section class="phone-alt">
+  <div class="phone-alt-inner">
+    <p class="eyebrow" style="color:var(--color-signal-soft)">Prefer to join by phone or email?</p>
+    <h2>We'd love to hear from you.</h2>
+    <p>Contact Holly Rogers, Director of Development, directly. She'll set up your monthly gift personally.</p>
+    <div class="contact">
+      <span><a href="tel:18018197294">801-819-7294</a></span>
+      <span><a href="mailto:hrogers@theroadhome.org">hrogers@theroadhome.org</a></span>
+    </div>
+  </div>
+</section>
+
+<footer class="site"><div class="footer-inner">
+  <div class="footer-top">
+    <div class="footer-brand"><img src="../assets/logo.png" alt="The Road Home"><p>A century-old frontline homeless-services organization in Salt Lake City. Refuge. Resources. Relief.</p>
+      <div class="footer-phones">
+        <div class="footer-phone-row"><span class="l">Shelter</span><a href="tel:18019909999">801-990-9999</a></div>
+        <div class="footer-phone-row"><span class="l">Housing crisis</span><a href="tel:18013592444">801-359-2444</a></div>
+        <div class="footer-phone-row"><span class="l">Utah 2-1-1</span><a href="tel:211">211</a></div>
+      </div>
+    </div>
+    <div class="footer-col"><h3>Get Help</h3><ul><li><a href="shelter.html">Find a Shelter</a></li><li><a href="emergency-services.html">Emergency Services</a></li><li><a href="housing-programs.html">Housing Assistance</a></li><li><a href="resource-centers.html">Resource Centers</a></li><li><a href="palmer-court.html">Palmer Court</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+    <div class="footer-col"><h3>Give</h3><ul><li><a href="donate.html">One-time</a></li><li><a href="housing-champions.html">Monthly · Housing Champions</a></li><li><a href="legacy-planned.html">Legacy / Planned</a></li><li><a href="#">Employer matching</a></li><li><a href="#">Item donations</a></li><li><a href="where-does-it-go.html">Where does it go?</a></li></ul></div>
+    <div class="footer-col"><h3>About</h3><ul><li><a href="about-us.html">Our mission</a></li><li><a href="#">Our history</a></li><li><a href="meet-the-team.html">Meet the team</a></li><li><a href="board-of-trustees.html">Board</a></li><li><a href="annual-reports.html">Annual reports</a></li><li><a href="contact-us.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h3>Impact</h3><ul><li><a href="housing-stories.html">Housing stories</a></li><li><a href="where-does-it-go.html">By the numbers</a></li><li><a href="annual-reports.html">Reports</a></li><li><a href="#">Press</a></li><li><a href="#">Newsletter</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><div>© 1923–2026 The Road Home · Salt Lake City, UT · EIN 87-0212465</div><nav><a href="#">Privacy</a><a href="#">Accessibility</a><a href="#">Donor bill of rights</a></nav></div>
+</div></footer>
+
+</body>
+</html>

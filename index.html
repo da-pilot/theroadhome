@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Road Home · redesign prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+  :root{
+    --signal:#008192;--shelter:#005560;--ink:#000;--paper:#fff;--g22:#222;--g44:#444;--g66:#666;--rule:#e9e9e9;--tint:#f0f8f9;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',-apple-system,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:980px;margin:0 auto;padding:64px 32px 96px}
+  .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:var(--g66);margin-bottom:20px}
+  h1{font-size:clamp(40px,6vw,72px);font-weight:900;text-transform:uppercase;line-height:0.98;letter-spacing:-.02em;margin:0 0 20px;max-width:14ch}
+  .lede{font-size:18px;color:var(--g22);line-height:1.6;max-width:64ch;margin:0 0 16px}
+  .bigcta{margin-top:32px;padding:56px;background:var(--shelter);color:var(--paper);display:flex;justify-content:space-between;align-items:center;gap:32px;text-transform:uppercase;font-weight:900}
+  .bigcta .label{font-size:13px;letter-spacing:.08em;opacity:.75}
+  .bigcta .t{font-size:32px;line-height:1.1;letter-spacing:-.01em;margin-top:6px}
+  .bigcta .go{font-size:40px;color:#7fd3dc}
+  .bigcta:hover{background:var(--ink)}
+  section{margin-top:64px}
+  section h2{font-size:22px;font-weight:900;text-transform:uppercase;margin:0 0 24px;padding-bottom:12px;border-bottom:2px solid var(--ink);letter-spacing:-.005em}
+  .rows{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+  .row{background:var(--paper);padding:24px 28px;display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;transition:background .2s}
+  .row:hover{background:var(--tint)}
+  .row .t{font-size:11px;color:var(--signal);font-weight:700;letter-spacing:.12em;min-width:110px}
+  .row .n{font-size:17px;font-weight:900}
+  .row .d{font-size:13px;color:var(--g66);margin-top:2px;font-weight:500}
+  .row .arrow{color:var(--signal);font-size:22px;font-weight:900}
+  .meta{font-size:12px;color:var(--g66);margin-top:48px;padding-top:24px;border-top:1px solid var(--rule);display:flex;gap:24px;flex-wrap:wrap;letter-spacing:.04em}
+  @media (max-width:640px){
+    .wrap{padding:40px 20px 72px}
+    .bigcta{flex-direction:column;align-items:flex-start;padding:36px 28px;gap:20px}
+    .bigcta .go{font-size:28px}
+    .row{grid-template-columns:1fr;gap:8px}
+    .row .arrow{text-align:right}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">Prototype · April 24, 2026</p>
+  <h1>The Road Home redesign</h1>
+  <p class="lede">A rebuild of theroadhome.org on a modern, responsive design system — built through the stardust pipeline. Brand extracted from the live site, design personality captured from the designer, twenty priority-1 pages rendered with verbatim copy from the live site (with targeted rewrites where the original was Lorem ipsum or failing).</p>
+  <p class="lede">The work below is a self-contained prototype. Every HTML file can be opened directly in a browser. Start with the home page, click through the nav, resize the window to see the responsive behavior.</p>
+
+  <a href="stardust/pages/index.html" class="bigcta">
+    <div>
+      <div class="label">Open the site</div>
+      <div class="t">stardust/pages/index.html</div>
+    </div>
+    <span class="go">→</span>
+  </a>
+
+  <section>
+    <h2>Browse</h2>
+    <div class="rows">
+      <a href="stardust/pages/index.html" class="row">
+        <span class="t">Home</span>
+        <span><div class="n">The home page</div><div class="d">The approved variant B design with navigation wired to real pages.</div></span>
+        <span class="arrow">→</span>
+      </a>
+      <a href="stardust/pages/sitemap.html" class="row">
+        <span class="t">Sitemap</span>
+        <span><div class="n">All 20 pages at a glance</div><div class="d">Grouped by template type with descriptions — the fastest way to click through every page.</div></span>
+        <span class="arrow">→</span>
+      </a>
+      <a href="stardust/brand-board.html" class="row">
+        <span class="t">Brand</span>
+        <span><div class="n">Brand board</div><div class="d">Palette, typography, voice, motifs, components, photography direction — all extracted from the live site.</div></span>
+        <span class="arrow">→</span>
+      </a>
+      <a href="stardust/prototypes/home-b.html" class="row">
+        <span class="t">Design</span>
+        <span><div class="n">Home · approved prototype (variant B)</div><div class="d">The original prototype file — same as the home page but with placeholder anchor links.</div></span>
+        <span class="arrow">→</span>
+      </a>
+      <a href="stardust/prototypes/home-a.html" class="row">
+        <span class="t">Design</span>
+        <span><div class="n">Home · variant A (retained)</div><div class="d">The editorial / portrait-led variant — not chosen, kept as design history.</div></span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Read</h2>
+    <div class="rows">
+      <a href="stardust/PLAN.md" class="row">
+        <span class="t">Plan</span>
+        <span><div class="n">PLAN.md</div><div class="d">The full rebuild plan — 84 pages, 15 templates, three phases, five locked decisions.</div></span>
+        <span class="arrow">↗</span>
+      </a>
+      <a href="stardust/EXECUTION_LOG.md" class="row">
+        <span class="t">Log</span>
+        <span><div class="n">EXECUTION_LOG.md</div><div class="d">Honest report on what was built, what was skipped, and what needs human review.</div></span>
+        <span class="arrow">↗</span>
+      </a>
+      <a href=".impeccable.md" class="row">
+        <span class="t">Taste</span>
+        <span><div class="n">.impeccable.md</div><div class="d">Designer-authored personality rules — the guardrails that shape every page.</div></span>
+        <span class="arrow">↗</span>
+      </a>
+      <a href="stardust/brand-profile.json" class="row">
+        <span class="t">JSON</span>
+        <span><div class="n">brand-profile.json</div><div class="d">Machine-readable brand source of truth — tokens, voice, motifs.</div></span>
+        <span class="arrow">↗</span>
+      </a>
+      <a href="stardust/briefings/" class="row">
+        <span class="t">Folder</span>
+        <span><div class="n">stardust/briefings/</div><div class="d">Twenty markdown briefings with verbatim copy and imagery paths.</div></span>
+        <span class="arrow">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Reference</h2>
+    <div class="rows">
+      <a href="stardust/prototypes/_tokens.css" class="row">
+        <span class="t">CSS</span>
+        <span><div class="n">Shared design tokens</div><div class="d">Every page imports this file. Type scale, color system, spacing, responsive breakpoints.</div></span>
+        <span class="arrow">↗</span>
+      </a>
+      <a href="stardust/assets/pages/" class="row">
+        <span class="t">Folder</span>
+        <span><div class="n">Scraped TRH imagery</div><div class="d">Real photography and icon assets downloaded from the live site.</div></span>
+        <span class="arrow">↗</span>
+      </a>
+      <a href="https://theroadhome.org/" target="_blank" class="row">
+        <span class="t">Live</span>
+        <span><div class="n">theroadhome.org</div><div class="d">The current production site — the source material for this redesign.</div></span>
+        <span class="arrow">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="meta">
+    <span>stardust pipeline · brand → briefings → prototype → render</span>
+    <span>Generated · 2026-04-24</span>
+    <span>20 priority-1 pages complete</span>
+    <span>Priority-2 and -3 (64 more) pending</span>
+  </div>
+</div>
+</body>
+</html>

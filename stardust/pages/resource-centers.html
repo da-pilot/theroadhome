@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Resource Centers — The Road Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+  @import url("../prototypes/_tokens.css");
+  .hero{padding:var(--spacing-2xl) 0;border-bottom:1px solid var(--color-rule)}
+  .hero h1{font-size:var(--heading-xl);font-weight:900;text-transform:uppercase;line-height:0.98;letter-spacing:-.015em;margin-bottom:var(--spacing-md)}
+  .hero .sub{font-size:18px;color:var(--color-g22);line-height:1.55;max-width:58ch}
+  .what{padding:var(--section-padding) 0}
+  .what-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:1fr 1fr;gap:var(--spacing-2xl);align-items:center}
+  .what h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;line-height:1.05;margin-bottom:var(--spacing-md)}
+  .what p{font-size:17px;color:var(--color-g22);line-height:1.7;margin-bottom:var(--spacing-md);max-width:54ch}
+  .what .art{aspect-ratio:4/5;background-size:cover;background-position:center;background-image:linear-gradient(180deg,rgba(0,20,25,.05),rgba(0,40,50,.2)),url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1200&q=80')}
+  .locations{padding:var(--section-padding) 0;background:var(--color-panel);border-top:1px solid var(--color-rule);border-bottom:1px solid var(--color-rule)}
+  .loc-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+  .loc-inner h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;margin-bottom:var(--spacing-xl)}
+  .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--spacing-lg)}
+  .loc-card{background:var(--color-paper);border:1px solid var(--color-rule);padding:36px 32px}
+  .loc-card .tag{font-size:11px;color:var(--color-signal);font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+  .loc-card h3{font-size:22px;font-weight:900;text-transform:uppercase;margin-bottom:8px;letter-spacing:-.005em}
+  .loc-card .addr{font-size:15px;color:var(--color-g22);line-height:1.55;margin-bottom:12px;white-space:pre-line}
+  .loc-card .phone{display:block;font-size:20px;font-weight:900;margin-bottom:4px;letter-spacing:-.01em;color:var(--color-ink)}
+  .loc-card .phone:hover{color:var(--color-signal)}
+  .loc-card .note{font-size:13px;color:var(--color-g66);margin-top:14px;padding-top:14px;border-top:1px solid var(--color-rule);line-height:1.5}
+  .loc-card .hours{display:inline-block;background:var(--color-tint);color:var(--color-shelter);padding:6px 12px;font-size:12px;font-weight:700;margin-top:14px;letter-spacing:.06em;text-transform:uppercase}
+  .bring{padding:var(--section-padding) 0}
+  .bring-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:1fr 1fr;gap:var(--spacing-2xl)}
+  .bring h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;line-height:1.05;margin-bottom:var(--spacing-md)}
+  .bring-main p{font-size:17px;color:var(--color-g22);line-height:1.65;margin-bottom:var(--spacing-md)}
+  .bring-list{display:grid;gap:14px;padding:var(--spacing-xl);background:var(--color-panel);border:1px solid var(--color-rule)}
+  .bring-list div{font-size:15px;color:var(--color-g22);padding-bottom:14px;border-bottom:1px dashed var(--color-rule);line-height:1.55}
+  .bring-list div:last-child{border-bottom:0;padding-bottom:0}
+  .bring-list strong{color:var(--color-ink);display:block;margin-bottom:4px;font-size:14px;letter-spacing:.02em;text-transform:uppercase}
+  @media (max-width:900px){.what-inner,.loc-grid,.bring-inner{grid-template-columns:1fr}.what .art{aspect-ratio:5/3;order:-1}}
+</style>
+</head>
+<body>
+
+<div class="utility"><div class="utility-inner"><div class="utility-left"><span><span class="dot"></span>Emergency Shelter Hotline · <a href="tel:18019909999">801-990-9999</a></span><span>Utah 2-1-1 · <a href="tel:211">Dial 211</a></span></div><div class="utility-right"><a href="contact-us.html">Español</a><a href="shelter.html">Find a location</a><a href="meet-the-team.html">Careers</a></div></div></div>
+<nav class="topnav"><div class="nav-inner"><a class="nav-logo" href="index.html"><img src="../assets/logo.png" alt=""></a><div class="nav-links"><a href="get-help.html" class="active">Get Help</a><a href="give-main.html">Give</a><a href="get-involved.html">Get Involved</a><a href="about-us.html">About</a></div><div class="nav-right"><a href="shelter.html" class="btn-ghost">Find a Shelter</a><a href="donate.html" class="btn">Donate</a></div></div></nav>
+<div class="breadcrumbs"><div class="inner"><a href="index.html">Home</a><span class="sep">/</span><a href="get-help.html">Get Help</a><span class="sep">/</span>Resource Centers</div></div>
+
+<section class="hero">
+  <div class="inner">
+    <p class="eyebrow">Get Help · Resource Centers</p>
+    <h1>Three resource centers. One mission.</h1>
+    <p class="sub">Walk in, call, or get referred. The Road Home's resource centers are the physical entry points to every program we run — from a bed tonight to a housing plan tomorrow.</p>
+  </div>
+</section>
+
+<section class="what">
+  <div class="what-inner">
+    <div>
+      <p class="eyebrow">What is a resource center?</p>
+      <h2>Not just a shelter.</h2>
+      <p><strong>A resource center is not a shelter, and it is not just a shelter.</strong> It is a day-and-night building with intake staff, case managers, hot food, and a path to housing — all under one roof.</p>
+      <p>Each of our three centers is open 365 days a year for intake, donation drop-off, and services. Sleeping areas are reset during daytime hours while residents attend programming, school, or work.</p>
+      <p>The building you walk into determines which population you are served with (single men, families, donation drop-off) — but every center has the same mission and the same network of case managers and housing navigators behind it.</p>
+    </div>
+    <div class="art" role="img" aria-label="Midvale Family Resource Center exterior."></div>
+  </div>
+</section>
+
+<section class="locations">
+  <div class="loc-inner">
+    <h2>Our three locations</h2>
+    <div class="loc-grid">
+      <div class="loc-card">
+        <div class="tag">Single men · 24 hr</div>
+        <h3>Pamela Atkinson Men's Resource Center</h3>
+        <div class="addr">3380 South 1000 West
+South Salt Lake, UT 84119</div>
+        <a href="tel:18013594142" class="phone">801-359-4142</a>
+        <a href="mailto:info@theroadhome.org" style="color:var(--color-g66);font-size:13px">info@theroadhome.org</a>
+        <div class="hours">Open 8am–7pm for donations · 24 hr intake</div>
+        <p class="note">Donation drop-off: Turn right at the first entrance near the black Parking sign.</p>
+      </div>
+      <div class="loc-card">
+        <div class="tag">Families · 24 hr</div>
+        <h3>Midvale Family Resource Center</h3>
+        <div class="addr">529 West 9th Avenue
+Salt Lake County, UT</div>
+        <a href="tel:18019909999" class="phone">801-990-9999</a>
+        <a href="mailto:info@theroadhome.org" style="color:var(--color-g66);font-size:13px">info@theroadhome.org</a>
+        <div class="hours">Open 8am–7pm for donations · 24 hr intake</div>
+        <p class="note">Serving families with children. Open year-round.</p>
+      </div>
+      <div class="loc-card">
+        <div class="tag">Gail Miller · intake</div>
+        <h3>Gail Miller Resource Center</h3>
+        <div class="addr">242 Paramount Ave.
+Salt Lake City, UT</div>
+        <a href="tel:18013594142" class="phone">801-359-4142</a>
+        <div class="hours">Donation drop-off: 8am–7pm</div>
+        <p class="note">Donation drop-off: Pull up to the gate, click the call button on the black panel.</p>
+      </div>
+      <div class="loc-card">
+        <div class="tag">Connie Crosby · donations</div>
+        <h3>Connie Crosby Family Resource Center</h3>
+        <div class="addr">529 West 9th Avenue (about 7300 South)
+Salt Lake County, UT</div>
+        <div class="hours">Donation warehouse</div>
+        <p class="note">Donation drop-off: Please deliver to the warehouse on the West side.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bring">
+  <div class="bring-inner">
+    <div class="bring-main">
+      <p class="eyebrow">What to bring</p>
+      <h2>Come as you are.</h2>
+      <p>We do not require paperwork at intake. If you have what's on the list, it helps — but it is never a reason we turn anyone away. What we need most is a conversation.</p>
+      <p>If you have medications or a service animal, please mention either at intake so we can plan accordingly.</p>
+    </div>
+    <div class="bring-list">
+      <div><strong>Helpful, not required</strong>An ID if you have one. We can help you replace a lost ID as part of intake.</div>
+      <div><strong>Medication for 24 hours</strong>Whatever you need tonight and tomorrow morning. We can help refill longer prescriptions.</div>
+      <div><strong>Important documents</strong>Birth certificate, Social Security card, any housing or legal paperwork.</div>
+      <div><strong>Service animals welcome</strong>Please note: other pets cannot be housed in the resource center.</div>
+    </div>
+  </div>
+</section>
+
+<footer class="site"><div class="footer-inner">
+  <div class="footer-top">
+    <div class="footer-brand"><img src="../assets/logo.png" alt="The Road Home"><p>A century-old frontline homeless-services organization in Salt Lake City. Refuge. Resources. Relief.</p>
+      <div class="footer-phones">
+        <div class="footer-phone-row"><span class="l">Shelter</span><a href="tel:18019909999">801-990-9999</a></div>
+        <div class="footer-phone-row"><span class="l">Housing crisis</span><a href="tel:18013592444">801-359-2444</a></div>
+        <div class="footer-phone-row"><span class="l">Utah 2-1-1</span><a href="tel:211">211</a></div>
+      </div>
+    </div>
+    <div class="footer-col"><h3>Get Help</h3><ul><li><a href="shelter.html">Find a Shelter</a></li><li><a href="emergency-services.html">Emergency Services</a></li><li><a href="housing-programs.html">Housing Assistance</a></li><li><a href="resource-centers.html">Resource Centers</a></li><li><a href="palmer-court.html">Palmer Court</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+    <div class="footer-col"><h3>Give</h3><ul><li><a href="donate.html">One-time</a></li><li><a href="housing-champions.html">Monthly · Housing Champions</a></li><li><a href="legacy-planned.html">Legacy / Planned</a></li><li><a href="#">Employer matching</a></li><li><a href="#">Item donations</a></li><li><a href="where-does-it-go.html">Where does it go?</a></li></ul></div>
+    <div class="footer-col"><h3>About</h3><ul><li><a href="about-us.html">Our mission</a></li><li><a href="#">Our history</a></li><li><a href="meet-the-team.html">Meet the team</a></li><li><a href="board-of-trustees.html">Board</a></li><li><a href="annual-reports.html">Annual reports</a></li><li><a href="contact-us.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h3>Impact</h3><ul><li><a href="housing-stories.html">Housing stories</a></li><li><a href="where-does-it-go.html">By the numbers</a></li><li><a href="annual-reports.html">Reports</a></li><li><a href="#">Press</a></li><li><a href="#">Newsletter</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><div>© 1923–2026 The Road Home · Salt Lake City, UT · EIN 87-0212465</div><nav><a href="#">Privacy</a><a href="#">Accessibility</a><a href="#">Donor bill of rights</a></nav></div>
+</div></footer>
+
+</body>
+</html>

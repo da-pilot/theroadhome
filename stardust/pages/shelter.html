@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shelter — The Road Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+  @import url("../prototypes/_tokens.css");
+
+  /* Service-detail page-specific */
+  .service-hero{padding:var(--spacing-2xl) 0 0}
+  .service-hero .inner{display:grid;grid-template-columns:1.2fr 1fr;gap:var(--spacing-2xl);align-items:end;padding-bottom:var(--spacing-2xl);border-bottom:1px solid var(--color-rule)}
+  .service-hero h1{font-size:var(--heading-xl);font-weight:900;text-transform:uppercase;line-height:0.98;letter-spacing:-.015em;margin-bottom:var(--spacing-md)}
+  .service-hero .sub{font-size:19px;color:var(--color-g22);line-height:1.55;max-width:52ch;margin-bottom:var(--spacing-lg)}
+  .service-hero .phone-cta{display:inline-flex;align-items:center;gap:14px;padding:18px 28px;background:var(--color-signal);color:var(--color-paper);font-weight:900;font-size:18px;letter-spacing:-.01em}
+  .service-hero .phone-cta small{font-weight:600;font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+  .service-hero .art{aspect-ratio:4/5;background-size:cover;background-position:center;background-image:linear-gradient(180deg,rgba(0,20,25,.05),rgba(0,40,50,.2)),url('https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=1200&q=80')}
+
+  .at-glance{padding:var(--section-padding) 0}
+  .at-glance-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:2fr 1fr;gap:var(--spacing-2xl)}
+  .at-glance-main h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;line-height:1.05;margin-bottom:var(--spacing-md);max-width:18ch}
+  .at-glance-main p{font-size:17px;color:var(--color-g22);line-height:1.65;margin-bottom:var(--spacing-md);max-width:58ch}
+  .at-glance-side{padding:32px 28px;background:var(--color-panel);border:1px solid var(--color-rule);align-self:start;position:sticky;top:calc(var(--nav-h) + 20px)}
+  .at-glance-side .eyebrow{margin-bottom:var(--spacing-md)}
+  .at-glance-side dl{margin:0;display:grid;gap:16px}
+  .at-glance-side dt{font-size:11px;color:var(--color-g66);text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:4px}
+  .at-glance-side dd{margin:0;font-size:15px;font-weight:600;color:var(--color-ink)}
+
+  .locations-band{padding:var(--section-padding) 0;background:var(--color-panel);border-top:1px solid var(--color-rule);border-bottom:1px solid var(--color-rule)}
+  .locations-band .inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+  .locations-band h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;margin-bottom:var(--spacing-xl)}
+  .locs-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--spacing-lg)}
+  .loc-card{background:var(--color-paper);border:1px solid var(--color-rule);padding:40px 36px;display:grid;grid-template-columns:1fr 140px;gap:var(--spacing-xl);align-items:start}
+  .loc-card .lc-title{font-size:22px;font-weight:900;text-transform:uppercase;margin-bottom:8px}
+  .loc-card .lc-serves{font-size:12px;color:var(--color-signal);font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
+  .loc-card .lc-addr{font-size:14px;color:var(--color-g22);line-height:1.6;margin-bottom:12px;white-space:pre-line}
+  .loc-card .lc-phone{font-size:19px;font-weight:900;color:var(--color-ink);letter-spacing:-.01em;margin-bottom:8px}
+  .loc-card .lc-phone:hover{color:var(--color-signal)}
+  .loc-card .lc-email{font-size:13px;color:var(--color-g44)}
+  .loc-card .lc-map{width:140px;height:140px;background:#d9e4e6;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--color-g66);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+
+  .steps{padding:var(--section-padding) 0}
+  .steps-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+  .steps-head{margin-bottom:var(--spacing-2xl)}
+  .steps-head h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;margin-bottom:8px}
+  .steps-head p{color:var(--color-g44);max-width:54ch}
+  .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--color-rule);border:1px solid var(--color-rule)}
+  .step{background:var(--color-paper);padding:44px 36px 40px}
+  .step .num{font-size:42px;font-weight:900;color:var(--color-signal);line-height:1;letter-spacing:-.02em;margin-bottom:20px}
+  .step h3{font-size:20px;font-weight:900;text-transform:uppercase;margin-bottom:10px}
+  .step p{font-size:14px;color:var(--color-g44);line-height:1.6}
+
+  .related{padding:var(--section-padding) 0;background:var(--color-ink);color:var(--color-paper)}
+  .related-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+  .related-inner h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;margin-bottom:var(--spacing-xl)}
+  .related-rows{display:grid;gap:1px;background:rgba(255,255,255,.16)}
+  .related-row{display:grid;grid-template-columns:80px 1fr 2fr 40px;align-items:center;gap:var(--spacing-lg);padding:24px;background:var(--color-ink);transition:background .2s}
+  .related-row:hover{background:#0c0c0c}
+  .related-row .code{font-size:11px;color:var(--color-signal);font-weight:700;letter-spacing:.12em}
+  .related-row .title{font-size:20px;font-weight:900;text-transform:uppercase;color:var(--color-paper)}
+  .related-row .desc{color:rgba(255,255,255,.7);font-size:14px;line-height:1.55}
+  .related-row .arrow{color:var(--color-signal);font-size:20px;text-align:right;font-weight:900}
+
+  @media (max-width:900px){
+    .service-hero .inner{grid-template-columns:1fr;gap:var(--spacing-xl)}
+    .service-hero .art{aspect-ratio:5/3;order:-1}
+    .at-glance-inner{grid-template-columns:1fr}
+    .at-glance-side{position:static}
+    .locs-grid{grid-template-columns:1fr}
+    .loc-card{grid-template-columns:1fr}
+    .loc-card .lc-map{width:100%;height:100px}
+    .steps-grid{grid-template-columns:1fr}
+    .related-row{grid-template-columns:1fr auto;grid-template-areas:"code arrow" "title title" "desc desc";row-gap:10px}
+    .related-row .code{grid-area:code}.related-row .arrow{grid-area:arrow}.related-row .title{grid-area:title}.related-row .desc{grid-area:desc}
+  }
+</style>
+</head>
+<body>
+
+<div class="utility"><div class="utility-inner"><div class="utility-left"><span><span class="dot"></span>Emergency Shelter Hotline · <a href="tel:18019909999">801-990-9999</a></span><span>Utah 2-1-1 · <a href="tel:211">Dial 211</a></span></div><div class="utility-right"><a href="contact-us.html">Español</a><a href="shelter.html">Find a location</a><a href="meet-the-team.html">Careers</a></div></div></div>
+
+<nav class="topnav" aria-label="Primary"><div class="nav-inner">
+  <a class="nav-logo" href="index.html"><img src="../assets/logo.png" alt=""></a>
+  <div class="nav-links"><a href="get-help.html" class="active">Get Help</a><a href="give-main.html">Give</a><a href="get-involved.html">Get Involved</a><a href="about-us.html">About</a></div>
+  <div class="nav-right"><a href="shelter.html" class="btn-ghost">Find a Shelter</a><a href="donate.html" class="btn">Donate</a></div>
+</div></nav>
+
+<div class="breadcrumbs"><div class="inner"><a href="index.html">Home</a><span class="sep">/</span><a href="get-help.html">Get Help</a><span class="sep">/</span>Shelter</div></div>
+
+<section class="service-hero" data-section="service-hero">
+  <div class="inner">
+    <div>
+      <p class="eyebrow">Get Help · Emergency Shelter</p>
+      <h1>Shelter is often the first step on the road home.</h1>
+      <p class="sub">The Road Home operates low-barrier shelter with housing-focused services for men and families in Salt Lake County, Utah.</p>
+      <a href="tel:18019909999" class="phone-cta"><span>801-990-9999</span><small>24 hr Homeless Services Line</small></a>
+    </div>
+    <div class="art" role="img" aria-label="A dignified resident of a Road Home resource center."></div>
+  </div>
+</section>
+
+<section class="at-glance" data-section="at-glance">
+  <div class="at-glance-inner">
+    <div class="at-glance-main">
+      <h2>A bed, a meal, a plan.</h2>
+      <p>Our Emergency Shelters, the <strong>South Salt Lake Men's Resource Center</strong> and the <strong>Midvale Family Resource Center</strong>, are open 365 days a year and serve people experiencing homelessness in Salt Lake County.</p>
+      <p>Along with providing life-saving emergency shelter, we help people re-build their support networks and create stability through supportive services and housing placement.</p>
+      <p>If you are in need of shelter please contact Utah Community Action's Homeless Services Line at <strong>801-990-9999</strong>.</p>
+    </div>
+    <aside class="at-glance-side" aria-label="At a glance">
+      <p class="eyebrow">At a glance</p>
+      <dl>
+        <div><dt>Who we serve</dt><dd>Single men; families with children</dd></div>
+        <div><dt>Where</dt><dd>South Salt Lake &amp; Midvale</dd></div>
+        <div><dt>When</dt><dd>Open 365 days a year</dd></div>
+        <div><dt>How to access</dt><dd>Call 801-990-9999 or walk in</dd></div>
+        <div><dt>Cost</dt><dd>Free. No ID required at intake.</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section class="locations-band" data-section="locations">
+  <div class="inner">
+    <h2>Two locations, both open year-round.</h2>
+    <div class="locs-grid">
+      <div class="loc-card">
+        <div>
+          <div class="lc-serves">Single men · 24 hr</div>
+          <div class="lc-title">South Salt Lake Men's Resource Center</div>
+          <div class="lc-addr">3380 South 1000 West
+South Salt Lake, UT 84119</div>
+          <a href="tel:18013594142" class="lc-phone">801-359-4142</a>
+          <div class="lc-email">info@theroadhome.org</div>
+        </div>
+        <div class="lc-map">MAP</div>
+      </div>
+      <div class="loc-card">
+        <div>
+          <div class="lc-serves">Families with children · 24 hr</div>
+          <div class="lc-title">Midvale Family Resource Center</div>
+          <div class="lc-addr">529 West 9th Avenue
+Salt Lake County, UT</div>
+          <a href="tel:18019909999" class="lc-phone">801-990-9999</a>
+          <div class="lc-email">info@theroadhome.org</div>
+        </div>
+        <div class="lc-map">MAP</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="steps" data-section="what-to-expect">
+  <div class="steps-inner">
+    <div class="steps-head">
+      <p class="eyebrow">What to expect</p>
+      <h2>Three steps from first call to first morning.</h2>
+      <p>Everyone's story is different, but the first 24 hours usually looks like this.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="num">01</div>
+        <h3>Call or walk in</h3>
+        <p>Homeless Services Line 24 hours, or in-person intake at either resource center. Interpreters available.</p>
+      </div>
+      <div class="step">
+        <div class="num">02</div>
+        <h3>Meet with a case manager</h3>
+        <p>Same day if possible. We listen, we ask about immediate needs, and we do not require paperwork you don't have.</p>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <h3>Bed. Meal. Plan.</h3>
+        <p>Shelter that night. Housing pathway the next day. Wrap-around support starts immediately.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="related" data-section="related">
+  <div class="related-inner">
+    <h2>Next steps</h2>
+    <div class="related-rows">
+      <a href="emergency-services.html" class="related-row">
+        <span class="code">01</span>
+        <span class="title">Emergency Services</span>
+        <span class="desc">24-hour crisis response, street outreach, extreme-weather protocol.</span>
+        <span class="arrow">→</span>
+      </a>
+      <a href="housing-programs.html" class="related-row">
+        <span class="code">02</span>
+        <span class="title">Housing Programs</span>
+        <span class="desc">Rapid rehousing, permanent supportive housing, rental assistance.</span>
+        <span class="arrow">→</span>
+      </a>
+      <a href="palmer-court.html" class="related-row">
+        <span class="code">03</span>
+        <span class="title">Palmer Court</span>
+        <span class="desc">201-unit permanent supportive housing — our flagship Housing First program.</span>
+        <span class="arrow">→</span>
+      </a>
+      <a href="resource-centers.html" class="related-row">
+        <span class="code">04</span>
+        <span class="title">Resource Centers</span>
+        <span class="desc">What a resource center is, what to bring, when we're open.</span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="site"><div class="footer-inner">
+  <div class="footer-top">
+    <div class="footer-brand"><img src="../assets/logo.png" alt="The Road Home"><p>A century-old frontline homeless-services organization in Salt Lake City. Refuge. Resources. Relief.</p>
+      <div class="footer-phones">
+        <div class="footer-phone-row"><span class="l">Shelter</span><a href="tel:18019909999">801-990-9999</a></div>
+        <div class="footer-phone-row"><span class="l">Housing crisis</span><a href="tel:18013592444">801-359-2444</a></div>
+        <div class="footer-phone-row"><span class="l">Utah 2-1-1</span><a href="tel:211">211</a></div>
+      </div>
+    </div>
+    <div class="footer-col"><h3>Get Help</h3><ul><li><a href="shelter.html">Find a Shelter</a></li><li><a href="emergency-services.html">Emergency Services</a></li><li><a href="housing-programs.html">Housing Assistance</a></li><li><a href="resource-centers.html">Resource Centers</a></li><li><a href="palmer-court.html">Palmer Court</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+    <div class="footer-col"><h3>Give</h3><ul><li><a href="donate.html">One-time</a></li><li><a href="housing-champions.html">Monthly · Housing Champions</a></li><li><a href="legacy-planned.html">Legacy / Planned</a></li><li><a href="#">Employer matching</a></li><li><a href="#">Item donations</a></li><li><a href="where-does-it-go.html">Where does it go?</a></li></ul></div>
+    <div class="footer-col"><h3>About</h3><ul><li><a href="about-us.html">Our mission</a></li><li><a href="#">Our history</a></li><li><a href="meet-the-team.html">Meet the team</a></li><li><a href="board-of-trustees.html">Board</a></li><li><a href="annual-reports.html">Annual reports</a></li><li><a href="contact-us.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h3>Impact</h3><ul><li><a href="housing-stories.html">Housing stories</a></li><li><a href="where-does-it-go.html">By the numbers</a></li><li><a href="annual-reports.html">Reports</a></li><li><a href="#">Press</a></li><li><a href="#">Newsletter</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><div>© 1923–2026 The Road Home · Salt Lake City, UT · EIN 87-0212465</div><nav><a href="#">Privacy</a><a href="#">Accessibility</a><a href="#">Donor bill of rights</a></nav></div>
+</div></footer>
+
+</body>
+</html>

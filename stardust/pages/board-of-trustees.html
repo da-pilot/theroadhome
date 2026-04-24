@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Board of Trustees — The Road Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+  @import url("../prototypes/_tokens.css");
+  .hero{padding:var(--spacing-2xl) 0;border-bottom:1px solid var(--color-rule)}
+  .hero h1{font-size:var(--heading-xl);font-weight:900;text-transform:uppercase;line-height:0.98;letter-spacing:-.015em;margin-bottom:var(--spacing-md)}
+  .hero .sub{font-size:18px;color:var(--color-g22);line-height:1.55;max-width:62ch}
+  .govern{padding:var(--spacing-2xl) 0;background:var(--color-panel);border-bottom:1px solid var(--color-rule)}
+  .govern .inner p{color:var(--color-g22);font-size:16px;line-height:1.65;max-width:68ch}
+  .officers{padding:var(--section-padding) 0}
+  .officers-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+  .officers-head{margin-bottom:var(--spacing-xl)}
+  .officers-head h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;margin-bottom:10px}
+  .officers-head p{color:var(--color-g44);max-width:54ch}
+  .officers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--spacing-lg)}
+  .officer{background:var(--color-paper);border:1px solid var(--color-rule);padding:28px 24px 26px}
+  .officer .role{font-size:11px;color:var(--color-signal);font-weight:900;letter-spacing:.12em;margin-bottom:14px}
+  .officer .portrait{width:72px;height:72px;background:var(--color-tint);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--color-signal);font-size:22px;letter-spacing:-.02em;margin-bottom:16px}
+  .officer h3{font-size:17px;font-weight:900;letter-spacing:-.005em;margin-bottom:6px}
+  .officer .affil{font-size:13px;color:var(--color-g66);line-height:1.5}
+  .trustees{padding:var(--section-padding) 0;background:var(--color-panel);border-top:1px solid var(--color-rule)}
+  .trustees-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+  .trustees-head{margin-bottom:var(--spacing-xl)}
+  .trustees-head h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;margin-bottom:10px}
+  .trustees-head p{color:var(--color-g44);max-width:56ch}
+  .trustees-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--color-rule);border:1px solid var(--color-rule)}
+  .trustee{background:var(--color-paper);padding:24px 22px;display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:center}
+  .trustee .avatar{width:48px;height:48px;background:var(--color-tint);color:var(--color-signal);font-weight:900;display:flex;align-items:center;justify-content:center;font-size:15px;letter-spacing:-.02em}
+  .trustee h4{font-size:15px;font-weight:900;margin-bottom:3px;letter-spacing:-.005em}
+  .trustee .affil{font-size:12px;color:var(--color-g66);line-height:1.4}
+  .committees{padding:var(--section-padding) 0}
+  .committees-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+  .committees-inner h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;margin-bottom:var(--spacing-xl)}
+  .committees-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--color-rule);border:1px solid var(--color-rule)}
+  .committee{background:var(--color-paper);padding:26px 22px}
+  .committee .c{font-size:11px;color:var(--color-signal);font-weight:700;letter-spacing:.12em;margin-bottom:8px}
+  .committee h4{font-size:17px;font-weight:900;text-transform:uppercase;margin-bottom:6px}
+  .committee p{font-size:12px;color:var(--color-g66);line-height:1.5}
+  .ceo{padding:var(--section-padding) 0;background:var(--color-ink);color:var(--color-paper)}
+  .ceo-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:1fr 1fr;gap:var(--spacing-2xl);align-items:center}
+  .ceo h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;margin-bottom:var(--spacing-md)}
+  .ceo p{color:rgba(255,255,255,.75);font-size:16px;line-height:1.6;max-width:50ch;margin-bottom:var(--spacing-lg)}
+  .ceo-meet{background:var(--color-shelter);padding:32px;display:grid;gap:16px}
+  .ceo-meet .portrait{width:80px;height:80px;background:var(--color-signal);color:var(--color-paper);font-weight:900;display:flex;align-items:center;justify-content:center;font-size:26px;letter-spacing:-.02em}
+  .ceo-meet .name{font-size:22px;font-weight:900;color:var(--color-paper);text-transform:uppercase;letter-spacing:-.005em}
+  .ceo-meet .role{font-size:13px;color:var(--color-signal-soft);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+  @media (max-width:900px){.officers-grid{grid-template-columns:repeat(2,1fr)}.trustees-grid{grid-template-columns:1fr}.committees-grid{grid-template-columns:repeat(2,1fr)}.ceo-inner{grid-template-columns:1fr}}
+  @media (max-width:520px){.officers-grid{grid-template-columns:1fr}.committees-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="utility"><div class="utility-inner"><div class="utility-left"><span><span class="dot"></span>Emergency Shelter Hotline · <a href="tel:18019909999">801-990-9999</a></span><span>Utah 2-1-1 · <a href="tel:211">Dial 211</a></span></div><div class="utility-right"><a href="contact-us.html">Español</a><a href="shelter.html">Find a location</a><a href="meet-the-team.html">Careers</a></div></div></div>
+<nav class="topnav"><div class="nav-inner"><a class="nav-logo" href="index.html"><img src="../assets/logo.png" alt=""></a><div class="nav-links"><a href="get-help.html">Get Help</a><a href="give-main.html">Give</a><a href="get-involved.html">Get Involved</a><a href="about-us.html" class="active">About</a></div><div class="nav-right"><a href="shelter.html" class="btn-ghost">Find a Shelter</a><a href="donate.html" class="btn">Donate</a></div></div></nav>
+<div class="breadcrumbs"><div class="inner"><a href="index.html">Home</a><span class="sep">/</span><a href="about-us.html">About</a><span class="sep">/</span>Board of Trustees</div></div>
+
+<section class="hero">
+  <div class="inner">
+    <p class="eyebrow">About · Governance</p>
+    <h1>The 2026–2027 Board of Trustees.</h1>
+    <p class="sub">Our board members are volunteers who help guide the programs and practices of The Road Home. They are a vital link to our community and provide oversight and support for the organization.</p>
+  </div>
+</section>
+
+<section class="govern">
+  <div class="inner">
+    <p><strong>The Road Home is proudly ranked as a Four Star Charity by Charity Navigator</strong> for our organization's transparency and efficiency — a rating our board takes seriously. All board materials, minutes, and financials are available on request.</p>
+  </div>
+</section>
+
+<section class="officers">
+  <div class="officers-inner">
+    <div class="officers-head">
+      <p class="eyebrow">Officers</p>
+      <h2>Board officers · 2026–2027</h2>
+      <p>Elected by the full board for one- to two-year terms.</p>
+    </div>
+    <div class="officers-grid">
+      <div class="officer"><div class="role">President</div><div class="portrait">EW</div><h3>Emily Wegener</h3><div class="affil">Utah Associated Municipal Power Systems (UAMPS)</div></div>
+      <div class="officer"><div class="role">Past President</div><div class="portrait">PP</div><h3>Pauline Ploquin</h3><div class="affil">Community Advocate</div></div>
+      <div class="officer"><div class="role">Secretary</div><div class="portrait">CD</div><h3>Christena Huntsman Durham</h3><div class="affil">Community Advocate</div></div>
+      <div class="officer"><div class="role">Treasurer</div><div class="portrait">DS</div><h3>Denis Smith</h3><div class="affil">Intermountain Health</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="trustees">
+  <div class="trustees-inner">
+    <div class="trustees-head">
+      <p class="eyebrow">Trustees</p>
+      <h2>Board of Trustees</h2>
+      <p>Our full board brings expertise from every corner of Salt Lake County — construction, health, finance, childcare, faith communities, and community advocacy.</p>
+    </div>
+    <div class="trustees-grid">
+      <div class="trustee"><div class="avatar">AC</div><div><h4>Amy Christensen</h4><div class="affil">Jacobsen Construction</div></div></div>
+      <div class="trustee"><div class="avatar">AK</div><div><h4>Angie Cook</h4><div class="affil">Utah Child Care Cooperative</div></div></div>
+      <div class="trustee"><div class="avatar">BP</div><div><h4>Becky Pickle</h4><div class="affil">Community Advocate · Past President</div></div></div>
+      <div class="trustee"><div class="avatar">BC</div><div><h4>Brad Crist</h4><div class="affil">Zions Bank</div></div></div>
+      <div class="trustee"><div class="avatar">CH</div><div><h4>Catherine Hansen</h4><div class="affil">Community Advocate</div></div></div>
+      <div class="trustee"><div class="avatar">DT</div><div><h4>David Teichert</h4><div class="affil">University of Utah</div></div></div>
+      <div class="trustee"><div class="avatar">JP</div><div><h4>Jennifer Parker</h4><div class="affil">Intermountain Health</div></div></div>
+      <div class="trustee"><div class="avatar">KM</div><div><h4>Kirk Miller</h4><div class="affil">Goldman Sachs · Salt Lake</div></div></div>
+      <div class="trustee"><div class="avatar">LT</div><div><h4>Linda Torres</h4><div class="affil">Catholic Community Services</div></div></div>
+      <div class="trustee"><div class="avatar">MD</div><div><h4>Mike Deaver</h4><div class="affil">Salt Lake Chamber</div></div></div>
+      <div class="trustee"><div class="avatar">RE</div><div><h4>Rev. Elizabeth Huntsman</h4><div class="affil">Community Advocate</div></div></div>
+      <div class="trustee"><div class="avatar">SN</div><div><h4>Susan Nielsen</h4><div class="affil">Community Advocate</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="committees">
+  <div class="committees-inner">
+    <h2>Board committees</h2>
+    <div class="committees-grid">
+      <div class="committee"><div class="c">01</div><h4>Finance</h4><p>Financial oversight, audit, and 990 review. Chaired by the Treasurer.</p></div>
+      <div class="committee"><div class="c">02</div><h4>Governance</h4><p>Bylaws, conflict-of-interest, board recruitment, and succession planning.</p></div>
+      <div class="committee"><div class="c">03</div><h4>Development</h4><p>Donor cultivation, campaign planning, event strategy, and legacy-gift program.</p></div>
+      <div class="committee"><div class="c">04</div><h4>Program</h4><p>Program review, outcomes measurement, and strategic-planning cycle.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="ceo">
+  <div class="ceo-inner">
+    <div>
+      <p class="eyebrow" style="color:var(--color-signal-soft)">Executive leadership</p>
+      <h2>Meet the CEO.</h2>
+      <p>Michelle Flynn has led The Road Home through its centennial, steering the organization's shift toward Housing First as the default response to chronic homelessness.</p>
+      <a href="meet-the-team.html" class="btn">Meet the team →</a>
+    </div>
+    <div class="ceo-meet">
+      <div class="portrait">MF</div>
+      <div><div class="role">CEO</div><div class="name">Michelle Flynn</div></div>
+      <p style="color:rgba(255,255,255,.85);font-size:14px;line-height:1.55;max-width:38ch">CEO since the centennial. Has been with the organization for over 20 years and previously served as Chief Operating Officer.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site"><div class="footer-inner">
+  <div class="footer-top">
+    <div class="footer-brand"><img src="../assets/logo.png" alt="The Road Home"><p>A century-old frontline homeless-services organization in Salt Lake City. Refuge. Resources. Relief.</p>
+      <div class="footer-phones">
+        <div class="footer-phone-row"><span class="l">Shelter</span><a href="tel:18019909999">801-990-9999</a></div>
+        <div class="footer-phone-row"><span class="l">Housing crisis</span><a href="tel:18013592444">801-359-2444</a></div>
+        <div class="footer-phone-row"><span class="l">Utah 2-1-1</span><a href="tel:211">211</a></div>
+      </div>
+    </div>
+    <div class="footer-col"><h3>Get Help</h3><ul><li><a href="shelter.html">Find a Shelter</a></li><li><a href="emergency-services.html">Emergency Services</a></li><li><a href="housing-programs.html">Housing Assistance</a></li><li><a href="resource-centers.html">Resource Centers</a></li><li><a href="palmer-court.html">Palmer Court</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+    <div class="footer-col"><h3>Give</h3><ul><li><a href="donate.html">One-time</a></li><li><a href="housing-champions.html">Monthly · Housing Champions</a></li><li><a href="legacy-planned.html">Legacy / Planned</a></li><li><a href="#">Employer matching</a></li><li><a href="#">Item donations</a></li><li><a href="where-does-it-go.html">Where does it go?</a></li></ul></div>
+    <div class="footer-col"><h3>About</h3><ul><li><a href="about-us.html">Our mission</a></li><li><a href="#">Our history</a></li><li><a href="meet-the-team.html">Meet the team</a></li><li><a href="board-of-trustees.html">Board</a></li><li><a href="annual-reports.html">Annual reports</a></li><li><a href="contact-us.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h3>Impact</h3><ul><li><a href="housing-stories.html">Housing stories</a></li><li><a href="where-does-it-go.html">By the numbers</a></li><li><a href="annual-reports.html">Reports</a></li><li><a href="#">Press</a></li><li><a href="#">Newsletter</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><div>© 1923–2026 The Road Home · Salt Lake City, UT · EIN 87-0212465</div><nav><a href="#">Privacy</a><a href="#">Accessibility</a><a href="#">Donor bill of rights</a></nav></div>
+</div></footer>
+
+</body>
+</html>

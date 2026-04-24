@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FAQ — The Road Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+  @import url("../prototypes/_tokens.css");
+
+  .faq-hero{padding:var(--spacing-2xl) 0;border-bottom:1px solid var(--color-rule)}
+  .faq-hero h1{font-size:var(--heading-xl);font-weight:900;text-transform:uppercase;line-height:0.98;letter-spacing:-.015em;margin-bottom:var(--spacing-md)}
+  .faq-hero .sub{font-size:18px;color:var(--color-g22);line-height:1.55;max-width:58ch}
+
+  .faq-main{padding:var(--section-padding) 0}
+  .faq-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:240px 1fr;gap:var(--spacing-2xl)}
+
+  .cat-nav{position:sticky;top:calc(var(--nav-h) + 20px);align-self:start}
+  .cat-nav p.eyebrow{margin-bottom:var(--spacing-md)}
+  .cat-nav ol{list-style:none;margin:0;padding:0}
+  .cat-nav li{padding:10px 0;border-top:1px solid var(--color-rule);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+  .cat-nav a{color:var(--color-g22)}
+  .cat-nav a:hover{color:var(--color-signal)}
+
+  .q-section{margin-bottom:var(--spacing-2xl)}
+  .q-section h2{font-size:var(--heading-md);font-weight:900;text-transform:uppercase;margin-bottom:var(--spacing-lg);padding-bottom:var(--spacing-md);border-bottom:2px solid var(--color-ink);letter-spacing:-.01em}
+
+  details.q{border-bottom:1px solid var(--color-rule);padding:var(--spacing-md) 0}
+  details.q > summary{list-style:none;cursor:pointer;font-size:17px;font-weight:700;color:var(--color-ink);padding:6px 0;display:flex;justify-content:space-between;align-items:center;gap:20px}
+  details.q > summary::-webkit-details-marker{display:none}
+  details.q > summary::after{content:"+";font-size:28px;font-weight:400;color:var(--color-signal);transition:transform .2s}
+  details.q[open] > summary::after{content:"−"}
+  details.q .a{padding:var(--spacing-md) 0 var(--spacing-md);font-size:15px;color:var(--color-g22);line-height:1.7;max-width:68ch}
+  details.q .a p{margin-bottom:12px}
+  details.q .a strong{color:var(--color-ink)}
+  details.q .a ul{padding-left:22px;margin:10px 0}
+  details.q .a li{margin-bottom:8px}
+  details.q .a a{color:var(--color-signal);font-weight:600;border-bottom:1px solid var(--color-signal)}
+
+  .still-have{padding:var(--section-padding) 0;background:var(--color-shelter);color:var(--color-paper)}
+  .still-have-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+  .still-have h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;margin-bottom:var(--spacing-xl);color:var(--color-paper)}
+  .still-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.18)}
+  .still-card{background:var(--color-shelter);padding:28px 24px}
+  .still-card .eyebrow{color:var(--color-signal-soft);margin-bottom:10px}
+  .still-card h3{font-size:18px;font-weight:900;color:var(--color-paper);margin-bottom:10px}
+  .still-card a{color:var(--color-paper);font-weight:700;font-size:15px;display:block;margin-bottom:4px}
+
+  @media (max-width:900px){
+    .faq-inner{grid-template-columns:1fr}
+    .cat-nav{position:static}
+    .still-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<div class="utility"><div class="utility-inner"><div class="utility-left"><span><span class="dot"></span>Emergency Shelter Hotline · <a href="tel:18019909999">801-990-9999</a></span><span>Utah 2-1-1 · <a href="tel:211">Dial 211</a></span></div><div class="utility-right"><a href="contact-us.html">Español</a><a href="shelter.html">Find a location</a><a href="meet-the-team.html">Careers</a></div></div></div>
+<nav class="topnav"><div class="nav-inner"><a class="nav-logo" href="index.html"><img src="../assets/logo.png" alt=""></a><div class="nav-links"><a href="get-help.html">Get Help</a><a href="give-main.html">Give</a><a href="get-involved.html">Get Involved</a><a href="about-us.html">About</a></div><div class="nav-right"><a href="shelter.html" class="btn-ghost">Find a Shelter</a><a href="donate.html" class="btn">Donate</a></div></div></nav>
+<div class="breadcrumbs"><div class="inner"><a href="index.html">Home</a><span class="sep">/</span>FAQ</div></div>
+
+<section class="faq-hero">
+  <div class="inner">
+    <p class="eyebrow">Help · FAQ</p>
+    <h1>Frequently asked questions.</h1>
+    <p class="sub">The things we get asked most. If you don't see your question, call or write to us — the contact info is at the bottom of the page.</p>
+  </div>
+</section>
+
+<section class="faq-main">
+  <div class="faq-inner">
+    <aside class="cat-nav">
+      <p class="eyebrow">On this page</p>
+      <ol>
+        <li><a href="#donations">Donations</a></li>
+        <li><a href="#volunteering">Volunteering</a></li>
+        <li><a href="#shelter">Shelter &amp; services</a></li>
+        <li><a href="#community">Community</a></li>
+      </ol>
+    </aside>
+
+    <div>
+
+      <div class="q-section" id="donations">
+        <h2>Donations</h2>
+        <details class="q">
+          <summary>Does The Road Home accept clothing, diapers, shoes, etc.?</summary>
+          <div class="a">
+            <p>Yes, we accept any of these new or gently used at any of our resource centers, <strong>7 days a week, between 8:00am – 7:00pm.</strong></p>
+            <ul>
+              <li><strong>Connie Crosby Family Resource Center</strong> (529 West 9th Avenue, about 7300 South): Please deliver to the warehouse on the West side.</li>
+              <li><strong>Pamela Atkinson Men's Resource Center</strong> (3380 South 1000 West): Turn right at the first entrance near the black Parking sign.</li>
+              <li><strong>Gail Miller Resource Center</strong> (242 Paramount Ave., Salt Lake City): Pull up to the gate, click the call button on the black panel.</li>
+            </ul>
+            <p><a href="#">See our full needs list →</a></p>
+          </div>
+        </details>
+        <details class="q">
+          <summary>What is the tax ID / EIN for The Road Home?</summary>
+          <div class="a">
+            <p>The Road Home is a 501(c)(3) charitable organization. Our federal ID number is <strong>87-0212465</strong>. All donations are tax-deductible to the extent allowed by law.</p>
+          </div>
+        </details>
+        <details class="q">
+          <summary>Can I donate stock, real property, or plan a bequest?</summary>
+          <div class="a">
+            <p>Yes. See our <a href="give-main.html">Give</a> hub for every giving method, or contact <strong>Holly Rogers</strong> at <a href="mailto:hrogers@theroadhome.org">hrogers@theroadhome.org</a> or 801-819-7294.</p>
+          </div>
+        </details>
+        <details class="q">
+          <summary>Is my donation of $10 or less accepted online?</summary>
+          <div class="a">
+            <p>For security purposes, donations of $10 or less must be made by phone at <strong>801-819-7294</strong>.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="q-section" id="volunteering">
+        <h2>Volunteering</h2>
+        <details class="q">
+          <summary>How can I help?</summary>
+          <div class="a">
+            <p>Visit our <a href="get-involved.html">Get Involved</a> page. Opportunities include weekly and one-time commitments, item drives, Eagle Scout projects, internships, and group activities.</p>
+          </div>
+        </details>
+        <details class="q">
+          <summary>Can my company volunteer as a group?</summary>
+          <div class="a">
+            <p>Yes. Email <a href="mailto:volunteer@theroadhome.org">volunteer@theroadhome.org</a> with team size and dates you're considering. We'll set up an orientation and match you with an activity.</p>
+          </div>
+        </details>
+        <details class="q">
+          <summary>Can I volunteer while serving a court-ordered community-service requirement?</summary>
+          <div class="a">
+            <p>Yes — we participate in court-ordered community service. See our Court-Ordered Volunteering page for specific requirements and the application process.</p>
+          </div>
+        </details>
+        <details class="q">
+          <summary>Is there an age requirement?</summary>
+          <div class="a">
+            <p>Weekly activities generally require volunteers to be 16 or older. One-time group activities and drives have lower age minimums depending on the specific role. Family-friendly opportunities are listed on the volunteer calendar.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="q-section" id="shelter">
+        <h2>Shelter &amp; services</h2>
+        <details class="q">
+          <summary>Are the resource centers closed during the day?</summary>
+          <div class="a">
+            <p>Our resource centers are open 365 days a year for intake, donation drop-off, and services. Shelter sleeping areas are reset during daytime hours while residents attend programming, school, or work.</p>
+          </div>
+        </details>
+        <details class="q">
+          <summary>What resources are available at the resource centers?</summary>
+          <div class="a">
+            <p>Beds, meals, case management, behavioral-health support, employment assistance, housing navigation, and help accessing benefits like Medicaid, SNAP, and ID replacement.</p>
+          </div>
+        </details>
+        <details class="q">
+          <summary>Do I need an ID to get shelter?</summary>
+          <div class="a">
+            <p>No. We can help you replace your ID as part of intake. We do not turn anyone away for lack of paperwork.</p>
+          </div>
+        </details>
+        <details class="q">
+          <summary>I am doing a school project or paper. Who can I reach out to?</summary>
+          <div class="a">
+            <p>Email <a href="mailto:media-center@theroadhome.org">media-center@theroadhome.org</a> or visit our Media Center page.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="q-section" id="community">
+        <h2>Community</h2>
+        <details class="q">
+          <summary>I saw someone outside who needs help. What should I do?</summary>
+          <div class="a">
+            <p>In non-emergency weather, call the Homeless Services Line at <strong>801-990-9999</strong>. In dangerous weather or a medical emergency, call <strong>911</strong>. Our outreach teams respond to non-emergency calls.</p>
+          </div>
+        </details>
+        <details class="q">
+          <summary>Can I tour a resource center or Palmer Court?</summary>
+          <div class="a">
+            <p>Tours are available to donors, prospective volunteers, and community partners by appointment. Email <a href="mailto:info@theroadhome.org">info@theroadhome.org</a> to schedule.</p>
+          </div>
+        </details>
+        <details class="q">
+          <summary>How can I stay informed about homelessness policy in Utah?</summary>
+          <div class="a">
+            <p>Sign up for our policy newsletter. We send short, specific updates — never more than once a month.</p>
+          </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="still-have">
+  <div class="still-have-inner">
+    <h2>Still have questions?</h2>
+    <div class="still-grid">
+      <div class="still-card">
+        <p class="eyebrow">Call</p>
+        <h3>Main office</h3>
+        <a href="tel:18013594142">801-359-4142</a>
+      </div>
+      <div class="still-card">
+        <p class="eyebrow">Email</p>
+        <h3>General inquiries</h3>
+        <a href="mailto:info@theroadhome.org">info@theroadhome.org</a>
+      </div>
+      <div class="still-card">
+        <p class="eyebrow">Visit</p>
+        <h3>Resource centers</h3>
+        <a href="shelter.html">Addresses &amp; hours →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site"><div class="footer-inner">
+  <div class="footer-top">
+    <div class="footer-brand"><img src="../assets/logo.png" alt="The Road Home"><p>A century-old frontline homeless-services organization in Salt Lake City. Refuge. Resources. Relief.</p>
+      <div class="footer-phones">
+        <div class="footer-phone-row"><span class="l">Shelter</span><a href="tel:18019909999">801-990-9999</a></div>
+        <div class="footer-phone-row"><span class="l">Housing crisis</span><a href="tel:18013592444">801-359-2444</a></div>
+        <div class="footer-phone-row"><span class="l">Utah 2-1-1</span><a href="tel:211">211</a></div>
+      </div>
+    </div>
+    <div class="footer-col"><h3>Get Help</h3><ul><li><a href="shelter.html">Find a Shelter</a></li><li><a href="emergency-services.html">Emergency Services</a></li><li><a href="housing-programs.html">Housing Assistance</a></li><li><a href="resource-centers.html">Resource Centers</a></li><li><a href="palmer-court.html">Palmer Court</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+    <div class="footer-col"><h3>Give</h3><ul><li><a href="donate.html">One-time</a></li><li><a href="housing-champions.html">Monthly · Housing Champions</a></li><li><a href="legacy-planned.html">Legacy / Planned</a></li><li><a href="#">Employer matching</a></li><li><a href="#">Item donations</a></li><li><a href="where-does-it-go.html">Where does it go?</a></li></ul></div>
+    <div class="footer-col"><h3>About</h3><ul><li><a href="about-us.html">Our mission</a></li><li><a href="#">Our history</a></li><li><a href="meet-the-team.html">Meet the team</a></li><li><a href="board-of-trustees.html">Board</a></li><li><a href="annual-reports.html">Annual reports</a></li><li><a href="contact-us.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h3>Impact</h3><ul><li><a href="housing-stories.html">Housing stories</a></li><li><a href="where-does-it-go.html">By the numbers</a></li><li><a href="annual-reports.html">Reports</a></li><li><a href="#">Press</a></li><li><a href="#">Newsletter</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><div>© 1923–2026 The Road Home · Salt Lake City, UT · EIN 87-0212465</div><nav><a href="#">Privacy</a><a href="#">Accessibility</a><a href="#">Donor bill of rights</a></nav></div>
+</div></footer>
+
+</body>
+</html>

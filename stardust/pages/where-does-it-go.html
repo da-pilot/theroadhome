@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Where Does It Go — The Road Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+  @import url("../prototypes/_tokens.css");
+
+  .wdg-hero{padding:var(--spacing-2xl) 0;border-bottom:1px solid var(--color-rule)}
+  .wdg-hero .inner{display:grid;grid-template-columns:1.2fr 1fr;gap:var(--spacing-2xl);align-items:end}
+  .wdg-hero h1{font-size:var(--heading-xl);font-weight:900;text-transform:uppercase;line-height:0.98;letter-spacing:-.015em;margin-bottom:var(--spacing-md)}
+  .wdg-hero .sub{font-size:18px;color:var(--color-g22);line-height:1.55;max-width:56ch}
+  .wdg-mega{font-size:clamp(120px,18vw,220px);font-weight:900;color:var(--color-signal);line-height:.88;letter-spacing:-.05em;text-align:right}
+  .wdg-mega small{display:block;font-size:14px;color:var(--color-g44);letter-spacing:.04em;text-transform:uppercase;font-weight:600;margin-top:12px;text-align:right}
+
+  .numbers{padding:var(--section-padding) 0}
+  .numbers-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+  .numbers-head{margin-bottom:var(--spacing-2xl)}
+  .numbers-head h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;margin-bottom:10px}
+  .numbers-head p{color:var(--color-g44);max-width:56ch;font-size:16px}
+  .numbers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--color-rule);border:1px solid var(--color-rule)}
+  .num-cell{background:var(--color-paper);padding:36px 28px}
+  .num-cell .n{font-size:56px;font-weight:900;color:var(--color-shelter);letter-spacing:-.02em;line-height:.95}
+  .num-cell .l{font-size:13px;color:var(--color-g22);text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-top:14px;line-height:1.4}
+  .num-cell .s{font-size:12px;color:var(--color-g66);margin-top:6px;font-weight:500}
+
+  .breakdown{padding:var(--section-padding) 0;background:var(--color-panel);border-top:1px solid var(--color-rule);border-bottom:1px solid var(--color-rule)}
+  .breakdown-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:1fr 1fr;gap:var(--spacing-2xl);align-items:center}
+  .breakdown h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;line-height:1.04;margin-bottom:var(--spacing-md)}
+  .breakdown p{color:var(--color-g22);font-size:16px;line-height:1.65;margin-bottom:var(--spacing-md);max-width:50ch}
+  .bars{display:grid;gap:14px}
+  .bar{display:grid;grid-template-columns:200px 1fr 60px;align-items:center;gap:var(--spacing-md);font-size:14px;font-weight:600}
+  .bar .b-name{color:var(--color-ink)}
+  .bar .b-track{background:var(--color-paper);border:1px solid var(--color-rule);height:36px;position:relative}
+  .bar .b-fill{height:100%;background:var(--color-signal);position:relative}
+  .bar .b-fill.secondary{background:var(--color-dusk)}
+  .bar .b-fill.muted{background:var(--color-g66)}
+  .bar .b-pct{color:var(--color-ink);text-align:right;font-variant-numeric:tabular-nums}
+
+  .audit{padding:var(--section-padding) 0}
+  .audit-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+  .audit-head{margin-bottom:var(--spacing-xl)}
+  .audit-head h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;margin-bottom:10px}
+  .audit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--color-rule);border:1px solid var(--color-rule)}
+  .audit-cell{background:var(--color-paper);padding:32px 24px;text-align:center}
+  .audit-cell .big{font-size:36px;font-weight:900;color:var(--color-shelter);letter-spacing:-.02em;line-height:1;margin-bottom:12px}
+  .audit-cell .label{font-size:13px;font-weight:700;color:var(--color-ink);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
+  .audit-cell .sub{font-size:12px;color:var(--color-g66)}
+
+  .downloads{padding:var(--section-padding) 0;background:var(--color-ink);color:var(--color-paper)}
+  .downloads-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+  .downloads h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;margin-bottom:var(--spacing-xl)}
+  .download-rows{display:grid;gap:1px;background:rgba(255,255,255,.16)}
+  .download-row{display:grid;grid-template-columns:auto 1fr auto;gap:var(--spacing-lg);padding:22px 0;background:var(--color-ink);align-items:center;transition:background .2s}
+  .download-row:hover{background:#0d0d0d}
+  .download-row .doc{font-size:11px;color:var(--color-signal);font-weight:700;letter-spacing:.12em;min-width:140px}
+  .download-row .title{font-size:18px;font-weight:900;color:var(--color-paper)}
+  .download-row .arrow{color:var(--color-signal);font-size:22px;text-align:right}
+
+  @media (max-width:900px){
+    .wdg-hero .inner{grid-template-columns:1fr}
+    .wdg-mega{text-align:left}
+    .numbers-grid{grid-template-columns:repeat(2,1fr)}
+    .breakdown-inner{grid-template-columns:1fr}
+    .bar{grid-template-columns:1fr 60px;grid-template-areas:"n p" "t t";row-gap:6px}
+    .bar .b-name{grid-area:n}.bar .b-pct{grid-area:p}.bar .b-track{grid-area:t}
+    .audit-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:520px){
+    .numbers-grid,.audit-grid{grid-template-columns:1fr}
+    .download-row{grid-template-columns:1fr auto}
+    .download-row .doc{grid-column:1/-1;min-width:0}
+  }
+</style>
+</head>
+<body>
+
+<div class="utility"><div class="utility-inner"><div class="utility-left"><span><span class="dot"></span>Emergency Shelter Hotline · <a href="tel:18019909999">801-990-9999</a></span><span>Utah 2-1-1 · <a href="tel:211">Dial 211</a></span></div><div class="utility-right"><a href="contact-us.html">Español</a><a href="shelter.html">Find a location</a><a href="meet-the-team.html">Careers</a></div></div></div>
+<nav class="topnav"><div class="nav-inner"><a class="nav-logo" href="index.html"><img src="../assets/logo.png" alt=""></a><div class="nav-links"><a href="get-help.html">Get Help</a><a href="give-main.html">Give</a><a href="get-involved.html">Get Involved</a><a href="about-us.html" class="active">About</a></div><div class="nav-right"><a href="shelter.html" class="btn-ghost">Find a Shelter</a><a href="donate.html" class="btn">Donate</a></div></div></nav>
+<div class="breadcrumbs"><div class="inner"><a href="index.html">Home</a><span class="sep">/</span><a href="about-us.html">About</a><span class="sep">/</span>Where Does It Go</div></div>
+
+<section class="wdg-hero">
+  <div class="inner">
+    <div>
+      <p class="eyebrow">Accountability · Where Does It Go?</p>
+      <h1>Ninety-four cents of every dollar.</h1>
+      <p class="sub">Here is exactly where your gift goes — the program categories, the operating overhead, and the audit paper trail. No soft language. Just the math.</p>
+    </div>
+    <div class="wdg-mega">94¢<small>Per dollar directly to services</small></div>
+  </div>
+</section>
+
+<section class="numbers">
+  <div class="numbers-inner">
+    <div class="numbers-head">
+      <p class="eyebrow">By the numbers</p>
+      <h2>Last fiscal year, in public figures.</h2>
+      <p>Every figure on this page is drawn from our independently audited financial statements. Our Form 990 and annual reports are linked below.</p>
+    </div>
+    <div class="numbers-grid">
+      <div class="num-cell"><div class="n">94¢</div><div class="l">Per dollar to services</div><div class="s">Audited 2025</div></div>
+      <div class="num-cell"><div class="n">21,000+</div><div class="l">People served</div><div class="s">Fiscal year 2025</div></div>
+      <div class="num-cell"><div class="n">1,550</div><div class="l">Housed any given night</div><div class="s">In the community</div></div>
+      <div class="num-cell"><div class="n">3,800</div><div class="l">Moved to housing</div><div class="s">Fiscal year 2025</div></div>
+      <div class="num-cell"><div class="n">★★★★</div><div class="l">Charity Navigator</div><div class="s">Eight years running</div></div>
+      <div class="num-cell"><div class="n">A+</div><div class="l">CharityWatch top rated</div><div class="s">2025</div></div>
+      <div class="num-cell"><div class="n">100 yr</div><div class="l">In Salt Lake City</div><div class="s">Since 1923</div></div>
+      <div class="num-cell"><div class="n">501(c)(3)</div><div class="l">Public charity</div><div class="s">EIN 87-0212465</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="breakdown">
+  <div class="breakdown-inner">
+    <div>
+      <p class="eyebrow">Budget allocation</p>
+      <h2>Where the dollars actually go.</h2>
+      <p>Four categories make up the working budget. The vast majority is direct program expense — the work of sheltering, stabilizing, and housing people. Fundraising and operations are audited separately.</p>
+      <p>Every percentage below is a line on the audited Form 990.</p>
+    </div>
+    <div class="bars">
+      <div class="bar"><span class="b-name">Shelter &amp; resource centers</span><div class="b-track"><div class="b-fill" style="width:33%"></div></div><span class="b-pct">33%</span></div>
+      <div class="bar"><span class="b-name">Supportive services</span><div class="b-track"><div class="b-fill" style="width:28%"></div></div><span class="b-pct">28%</span></div>
+      <div class="bar"><span class="b-name">Housing assistance</span><div class="b-track"><div class="b-fill" style="width:33%"></div></div><span class="b-pct">33%</span></div>
+      <div class="bar"><span class="b-name">Operations (admin, IT, audit)</span><div class="b-track"><div class="b-fill secondary" style="width:4%"></div></div><span class="b-pct">4%</span></div>
+      <div class="bar"><span class="b-name">Fundraising</span><div class="b-track"><div class="b-fill muted" style="width:2%"></div></div><span class="b-pct">2%</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="audit">
+  <div class="audit-inner">
+    <div class="audit-head">
+      <p class="eyebrow">Independent verification</p>
+      <h2>Don't take our word for it.</h2>
+    </div>
+    <div class="audit-grid">
+      <div class="audit-cell"><div class="big">★★★★</div><div class="label">Charity Navigator</div><div class="sub">8 years running</div></div>
+      <div class="audit-cell"><div class="big">A+</div><div class="label">CharityWatch</div><div class="sub">Top-rated 2025</div></div>
+      <div class="audit-cell"><div class="big">✓</div><div class="label">BBB Accredited</div><div class="sub">Utah nonprofit</div></div>
+      <div class="audit-cell"><div class="big">✓</div><div class="label">GuideStar Platinum</div><div class="sub">Transparency seal</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="downloads">
+  <div class="downloads-inner">
+    <h2>Download the paperwork</h2>
+    <div class="download-rows">
+      <a href="#" class="download-row"><span class="doc">PDF · 2025</span><span class="title">Annual Report 2025</span><span class="arrow">↓</span></a>
+      <a href="#" class="download-row"><span class="doc">PDF · 2024</span><span class="title">Annual Report 2024</span><span class="arrow">↓</span></a>
+      <a href="#" class="download-row"><span class="doc">PDF · Form 990</span><span class="title">IRS Form 990 · fiscal year 2025</span><span class="arrow">↓</span></a>
+      <a href="#" class="download-row"><span class="doc">PDF · Audit</span><span class="title">Full financial statement · fiscal year 2025</span><span class="arrow">↓</span></a>
+      <a href="#" class="download-row"><span class="doc">PDF · IRS</span><span class="title">IRS Determination Letter (501(c)(3))</span><span class="arrow">↓</span></a>
+      <a href="annual-reports.html" class="download-row"><span class="doc">Archive</span><span class="title">All annual reports · 2016 → present</span><span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="site"><div class="footer-inner">
+  <div class="footer-top">
+    <div class="footer-brand"><img src="../assets/logo.png" alt="The Road Home"><p>A century-old frontline homeless-services organization in Salt Lake City. Refuge. Resources. Relief.</p>
+      <div class="footer-phones">
+        <div class="footer-phone-row"><span class="l">Shelter</span><a href="tel:18019909999">801-990-9999</a></div>
+        <div class="footer-phone-row"><span class="l">Housing crisis</span><a href="tel:18013592444">801-359-2444</a></div>
+        <div class="footer-phone-row"><span class="l">Utah 2-1-1</span><a href="tel:211">211</a></div>
+      </div>
+    </div>
+    <div class="footer-col"><h3>Get Help</h3><ul><li><a href="shelter.html">Find a Shelter</a></li><li><a href="emergency-services.html">Emergency Services</a></li><li><a href="housing-programs.html">Housing Assistance</a></li><li><a href="resource-centers.html">Resource Centers</a></li><li><a href="palmer-court.html">Palmer Court</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+    <div class="footer-col"><h3>Give</h3><ul><li><a href="donate.html">One-time</a></li><li><a href="housing-champions.html">Monthly · Housing Champions</a></li><li><a href="legacy-planned.html">Legacy / Planned</a></li><li><a href="#">Employer matching</a></li><li><a href="#">Item donations</a></li><li><a href="where-does-it-go.html">Where does it go?</a></li></ul></div>
+    <div class="footer-col"><h3>About</h3><ul><li><a href="about-us.html">Our mission</a></li><li><a href="#">Our history</a></li><li><a href="meet-the-team.html">Meet the team</a></li><li><a href="board-of-trustees.html">Board</a></li><li><a href="annual-reports.html">Annual reports</a></li><li><a href="contact-us.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h3>Impact</h3><ul><li><a href="housing-stories.html">Housing stories</a></li><li><a href="where-does-it-go.html">By the numbers</a></li><li><a href="annual-reports.html">Reports</a></li><li><a href="#">Press</a></li><li><a href="#">Newsletter</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><div>© 1923–2026 The Road Home · Salt Lake City, UT · EIN 87-0212465</div><nav><a href="#">Privacy</a><a href="#">Accessibility</a><a href="#">Donor bill of rights</a></nav></div>
+</div></footer>
+
+</body>
+</html>

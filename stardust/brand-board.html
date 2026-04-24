@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Road Home — Brand Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+  :root{
+    --signal:#008192;
+    --shelter:#005560;
+    --dusk:#105560;
+    --ink:#000;
+    --paper:#fff;
+    --g22:#222;
+    --g44:#444;
+    --g66:#666;
+    --g80:#808080;
+    --rule:#e6e6e6;
+    --nav-h:56px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:var(--signal);text-decoration:none}
+  .nav{position:sticky;top:0;z-index:10;background:var(--paper);border-bottom:1px solid var(--rule);height:var(--nav-h);display:flex;align-items:center;padding:0 24px;gap:24px;font-size:13px;font-weight:600;letter-spacing:.02em;text-transform:uppercase}
+  .nav strong{font-weight:800;margin-right:auto;font-size:14px}
+  .nav a{color:var(--g44)}
+  .nav a:hover{color:var(--signal)}
+  main{max-width:1280px;margin:0 auto;padding:0 40px 120px}
+  section{padding:80px 0;border-bottom:1px solid var(--rule)}
+  section:last-of-type{border-bottom:none}
+  h1,h2,h3,h4{font-family:'Inter',sans-serif;margin:0}
+  .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--g66);font-weight:600;margin-bottom:16px}
+  h2.section-title{font-size:36px;font-weight:900;letter-spacing:-.01em;line-height:1.1;margin-bottom:32px;text-transform:uppercase}
+  p.lede{font-size:18px;line-height:1.55;color:var(--g22);max-width:68ch;margin:0 0 24px}
+  p{margin:0 0 16px;color:var(--g22)}
+  small,.small{font-size:12px;color:var(--g66)}
+
+  /* Masthead */
+  .mast{padding:96px 0 80px;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:end}
+  .mast img{width:180px;height:auto;display:block}
+  .mast h1{font-size:80px;font-weight:900;line-height:.95;letter-spacing:-.02em;margin:0 0 16px;text-transform:uppercase}
+  .mast .tag{font-size:22px;font-weight:600;color:var(--signal);letter-spacing:.02em;margin:0 0 24px}
+  .mast .mission{font-size:18px;max-width:68ch;color:var(--g22);line-height:1.55}
+  .mast .meta{margin-top:20px;display:flex;gap:24px;flex-wrap:wrap;font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--g66);font-weight:600}
+  .mast .meta span strong{color:var(--ink);font-weight:700}
+
+  /* Color */
+  .palette{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+  .swatch{border:1px solid var(--rule)}
+  .swatch .chip{height:140px;display:flex;align-items:flex-end;padding:14px;color:#fff;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+  .swatch.light .chip{color:var(--ink)}
+  .swatch .meta{padding:14px;border-top:1px solid var(--rule)}
+  .swatch .name{font-weight:700;font-size:14px;margin-bottom:4px}
+  .swatch .hex{font-family:'SFMono-Regular',Menlo,monospace;font-size:12px;color:var(--g66);margin-bottom:8px}
+  .swatch .use{font-size:12px;color:var(--g44);line-height:1.45}
+  .swatch .role{display:inline-block;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--signal);font-weight:700;margin-bottom:6px}
+  .neutrals{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:24px}
+  .note{background:#f7f7f7;padding:16px 20px;font-size:13px;color:var(--g44);margin-top:24px;border-left:3px solid var(--signal)}
+
+  /* Typography */
+  .type-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+  .type-card{border:1px solid var(--rule);padding:32px}
+  .type-label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--g66);font-weight:700;margin-bottom:12px}
+  .type-name{font-size:18px;font-weight:700;margin-bottom:4px}
+  .type-sub{font-size:13px;color:var(--g66);margin-bottom:32px}
+  .type-display{font-size:72px;font-weight:900;line-height:.95;letter-spacing:-.02em;text-transform:uppercase;margin-bottom:24px}
+  .type-body{font-size:17px;line-height:1.55;color:var(--g22);margin-bottom:16px}
+  .type-weights{display:flex;gap:24px;flex-wrap:wrap;font-size:14px;color:var(--g66);padding-top:16px;border-top:1px dashed var(--rule)}
+  .w400{font-weight:400}.w500{font-weight:500}.w700{font-weight:700}.w900{font-weight:900}
+
+  /* Voice */
+  .voice-traits{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+  .tag{display:inline-block;padding:6px 14px;border:1px solid var(--ink);font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+  .voice-pairs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px}
+  .voice-card{padding:20px 24px;border-left:4px solid var(--g80)}
+  .voice-card.do{border-left-color:var(--signal);background:#f0f8f9}
+  .voice-card.dont{border-left-color:#9a1c1c;background:#fbf3f3}
+  .voice-card .label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;margin-bottom:10px}
+  .voice-card.do .label{color:var(--shelter)}
+  .voice-card.dont .label{color:#9a1c1c}
+  .voice-card p{margin:0 0 10px;font-size:15px;color:var(--ink);line-height:1.5}
+  .voice-card p:last-child{margin-bottom:0}
+  .voice-rules{margin-top:32px}
+  .voice-rules ol{padding-left:20px;color:var(--g22);font-size:15px}
+  .voice-rules li{margin-bottom:10px}
+
+  /* Motifs */
+  .motifs{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .motif{border:1px solid var(--rule);padding:0;overflow:hidden;display:flex;flex-direction:column}
+  .motif .demo{height:200px;background:var(--shelter);color:var(--paper);display:flex;align-items:center;justify-content:center;padding:32px;text-align:center}
+  .motif .demo.triplet{background:linear-gradient(rgba(0,40,50,.55),rgba(0,40,50,.55)),url("https://images.unsplash.com/photo-1514894780887-121968d00567?auto=format&fit=crop&w=1400&q=60") center/cover;}
+  .motif .demo.triplet .t{font-size:38px;font-weight:900;line-height:1;letter-spacing:-.01em}
+  .motif .demo.slab{background:#fafafa;color:var(--ink)}
+  .motif .demo.portrait{background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.55)),url("https://images.unsplash.com/photo-1512291313931-d4291048e7b6?auto=format&fit=crop&w=1400&q=60") center/cover}
+  .motif .demo.portrait .t{font-size:28px;font-weight:900;text-transform:uppercase;letter-spacing:-.01em}
+  .motif .demo.centennial{background:#fff}
+  .motif .demo.centennial .mark{font-size:14px;color:var(--signal);font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+  .motif .demo.phone{background:var(--shelter);color:var(--paper)}
+  .motif .demo.phone .ph{font-size:36px;font-weight:900;letter-spacing:-.01em;line-height:1}
+  .motif .demo.phone small{display:block;margin-top:8px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.8}
+  .motif .meta{padding:20px 24px}
+  .motif .name{font-size:15px;font-weight:700;margin-bottom:6px}
+  .motif .desc{font-size:13px;color:var(--g44);line-height:1.5;margin-bottom:10px}
+  .motif .use{font-size:12px;color:var(--g66);font-style:italic}
+
+  /* Components: buttons */
+  .btn-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center;padding:32px;background:#f7f7f7;margin-bottom:24px}
+  .btn-row.dark{background:var(--shelter)}
+  .trh-btn{display:inline-block;padding:18px 50px;font-weight:900;font-size:16px;letter-spacing:.04em;text-transform:uppercase;border:0;cursor:pointer;border-radius:0}
+  .trh-btn.primary{background:var(--signal);color:var(--paper)}
+  .trh-btn.inverted{background:var(--paper);color:var(--ink);padding:12px 26px;font-weight:700}
+  .trh-btn.ghost{background:transparent;color:var(--paper);padding:12px 2px;border-bottom:2px solid currentColor}
+  .btn-caption{display:block;margin-top:10px;font-size:12px;color:var(--g66);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+
+  /* Photography */
+  .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px}
+  .photo{aspect-ratio:4/5;background:#222 center/cover;position:relative}
+  .photo::after{content:attr(data-label);position:absolute;left:12px;bottom:12px;color:#fff;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:4px 8px;background:rgba(0,0,0,.5)}
+  .p1{background-image:url("https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=60")}
+  .p2{background-image:url("https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=60")}
+  .p3{background-image:url("https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=60")}
+  .rule-list{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+  .rule-list h4{font-size:13px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px}
+  .rule-list ul{padding-left:20px;margin:0;color:var(--g22);font-size:14px;line-height:1.55}
+  .rule-list ul li{margin-bottom:8px}
+  .rule-list .dont h4{color:#9a1c1c}
+  .rule-list .do h4{color:var(--shelter)}
+
+  /* Pillars & personas */
+  .pillars{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+  .pillar{padding:28px 24px;border:1px solid var(--rule)}
+  .pillar .num{font-size:12px;color:var(--signal);font-weight:700;letter-spacing:.1em;margin-bottom:8px}
+  .pillar .n{font-size:16px;font-weight:700;margin-bottom:10px;text-transform:uppercase;letter-spacing:.02em}
+  .pillar .d{font-size:13px;line-height:1.5;color:var(--g44)}
+  .personas{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .persona{padding:28px;border:1px solid var(--rule);display:grid;grid-template-columns:48px 1fr;gap:20px}
+  .persona .av{width:48px;height:48px;background:var(--signal);color:var(--paper);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px}
+  .persona .pn{font-size:14px;font-weight:700;margin-bottom:4px}
+  .persona .pm{font-size:13px;color:var(--signal);font-style:italic;margin-bottom:10px}
+  .persona .pd{font-size:13px;color:var(--g44);line-height:1.5}
+
+  /* Logo */
+  .logo-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .logo-card{border:1px solid var(--rule);padding:40px;text-align:center}
+  .logo-card.dark{background:var(--shelter)}
+  .logo-card img{max-width:200px;height:auto}
+  .logo-card .cap{margin-top:16px;font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--g66);font-weight:600}
+  .logo-card.dark .cap{color:rgba(255,255,255,.7)}
+
+  footer{padding:48px 40px;text-align:center;font-size:12px;color:var(--g66)}
+  .authored{display:inline-block;padding:4px 10px;border:1px solid var(--g80);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--g44);margin-left:8px}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <strong>The Road Home · Brand Board</strong>
+  <a href="#colors">Color</a>
+  <a href="#type">Type</a>
+  <a href="#voice">Voice</a>
+  <a href="#motifs">Motifs</a>
+  <a href="#buttons">Components</a>
+  <a href="#photo">Photography</a>
+  <a href="#pillars">Pillars</a>
+  <a href="#personas">Personas</a>
+  <a href="#logo">Logo</a>
+</nav>
+
+<main>
+
+  <!-- Masthead -->
+  <section class="mast">
+    <img src="assets/logo.png" alt="The Road Home logo">
+    <div>
+      <h1>The Road Home</h1>
+      <p class="tag">Refuge. Resources. Relief.</p>
+      <p class="mission">A century-old frontline homeless-services organization in Salt Lake City. The public surface is designed as a triage layer: one lane for people in crisis, one lane for donors and volunteers. Everything else is secondary.</p>
+      <div class="meta">
+        <span><strong>Founded</strong> &nbsp; 1923</span>
+        <span><strong>Location</strong> &nbsp; Salt Lake City, UT</span>
+        <span><strong>Category</strong> &nbsp; Nonprofit · Homelessness response</span>
+        <span><strong>Source</strong> &nbsp; theroadhome.org</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Colors -->
+  <section id="colors">
+    <div class="eyebrow">01 · Palette</div>
+    <h2 class="section-title">Color</h2>
+    <p class="lede">A teal family carries the brand. White is the ground, black the text, deep teal the inverted surface. No warm accent — the original WordPress theme carries pink and cream presets but neither is rendered in the live site, and both are excluded from the real brand.</p>
+
+    <div class="palette">
+      <div class="swatch" style="">
+        <div class="chip" style="background:#008192">#008192</div>
+        <div class="meta">
+          <div class="role">Signal</div>
+          <div class="name">Road Home Teal</div>
+          <div class="hex">#008192</div>
+          <div class="use">Primary CTA fill · link accent · wordmark underscore</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:#005560">#005560</div>
+        <div class="meta">
+          <div class="role">Ground</div>
+          <div class="name">Shelter Teal</div>
+          <div class="hex">#005560</div>
+          <div class="use">Deep inverted surface · footer · section ground</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:#105560">#105560</div>
+        <div class="meta">
+          <div class="role">Secondary Signal</div>
+          <div class="name">Dusk Teal</div>
+          <div class="hex">#105560</div>
+          <div class="use">Form submit · secondary actions</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:#000">#000000</div>
+        <div class="meta">
+          <div class="role">Text</div>
+          <div class="name">Ink</div>
+          <div class="hex">#000000</div>
+          <div class="use">Body on paper · inverted button text</div>
+        </div>
+      </div>
+      <div class="swatch light">
+        <div class="chip" style="background:#fff;border:1px solid #e6e6e6">#FFFFFF</div>
+        <div class="meta">
+          <div class="role">Ground</div>
+          <div class="name">Paper</div>
+          <div class="hex">#FFFFFF</div>
+          <div class="use">Primary ground · display type on photography</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="neutrals">
+      <div class="swatch"><div class="chip" style="background:#222">#222</div><div class="meta"><div class="name">Graphite 33</div><div class="hex">#222222</div><div class="use">Secondary dark text</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#444">#444</div><div class="meta"><div class="name">Graphite 44</div><div class="hex">#444444</div><div class="use">Body muted</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#666">#666</div><div class="meta"><div class="name">Graphite 66</div><div class="hex">#666666</div><div class="use">Caption · meta · eyebrow</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#808080">#808080</div><div class="meta"><div class="name">Graphite 80</div><div class="hex">#808080</div><div class="use">Dividers · icons</div></div></div>
+    </div>
+
+    <div class="note"><strong>Extracted, not synthesized.</strong> These are the hexes actually rendered on the live theroadhome.org. WordPress preset accent <code>#CD2653</code> and cream background <code>#F5EFE0</code> appear in <code>:root</code> custom properties but are not applied in the live UI; they are excluded from the real brand palette.</div>
+  </section>
+
+  <!-- Typography -->
+  <section id="type">
+    <div class="eyebrow">02 · Typography</div>
+    <h2 class="section-title">Type</h2>
+    <p class="lede">A utility-first, sans-on-sans pairing — both faces engineered, no editorial italic accents. Holds a "we show up and do the work" register. In the board below, Inter substitutes for HarmoniaSans (display) and DINNextLTPro (body) as a modern web-ready equivalent; the redesign prototype can use either the originals or the substitutes.</p>
+
+    <div class="type-grid">
+      <div class="type-card">
+        <div class="type-label">Display · HarmoniaSans (Adobe Fonts)</div>
+        <div class="type-name">Inter 900 — web substitute</div>
+        <div class="type-sub">Heavy 900 at 45–72px. UPPERCASE. Tight leading. Used for slogans and section titles only.</div>
+        <div class="type-display">Refuge.<br>Resources.<br>Relief.</div>
+        <div class="type-weights">
+          <span class="w500">500 · Medium</span>
+          <span class="w700">700 · Bold</span>
+          <span class="w900">900 · Black</span>
+        </div>
+      </div>
+      <div class="type-card">
+        <div class="type-label">Body · DINNextLTPro (Adobe Fonts)</div>
+        <div class="type-name">Inter 400/500 — web substitute</div>
+        <div class="type-sub">German-industrial sibling of the display face. Workmanlike. 14–18px. 1.55 leading.</div>
+        <p class="type-body">On any given night, we have over 1,550 people in housing, in the community. Our team may be able to help you find the resources you need: <strong>801-359-2444</strong>.</p>
+        <p class="type-body" style="font-size:14px;color:var(--g66)">Micro copy and meta information lives here. Compact. Legible. No italic flourishes.</p>
+        <div class="type-weights">
+          <span class="w400">400 · Regular</span>
+          <span class="w500">500 · Medium</span>
+          <span class="w700">700 · Bold</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="note"><strong>Pairing logic.</strong> Both sans, both engineered. No serif. No script. No italic display accents. Any substitute must hold the same functional-not-precious register — Inter, DM Sans, or IBM Plex Sans are acceptable. Editorial serifs like Recoleta or GT Super are not.</div>
+  </section>
+
+  <!-- Voice -->
+  <section id="voice">
+    <div class="eyebrow">03 · Voice</div>
+    <h2 class="section-title">Voice</h2>
+    <p class="lede">Service-first and plainspoken. Lead with an action the reader can take now. Use uppercase display for slogans only — do not shout in body copy. Two audiences, two registers: instructional for someone in crisis, brisk and accountable for donors.</p>
+
+    <div class="voice-traits">
+      <span class="tag">Direct</span>
+      <span class="tag">Service-first</span>
+      <span class="tag">Calm</span>
+      <span class="tag">Plainspoken</span>
+      <span class="tag">Numeric when it matters</span>
+    </div>
+
+    <div class="voice-pairs">
+      <div class="voice-card do">
+        <div class="label">Do</div>
+        <p>REFUGE. RESOURCES. RELIEF.</p>
+        <p>Looking for immediate shelter? Call 801-990-9999.</p>
+        <p>On any given night, we have over 1,550 people in housing, in the community.</p>
+      </div>
+      <div class="voice-card dont">
+        <div class="label">Don't</div>
+        <p>Join us on our journey to end the crisis of unhoused communities.</p>
+        <p>Together, we can make a difference in the lives of those less fortunate.</p>
+        <p>Make an impact today by donating to our important cause.</p>
+      </div>
+    </div>
+
+    <div class="voice-rules">
+      <h4 class="type-label">Hard rules</h4>
+      <ol>
+        <li>Lead with the action — call this number, find a shelter.</li>
+        <li>Uppercase is for slogans only. Never shout in body copy.</li>
+        <li>Prefer triplets: three one-beat sentences separated by periods, like "Refuge. Resources. Relief."</li>
+        <li>State scale in concrete numbers, not adjectives.</li>
+        <li>One register for the crisis audience (instructional), one for donors (brisk, accountable). Keep them separate on the page.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Motifs -->
+  <section id="motifs">
+    <div class="eyebrow">04 · Motifs</div>
+    <h2 class="section-title">Visual motifs</h2>
+
+    <div class="motifs">
+      <div class="motif">
+        <div class="demo triplet"><div class="t">REFUGE.<br>RESOURCES.<br>RELIEF.</div></div>
+        <div class="meta">
+          <div class="name">Triplet display headline</div>
+          <div class="desc">Three one-word sentences separated by periods, uppercase, centered, white on photography.</div>
+          <div class="use">Hero and major section openers.</div>
+        </div>
+      </div>
+      <div class="motif">
+        <div class="demo slab">
+          <a href="#" class="trh-btn primary" style="pointer-events:none">DONATE</a>
+        </div>
+        <div class="meta">
+          <div class="name">Teal slab CTA</div>
+          <div class="desc">Squared-off, heavy-weight uppercase button in Road Home Teal with generous horizontal padding. Zero border-radius is deliberate.</div>
+          <div class="use">The DONATE button — the visual anchor across every page. Used sparingly.</div>
+        </div>
+      </div>
+      <div class="motif">
+        <div class="demo portrait"><div class="t">HOUSING<br>ASSISTANCE</div></div>
+        <div class="meta">
+          <div class="name">Full-width dignified portrait</div>
+          <div class="desc">Real subject, full-bleed, urban backdrop, centered headline overlay. No sepia. No outstretched palms.</div>
+          <div class="use">Hero of landing and major program pages.</div>
+        </div>
+      </div>
+      <div class="motif">
+        <div class="demo phone">
+          <div>
+            <div class="ph">801-990-9999</div>
+            <small>Homeless services line</small>
+          </div>
+        </div>
+        <div class="meta">
+          <div class="name">Phone-number-as-CTA</div>
+          <div class="desc">Emergency phone numbers treated as primary affordances, not decorative. Large display weight, prominent placement.</div>
+          <div class="use">Crisis-path sections and the footer.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Components -->
+  <section id="buttons">
+    <div class="eyebrow">05 · Components</div>
+    <h2 class="section-title">Buttons</h2>
+    <p class="lede">Squared corners (<code>border-radius: 0</code>) across the board. Chunky uppercase labels. Three patterns, one for each surface.</p>
+
+    <div class="btn-row">
+      <a href="#" class="trh-btn primary" style="pointer-events:none">DONATE</a>
+      <span class="btn-caption">Primary · Signal teal on paper · 18 × 50 padding</span>
+    </div>
+    <div class="btn-row dark">
+      <a href="#" class="trh-btn inverted" style="pointer-events:none">WAYS TO GIVE</a>
+      <span class="btn-caption" style="color:rgba(255,255,255,.75)">Inverted · paper on shelter teal · 12 × 26 padding</span>
+    </div>
+    <div class="btn-row dark">
+      <a href="#" class="trh-btn ghost" style="pointer-events:none">Find a Shelter</a>
+      <span class="btn-caption" style="color:rgba(255,255,255,.75)">Ghost · underline on dark surfaces · for quick-nav items</span>
+    </div>
+  </section>
+
+  <!-- Photography -->
+  <section id="photo">
+    <div class="eyebrow">06 · Photography</div>
+    <h2 class="section-title">Photography direction</h2>
+
+    <div class="photo-grid">
+      <div class="photo p1" data-label="Dignified portrait"></div>
+      <div class="photo p2" data-label="Urban context"></div>
+      <div class="photo p3" data-label="Named subject"></div>
+    </div>
+
+    <div class="rule-list">
+      <div class="do">
+        <h4>Do</h4>
+        <ul>
+          <li>Real people, real settings — clients, staff, volunteers, with names when possible.</li>
+          <li>Dignified subjects, composed, clothed for the weather. Jackets, beanies, warmth.</li>
+          <li>Salt Lake City context visible — architecture, mountains, recognizable streets.</li>
+          <li>Natural light, muted cool tones — let the brand teal stay the loudest color.</li>
+          <li>Room for a centered white display headline overlay.</li>
+        </ul>
+      </div>
+      <div class="dont">
+        <h4>Don't</h4>
+        <ul>
+          <li>Sepia hardship clichés or pity framing.</li>
+          <li>Faces of clients shown in distress or shame.</li>
+          <li>Stock photography that could belong to any nonprofit.</li>
+          <li>Hands-holding-hands, outstretched palms, or prayer-circle compositions.</li>
+          <li>Golden-hour uplift that pretends the problem is solved.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pillars -->
+  <section id="pillars">
+    <div class="eyebrow">07 · Content pillars</div>
+    <h2 class="section-title">Information architecture</h2>
+    <div class="pillars">
+      <div class="pillar"><div class="num">01</div><div class="n">Get Help</div><div class="d">Crisis-first services: emergency shelter, supportive services, housing assistance.</div></div>
+      <div class="pillar"><div class="num">02</div><div class="n">Give</div><div class="d">Donation pathways — one-time, recurring, employer matching, legacy, real property.</div></div>
+      <div class="pillar"><div class="num">03</div><div class="n">Get Involved</div><div class="d">Volunteer, fundraise, advocate. Community and corporate partners.</div></div>
+      <div class="pillar"><div class="num">04</div><div class="n">About</div><div class="d">100-year history, leadership, accountability, charity ratings.</div></div>
+      <div class="pillar"><div class="num">05</div><div class="n">Impact</div><div class="d">Numbers and stories. "1,550+ people housed on any given night."</div></div>
+    </div>
+  </section>
+
+  <!-- Personas -->
+  <section id="personas">
+    <div class="eyebrow">08 · Personas</div>
+    <h2 class="section-title">Audiences</h2>
+    <div class="personas">
+      <div class="persona">
+        <div class="av">C</div>
+        <div>
+          <div class="pn">Person in crisis</div>
+          <div class="pm">"I need help tonight."</div>
+          <div class="pd">Fastest path to shelter or a human on the phone. Low reading load. High contrast. Phone numbers treated as primary affordances.</div>
+        </div>
+      </div>
+      <div class="persona">
+        <div class="av">D</div>
+        <div>
+          <div class="pn">Donor</div>
+          <div class="pm">"I want to know my money works."</div>
+          <div class="pd">Concrete impact numbers. Transparent "Where does it go?" Multiple giving paths — recurring, employer matching, legacy.</div>
+        </div>
+      </div>
+      <div class="persona">
+        <div class="av">V</div>
+        <div>
+          <div class="pn">Volunteer / advocate</div>
+          <div class="pm">"I want to show up."</div>
+          <div class="pd">Scheduled opportunities. Program context. A way to bring friends or coworkers.</div>
+        </div>
+      </div>
+      <div class="persona">
+        <div class="av">P</div>
+        <div>
+          <div class="pn">Policy / partner</div>
+          <div class="pm">"I need the org's data and credibility cues."</div>
+          <div class="pd">Annual reports, board, press, 4-star charity rating.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Logo -->
+  <section id="logo">
+    <div class="eyebrow">09 · Logo</div>
+    <h2 class="section-title">Logo</h2>
+    <div class="logo-grid">
+      <div class="logo-card">
+        <img src="assets/logo.png" alt="The Road Home logo — primary">
+        <div class="cap">Primary lockup · color on paper</div>
+      </div>
+      <div class="logo-card dark">
+        <img src="assets/logo.png" alt="The Road Home logo — on dark" style="filter:brightness(0) invert(1)">
+        <div class="cap">Reversed — on Shelter Teal (derived by filter, original mono/white asset TBD)</div>
+      </div>
+    </div>
+    <div class="note">The centennial logo — a human-silhouette-in-doorway icon beside a "100" numeral and the wordmark underscored in teal — has been in use since 2023. Any redesign should keep the lockup intact; the "100" mark can step back to a smaller secondary position once the centennial window closes.</div>
+  </section>
+
+</main>
+
+<footer>
+  Brand board generated by <strong>stardust</strong> from <a href="https://theroadhome.org/">theroadhome.org</a> · 2026-04-24
+  <span class="authored">.impeccable.md authored by designer</span>
+</footer>
+
+</body>
+</html>

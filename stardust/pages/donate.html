@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Donate — The Road Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+  @import url("../prototypes/_tokens.css");
+
+  .donate-hero{padding:var(--spacing-2xl) 0 0}
+  .donate-hero .inner{display:grid;grid-template-columns:1.1fr 1fr;gap:var(--spacing-2xl);align-items:start;padding-bottom:var(--spacing-2xl);border-bottom:1px solid var(--color-rule)}
+  .donate-hero h1{font-size:var(--heading-xl);font-weight:900;text-transform:uppercase;line-height:0.98;letter-spacing:-.015em;margin-bottom:var(--spacing-md)}
+  .donate-hero .sub{font-size:18px;color:var(--color-g22);line-height:1.55;max-width:52ch;margin-bottom:var(--spacing-xl)}
+  .impact-math{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--color-rule);border:1px solid var(--color-rule)}
+  .impact-math div{background:var(--color-paper);padding:20px 24px}
+  .impact-math .n{font-size:22px;font-weight:900;color:var(--color-shelter);letter-spacing:-.01em;line-height:1}
+  .impact-math .l{font-size:13px;color:var(--color-g44);margin-top:6px;font-weight:500}
+
+  /* Amount picker card */
+  .picker{background:var(--color-paper);border:1px solid var(--color-rule);padding:32px 32px 28px;box-shadow:0 2px 0 var(--color-rule)}
+  .picker .tabs{display:grid;grid-template-columns:1fr 1fr;margin-bottom:28px;border:1px solid var(--color-ink)}
+  .picker .tab{padding:16px;text-align:center;font-size:13px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;color:var(--color-ink)}
+  .picker .tab.active{background:var(--color-ink);color:var(--color-paper)}
+  .picker .amt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+  .picker .amt{padding:16px;text-align:center;border:1px solid var(--color-rule);background:var(--color-paper);font-weight:900;font-size:16px;cursor:pointer;transition:all .2s}
+  .picker .amt:hover{border-color:var(--color-signal);color:var(--color-signal)}
+  .picker .amt.selected{background:var(--color-signal);color:var(--color-paper);border-color:var(--color-signal)}
+  .picker .amt.other{grid-column:span 3;padding:14px;font-weight:700;font-size:14px;letter-spacing:.04em}
+  .picker .fields{display:grid;gap:10px;margin-top:20px}
+  .picker label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--color-g66)}
+  .picker input,.picker select{width:100%;padding:14px;border:1px solid var(--color-rule);border-radius:0;background:var(--color-paper);font-family:inherit;font-size:15px}
+  .picker .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .picker .submit{width:100%;margin-top:20px;padding:18px;background:var(--color-signal);color:var(--color-paper);font-weight:900;font-size:14px;letter-spacing:.08em;text-transform:uppercase;border:0;cursor:pointer}
+  .picker .submit:hover{background:var(--color-shelter)}
+
+  .security{padding:var(--spacing-2xl) 0;background:var(--color-panel);border-top:1px solid var(--color-rule);border-bottom:1px solid var(--color-rule)}
+  .security-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:repeat(4,1fr);gap:var(--spacing-xl)}
+  .security-item .n{font-size:22px;font-weight:900;color:var(--color-signal);letter-spacing:-.01em;margin-bottom:6px}
+  .security-item .l{font-size:13px;color:var(--color-g22);font-weight:600;line-height:1.45}
+  .security-item .s{font-size:12px;color:var(--color-g66);margin-top:4px}
+
+  .testimonial{padding:var(--section-padding) 0}
+  .testimonial-inner{max-width:1040px;margin:0 auto;padding:0 var(--gutter);text-align:center}
+  .testimonial blockquote{font-size:32px;font-weight:700;line-height:1.25;letter-spacing:-.01em;color:var(--color-ink);margin:0 auto var(--spacing-lg);max-width:32ch}
+  .testimonial blockquote::before{content:"\201C";font-family:Georgia,serif;font-size:72px;color:var(--color-signal);line-height:0;vertical-align:-.3em;margin-right:4px}
+  .testimonial .attribution{font-size:13px;color:var(--color-g44);letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+  .testimonial .attribution strong{color:var(--color-ink)}
+
+  .other-give{padding:var(--section-padding) 0;background:var(--color-ink);color:var(--color-paper)}
+  .other-give-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+  .other-give-inner h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;margin-bottom:var(--spacing-xl)}
+  .other-give-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.16)}
+  .other-give-card{background:var(--color-ink);padding:28px 24px 24px;transition:background .2s}
+  .other-give-card:hover{background:#0c0c0c}
+  .other-give-card .tag{font-size:11px;color:var(--color-signal);font-weight:700;letter-spacing:.08em;margin-bottom:8px}
+  .other-give-card h3{font-size:18px;font-weight:900;color:var(--color-paper);text-transform:uppercase;margin-bottom:10px}
+  .other-give-card p{font-size:13px;color:rgba(255,255,255,.7);line-height:1.55;margin-bottom:10px}
+  .other-give-card .arrow{font-size:12px;color:var(--color-signal);font-weight:700;letter-spacing:.06em}
+
+  .footnote{padding:var(--section-padding) 0 var(--spacing-xl);font-size:13px;color:var(--color-g66);line-height:1.65}
+  .footnote .inner{max-width:820px;margin:0 auto;padding:0 var(--gutter)}
+  .footnote p{margin-bottom:10px}
+
+  @media (max-width:900px){
+    .donate-hero .inner{grid-template-columns:1fr}
+    .picker{order:-1}
+    .security-inner{grid-template-columns:repeat(2,1fr)}
+    .other-give-grid{grid-template-columns:repeat(2,1fr)}
+    .testimonial blockquote{font-size:24px}
+  }
+  @media (max-width:520px){
+    .security-inner{grid-template-columns:1fr}
+    .other-give-grid{grid-template-columns:1fr}
+    .impact-math{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<div class="utility"><div class="utility-inner"><div class="utility-left"><span><span class="dot"></span>Emergency Shelter Hotline · <a href="tel:18019909999">801-990-9999</a></span><span>Utah 2-1-1 · <a href="tel:211">Dial 211</a></span></div><div class="utility-right"><a href="contact-us.html">Español</a><a href="shelter.html">Find a location</a><a href="meet-the-team.html">Careers</a></div></div></div>
+
+<nav class="topnav" aria-label="Primary"><div class="nav-inner">
+  <a class="nav-logo" href="index.html"><img src="../assets/logo.png" alt=""></a>
+  <div class="nav-links"><a href="get-help.html">Get Help</a><a href="give-main.html" class="active">Give</a><a href="get-involved.html">Get Involved</a><a href="about-us.html">About</a></div>
+  <div class="nav-right"><a href="shelter.html" class="btn-ghost">Find a Shelter</a><a href="donate.html" class="btn">Donate</a></div>
+</div></nav>
+
+<div class="breadcrumbs"><div class="inner"><a href="index.html">Home</a><span class="sep">/</span><a href="give-main.html">Give</a><span class="sep">/</span>Donate</div></div>
+
+<section class="donate-hero">
+  <div class="inner">
+    <div>
+      <p class="eyebrow">Give · One-time or monthly</p>
+      <h1>Your gift keeps the lights on tonight.</h1>
+      <p class="sub">Your donation will directly provide shelter, housing, and supportive services to the people we serve. Ninety-four cents of every dollar reaches programs.</p>
+      <div class="impact-math">
+        <div><div class="n">$25</div><div class="l">One warm meal for a family</div></div>
+        <div><div class="n">$85</div><div class="l">One night of shelter</div></div>
+        <div><div class="n">$250</div><div class="l">One week of case-management</div></div>
+        <div><div class="n">$1,000</div><div class="l">Rental assistance runway</div></div>
+      </div>
+    </div>
+    <form class="picker" onsubmit="return false">
+      <div class="tabs">
+        <div class="tab active">One-Time</div>
+        <div class="tab">Monthly</div>
+      </div>
+      <div class="amt-grid">
+        <div class="amt">$25</div>
+        <div class="amt selected">$50</div>
+        <div class="amt">$100</div>
+        <div class="amt">$250</div>
+        <div class="amt">$500</div>
+        <div class="amt">$1,000</div>
+        <div class="amt other">Other amount $_____</div>
+      </div>
+      <div class="fields">
+        <div class="row"><label>First name<input type="text" value="" placeholder=""></label><label>Last name<input type="text" value="" placeholder=""></label></div>
+        <label>Email<input type="email" value="" placeholder=""></label>
+        <div class="row"><label>Zip<input type="text" value="" placeholder=""></label><label>Phone (optional)<input type="tel" value=""></label></div>
+        <label>Card number<input type="text" value="" placeholder="•••• •••• •••• ••••"></label>
+        <div class="row"><label>Expiration<input type="text" value="" placeholder="MM / YY"></label><label>CVC<input type="text" value="" placeholder="•••"></label></div>
+      </div>
+      <button class="submit" type="submit">Give $50 now →</button>
+    </form>
+  </div>
+</section>
+
+<section class="security">
+  <div class="security-inner">
+    <div class="security-item"><div class="n">501(c)(3)</div><div class="l">Tax-deductible</div><div class="s">EIN 87-0212465</div></div>
+    <div class="security-item"><div class="n">★★★★</div><div class="l">Charity Navigator</div><div class="s">Eight years running</div></div>
+    <div class="security-item"><div class="n">94¢</div><div class="l">Per dollar to services</div><div class="s">Audited 2025</div></div>
+    <div class="security-item"><div class="n">🔒</div><div class="l">Secure checkout</div><div class="s">Your card details never touch our servers</div></div>
+  </div>
+</section>
+
+<section class="testimonial">
+  <div class="testimonial-inner">
+    <blockquote>The hardest thing about being unhoused wasn't sleeping outside. It was the paperwork. The Road Home sat with me through every form.</blockquote>
+    <div class="attribution"><strong>Darnell H.</strong> · Palmer Court resident · 4 years</div>
+  </div>
+</section>
+
+<section class="other-give">
+  <div class="other-give-inner">
+    <h2>Other ways to give</h2>
+    <div class="other-give-grid">
+      <a href="housing-champions.html" class="other-give-card">
+        <div class="tag">01 · Monthly</div>
+        <h3>Housing Champions</h3>
+        <p>Recurring giving that lets us plan housing placements months in advance.</p>
+        <span class="arrow">Become a Champion →</span>
+      </a>
+      <a href="legacy-planned.html" class="other-give-card">
+        <div class="tag">02 · Legacy</div>
+        <h3>Legacy &amp; Planned</h3>
+        <p>Bequests, trusts, life insurance, and retirement-fund designations.</p>
+        <span class="arrow">Plan your legacy →</span>
+      </a>
+      <a href="#" class="other-give-card">
+        <div class="tag">03 · In kind</div>
+        <h3>Item donations</h3>
+        <p>Clothing, bedding, kitchen supplies, books. Drop off at any resource center.</p>
+        <span class="arrow">Needs list →</span>
+      </a>
+      <a href="#" class="other-give-card">
+        <div class="tag">04 · Other</div>
+        <h3>Stock, wire, crypto</h3>
+        <p>Real property, donor-advised funds, stock, wire transfer, cryptocurrency.</p>
+        <span class="arrow">All methods →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="footnote">
+  <div class="inner">
+    <p>For security purposes, donations of $10 or less must be made by phone at <strong>801-819-7294</strong>.</p>
+    <p>To donate by check: The Road Home, P.O. Box [address], Salt Lake City, UT. If you would like to donate stock, please email <strong>hrogers@theroadhome.org</strong>.</p>
+    <p>Questions about donations? Contact <strong>Holly Rogers</strong>, Director of Development, at 801-819-7294.</p>
+  </div>
+</section>
+
+<footer class="site"><div class="footer-inner">
+  <div class="footer-top">
+    <div class="footer-brand"><img src="../assets/logo.png" alt="The Road Home"><p>A century-old frontline homeless-services organization in Salt Lake City. Refuge. Resources. Relief.</p>
+      <div class="footer-phones">
+        <div class="footer-phone-row"><span class="l">Shelter</span><a href="tel:18019909999">801-990-9999</a></div>
+        <div class="footer-phone-row"><span class="l">Housing crisis</span><a href="tel:18013592444">801-359-2444</a></div>
+        <div class="footer-phone-row"><span class="l">Utah 2-1-1</span><a href="tel:211">211</a></div>
+      </div>
+    </div>
+    <div class="footer-col"><h3>Get Help</h3><ul><li><a href="shelter.html">Find a Shelter</a></li><li><a href="emergency-services.html">Emergency Services</a></li><li><a href="housing-programs.html">Housing Assistance</a></li><li><a href="resource-centers.html">Resource Centers</a></li><li><a href="palmer-court.html">Palmer Court</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+    <div class="footer-col"><h3>Give</h3><ul><li><a href="donate.html">One-time</a></li><li><a href="housing-champions.html">Monthly · Housing Champions</a></li><li><a href="legacy-planned.html">Legacy / Planned</a></li><li><a href="#">Employer matching</a></li><li><a href="#">Item donations</a></li><li><a href="where-does-it-go.html">Where does it go?</a></li></ul></div>
+    <div class="footer-col"><h3>About</h3><ul><li><a href="about-us.html">Our mission</a></li><li><a href="#">Our history</a></li><li><a href="meet-the-team.html">Meet the team</a></li><li><a href="board-of-trustees.html">Board</a></li><li><a href="annual-reports.html">Annual reports</a></li><li><a href="contact-us.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h3>Impact</h3><ul><li><a href="housing-stories.html">Housing stories</a></li><li><a href="where-does-it-go.html">By the numbers</a></li><li><a href="annual-reports.html">Reports</a></li><li><a href="#">Press</a></li><li><a href="#">Newsletter</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><div>© 1923–2026 The Road Home · Salt Lake City, UT · EIN 87-0212465</div><nav><a href="#">Privacy</a><a href="#">Accessibility</a><a href="#">Donor bill of rights</a></nav></div>
+</div></footer>
+
+</body>
+</html>

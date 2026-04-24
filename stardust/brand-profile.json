@@ -1,0 +1,240 @@
+{
+  "_provenance": {
+    "generated_by": "brand",
+    "date": "2026-04-24",
+    "source": "https://theroadhome.org/",
+    "extraction_method": "Playwright Chromium 1440x900 @2x, networkidle + 1500ms, evaluated computed styles on :root, body, headings, paras, italics, CTAs, sections, logo candidates, meta, nav",
+    "synthesized_inputs": [
+      "brand.mission — lightly reworded from meta description (kept factual)",
+      "voice.examples.dont — composed to contrast extracted voice rules; not read from the page",
+      "personas — derived from nav IA (GET HELP audience vs GIVE/GET INVOLVED audience); not explicitly named on site",
+      "photography.rules — inferred from the single hero image observed; full page photography library not yet crawled",
+      "motifs descriptions — observed from the hero screenshot and CTA styles",
+      "contentPillars.descriptions — inferred from nav + hero copy"
+    ],
+    "screenshots": [
+      "stardust/_scratch/hero.png",
+      "stardust/_scratch/fullpage.png"
+    ]
+  },
+  "_divergence": {
+    "palette_source": {
+      "method": "extracted-from-source",
+      "description_used": "The Road Home's actual site palette — teal family, white, black, with neutral grays",
+      "notes": "Site is WordPress/WPBakery. Root contains WP preset colors (accent pink #CD2653, cream #F5EFE0) that are theme defaults, NOT actively used in rendered UI. The real brand palette is the teal family plus white/black, observed in CTAs, sections, and footer."
+    }
+  },
+  "brand": {
+    "name": "The Road Home",
+    "tagline": "Refuge. Resources. Relief.",
+    "mission": "Help people experiencing homelessness step out of homelessness through emergency shelter, supportive services, and housing assistance.",
+    "founded": 1923,
+    "anniversary_note": "100-year anniversary mark visible in the logo (centennial logo in use since 2023)",
+    "location": "Salt Lake City, Utah (area code 801)",
+    "category": "Nonprofit / Human services / Homelessness response",
+    "positioning": "A century-old frontline homeless services organization. The site is designed as a triage surface: one lane for people in crisis, one lane for donors and volunteers. Everything else is secondary."
+  },
+  "logo": {
+    "path": "stardust/assets/logo.png",
+    "format": "png",
+    "source": "<img src=\"https://theroadhome.org/wp-content/uploads/2023/02/TRH-100-Logo_Color-for-website-header.png\">",
+    "description": "Centennial lockup: a small human-silhouette icon inside a doorway mark, beside a '100' numeral with 'THE ROAD HOME' wordmark underscored in teal. Multi-color but dominant teal."
+  },
+  "colors": {
+    "primary": [
+      {
+        "name": "Road Home Teal",
+        "hex": "#008192",
+        "role": "Signal",
+        "use": "Primary CTA fill (DONATE), active link accents, wordmark underscore"
+      },
+      {
+        "name": "Shelter Teal",
+        "hex": "#005560",
+        "role": "Ground",
+        "use": "Deep teal footer, section grounds, inverted surfaces"
+      },
+      {
+        "name": "Dusk Teal",
+        "hex": "#105560",
+        "role": "Secondary Signal",
+        "use": "Secondary buttons, form submit"
+      },
+      {
+        "name": "Ink",
+        "hex": "#000000",
+        "role": "Text",
+        "use": "Body copy on light grounds, inverted CTA text"
+      },
+      {
+        "name": "Paper",
+        "hex": "#FFFFFF",
+        "role": "Ground",
+        "use": "Primary ground, display type over photography, inverted buttons"
+      }
+    ],
+    "neutrals": [
+      { "name": "Graphite 33", "hex": "#222222", "use": "Secondary dark text" },
+      { "name": "Graphite 44", "hex": "#444444", "use": "Body muted" },
+      { "name": "Graphite 66", "hex": "#666666", "use": "Caption, meta" },
+      { "name": "Graphite 80", "hex": "#808080", "use": "Dividers, icons" }
+    ]
+  },
+  "typography": {
+    "display": {
+      "family": "HarmoniaSans",
+      "weights_used": [500, 700, 900],
+      "case": "UPPERCASE for big display, Title Case for sub",
+      "tracking": "normal",
+      "leading": "1.2 (tight)",
+      "notes": "Heavy 900 weight at 45–60px for hero/section titles. Confident, institutional, not decorative. Consider a modern substitute for a redesign: Neue Haas Grotesk Display, Söhne Breit, or Inter Display 900."
+    },
+    "body": {
+      "family": "DINNextLTPro",
+      "weights_used": [400, 700],
+      "leading": "1.5",
+      "notes": "DIN Next is the German-industrial sibling of the display face. Functional, workmanlike, legible at small sizes. Modern substitutes: Inter, DM Sans, IBM Plex Sans."
+    },
+    "pairing_logic": "A utility-first pair — both sans-serif, both engineered, no editorial italic accents. Holds a 'we show up and do the work' tone. Any redesign that swaps the faces should preserve this functional-not-precious register."
+  },
+  "componentStyle": {
+    "borderRadius": {
+      "default": "0px",
+      "notes": "Squared-off corners on buttons, inputs, cards. Reads as disciplined and public-sector."
+    },
+    "buttons": {
+      "primary": {
+        "bg": "#008192",
+        "color": "#FFFFFF",
+        "padding": "18px 50px",
+        "radius": "0px",
+        "case": "UPPERCASE",
+        "family": "HarmoniaSans 900",
+        "notes": "Chunky teal slab. The principal visual emphasis on the page."
+      },
+      "inverted": {
+        "bg": "#FFFFFF",
+        "color": "#000000",
+        "padding": "10px 20px",
+        "radius": "0px",
+        "case": "UPPERCASE",
+        "family": "HarmoniaSans 700",
+        "notes": "Over photography or dark grounds."
+      },
+      "ghost": {
+        "bg": "transparent",
+        "color": "#FFFFFF",
+        "border": "none",
+        "family": "HarmoniaSans 700",
+        "notes": "Used for quick-nav items on dark/photo grounds."
+      }
+    }
+  },
+  "photography": {
+    "rules": [
+      "Real people in real settings — not stock pity imagery.",
+      "Subjects are dignified, composed, clothed for the weather they live in. Jackets, beanies, warmth.",
+      "Architectural or urban backgrounds — recognizably Salt Lake City.",
+      "Natural light, muted cool tones that let the teal brand color stay the loudest color on the page.",
+      "Room left for a centered white display headline overlay."
+    ],
+    "do": ["dignified portraits", "urban backdrop that contextualizes the mission", "subjects looking away/up (not begging-eye-contact)"],
+    "dont": ["Sepia-toned hardship clichés", "Faces of clients shown in distress or shame", "Stock photography that could be any nonprofit"]
+  },
+  "voice": {
+    "traits": ["Direct", "Service-first", "Calm", "Public-sector plainspoken", "Numeric when it matters"],
+    "rules": [
+      "Lead with the action a reader can take right now (call this number, find a shelter).",
+      "Use uppercase display for slogans only. Do not shout in body copy.",
+      "Prefer triplets: 'Refuge. Resources. Relief.' — three-beat cadence for headlines.",
+      "State scale in concrete numbers: 'over 1,550 people in housing, in the community'.",
+      "Two distinct audiences, two distinct tones: to someone in crisis, be instructional; to donors, be brisk and accountable."
+    ],
+    "examples": {
+      "do": [
+        "REFUGE. RESOURCES. RELIEF.",
+        "Looking for immediate shelter?",
+        "Experiencing a housing crisis?",
+        "Our team may be able to help you find the resources you need: 801-359-2444",
+        "On any given night, we have over 1,550 people in housing, in the community.",
+        "The Road Home provides emergency shelter, supportive services, and housing assistance that help individuals and families step out of homelessness."
+      ],
+      "dont": [
+        "Join us on our journey to end the crisis of unhoused communities.",
+        "Together, we can make a difference in the lives of those less fortunate.",
+        "Make an impact today by donating to our important cause."
+      ]
+    }
+  },
+  "motifs": [
+    {
+      "name": "Triplet display headline",
+      "description": "Three one-word sentences separated by periods, uppercase, centered, white on photography.",
+      "usage": "Hero and major section openers. 'REFUGE. RESOURCES. RELIEF.' is the canonical example."
+    },
+    {
+      "name": "Teal slab CTA",
+      "description": "Squared-off, heavy-weight uppercase button in Road Home Teal (#008192) with generous horizontal padding.",
+      "usage": "The DONATE button — the single consistent visual anchor across every page."
+    },
+    {
+      "name": "Full-width dignified portrait",
+      "description": "Real subject, full-bleed, city as backdrop, headline overlay.",
+      "usage": "Hero section of landing and program pages."
+    },
+    {
+      "name": "Centennial mark",
+      "description": "The 100 numeral paired with the house-doorway icon and wordmark — currently the header lockup.",
+      "usage": "Header and footer. Signals longevity and trust."
+    },
+    {
+      "name": "Phone-number-as-CTA",
+      "description": "Emergency phone numbers (211, 801-990-9999, 801-359-2444) treated as primary affordances, not decorative.",
+      "usage": "Crisis-path sections and the footer."
+    }
+  ],
+  "personas": [
+    {
+      "name": "Person in crisis",
+      "motto": "I need help tonight.",
+      "needs": "Fastest path to shelter or a human on the phone. Low reading load, high contrast, phone-forward."
+    },
+    {
+      "name": "Donor",
+      "motto": "I want to know my money works.",
+      "needs": "Concrete impact numbers, transparent 'Where Does It Go?', named giving paths (recurring, employer matching, legacy)."
+    },
+    {
+      "name": "Volunteer / advocate",
+      "motto": "I want to show up.",
+      "needs": "Scheduled opportunities, program context, a way to bring friends/coworkers."
+    },
+    {
+      "name": "Policy / partner",
+      "motto": "I need the org's data and credibility cues.",
+      "needs": "Annual reports, board, press, charity ratings."
+    }
+  ],
+  "contentPillars": [
+    {
+      "name": "Get Help",
+      "description": "Crisis-first services: emergency shelter, supportive services, housing assistance. Audience: people experiencing or at risk of homelessness."
+    },
+    {
+      "name": "Give",
+      "description": "Donation pathways: one-time, recurring (Housing Champions), employer matching, item donations, legacy/planned giving, real property, trusts."
+    },
+    {
+      "name": "Get Involved",
+      "description": "Volunteer, fundraise, advocate. Audience: community members and corporate partners."
+    },
+    {
+      "name": "About",
+      "description": "Who we are, our 100-year history, leadership, accountability, charity ratings (4-star)."
+    },
+    {
+      "name": "Impact",
+      "description": "Numbers, stories, annual reporting. 'On any given night, 1,550+ people housed.'"
+    }
+  ]
+}

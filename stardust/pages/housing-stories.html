@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Housing Stories — The Road Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+  @import url("../prototypes/_tokens.css");
+
+  .stories-hero{padding:var(--spacing-2xl) 0;border-bottom:1px solid var(--color-rule)}
+  .stories-hero h1{font-size:var(--heading-xl);font-weight:900;text-transform:uppercase;line-height:0.98;letter-spacing:-.015em;margin-bottom:var(--spacing-md)}
+  .stories-hero .sub{font-size:18px;color:var(--color-g22);line-height:1.55;max-width:60ch}
+
+  .featured-story{padding:var(--section-padding) 0;background:var(--color-panel);border-bottom:1px solid var(--color-rule)}
+  .featured-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:1.2fr 1fr;gap:var(--spacing-2xl);align-items:center}
+  .featured-portrait{aspect-ratio:4/5;background-size:cover;background-position:center;background-image:linear-gradient(180deg,rgba(0,20,25,.05),rgba(0,40,50,.25)),url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=80')}
+  .featured-text .tag{display:inline-block;background:var(--color-signal);color:var(--color-paper);padding:6px 14px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:var(--spacing-lg)}
+  .featured-text h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;line-height:1.02;letter-spacing:-.015em;margin-bottom:var(--spacing-md);max-width:14ch}
+  .featured-text blockquote{font-size:22px;font-weight:700;line-height:1.35;color:var(--color-ink);margin:0 0 var(--spacing-lg);max-width:38ch;padding-left:20px;border-left:3px solid var(--color-signal)}
+  .featured-text .byline{font-size:13px;color:var(--color-g44);letter-spacing:.04em;margin-bottom:var(--spacing-md);text-transform:uppercase;font-weight:600}
+  .featured-text .byline strong{color:var(--color-ink)}
+  .featured-text .read{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-signal);padding-bottom:4px;border-bottom:1px solid var(--color-signal)}
+
+  .stories-grid-sec{padding:var(--section-padding) 0}
+  .stories-grid-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+  .stories-grid-head{margin-bottom:var(--spacing-xl);display:flex;justify-content:space-between;align-items:end;gap:var(--spacing-xl);flex-wrap:wrap}
+  .stories-grid-head h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase}
+  .stories-grid-head .filters{display:flex;gap:8px;padding:0}
+  .stories-grid-head .chip{padding:8px 14px;border:1px solid var(--color-rule);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;background:var(--color-paper);color:var(--color-g44)}
+  .stories-grid-head .chip.active{background:var(--color-ink);color:var(--color-paper);border-color:var(--color-ink)}
+  .stories-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--spacing-lg)}
+  .story-card{background:var(--color-paper);display:flex;flex-direction:column;border:1px solid var(--color-rule);transition:border-color .2s}
+  .story-card:hover{border-color:var(--color-signal)}
+  .story-card .cover{aspect-ratio:4/3;background-size:cover;background-position:center;background-color:var(--color-tint)}
+  .story-card .meta{padding:24px 26px 26px;display:flex;flex-direction:column;flex:1}
+  .story-card .tag{font-size:11px;color:var(--color-signal);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+  .story-card h3{font-size:20px;font-weight:900;text-transform:uppercase;letter-spacing:-.005em;margin-bottom:12px;line-height:1.1}
+  .story-card p{font-size:14px;color:var(--color-g44);line-height:1.55;flex:1;margin-bottom:16px}
+  .story-card .arrow{font-size:12px;color:var(--color-signal);font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+
+  .by-numbers{padding:var(--section-padding) 0;background:var(--color-ink);color:var(--color-paper)}
+  .by-numbers-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+  .by-numbers h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;margin-bottom:var(--spacing-xl);color:var(--color-paper)}
+  .by-numbers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.16)}
+  .bn-cell{background:var(--color-ink);padding:36px 28px}
+  .bn-cell .n{font-size:56px;font-weight:900;color:var(--color-signal);line-height:.95;letter-spacing:-.02em}
+  .bn-cell .l{font-size:13px;color:rgba(255,255,255,.72);text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-top:14px;line-height:1.4}
+
+  .share-story{padding:var(--section-padding) 0;background:var(--color-panel);border-top:1px solid var(--color-rule)}
+  .share-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:1.2fr 1fr;gap:var(--spacing-2xl);align-items:center}
+  .share-inner h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;margin-bottom:var(--spacing-md)}
+  .share-inner p{color:var(--color-g22);font-size:16px;line-height:1.65;max-width:50ch;margin-bottom:var(--spacing-lg)}
+
+  @media (max-width:1100px){
+    .featured-inner{grid-template-columns:1fr}
+    .stories-grid{grid-template-columns:repeat(2,1fr)}
+    .by-numbers-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:520px){
+    .stories-grid,.by-numbers-grid{grid-template-columns:1fr}
+    .share-inner{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<div class="utility"><div class="utility-inner"><div class="utility-left"><span><span class="dot"></span>Emergency Shelter Hotline · <a href="tel:18019909999">801-990-9999</a></span><span>Utah 2-1-1 · <a href="tel:211">Dial 211</a></span></div><div class="utility-right"><a href="contact-us.html">Español</a><a href="shelter.html">Find a location</a><a href="meet-the-team.html">Careers</a></div></div></div>
+<nav class="topnav"><div class="nav-inner"><a class="nav-logo" href="index.html"><img src="../assets/logo.png" alt=""></a><div class="nav-links"><a href="get-help.html">Get Help</a><a href="give-main.html">Give</a><a href="get-involved.html">Get Involved</a><a href="about-us.html" class="active">About</a></div><div class="nav-right"><a href="shelter.html" class="btn-ghost">Find a Shelter</a><a href="donate.html" class="btn">Donate</a></div></div></nav>
+<div class="breadcrumbs"><div class="inner"><a href="index.html">Home</a><span class="sep">/</span>Housing Stories</div></div>
+
+<section class="stories-hero">
+  <div class="inner">
+    <p class="eyebrow">Impact · Housing Stories</p>
+    <h1>Housing Stories</h1>
+    <p class="sub">Stories in housing — the people, the homes, the neighbors. Every person on this page agreed to share their story and use their own name.</p>
+  </div>
+</section>
+
+<section class="featured-story">
+  <div class="featured-inner">
+    <div class="featured-portrait" role="img" aria-label="Darnell, a man with a close-cropped beard, in an olive jacket, downtown Salt Lake City behind him."></div>
+    <div class="featured-text">
+      <span class="tag">Featured · Palmer Court</span>
+      <h2>The hardest thing wasn't sleeping outside.</h2>
+      <blockquote>The hardest thing about being unhoused wasn't sleeping outside. It was the paperwork. The Road Home sat with me through every form.</blockquote>
+      <p class="byline"><strong>Darnell H.</strong> · Permanent supportive housing · 4 years</p>
+      <a href="#" class="read">Read Darnell's story →</a>
+    </div>
+  </div>
+</section>
+
+<section class="stories-grid-sec">
+  <div class="stories-grid-inner">
+    <div class="stories-grid-head">
+      <h2>More stories</h2>
+      <div class="filters">
+        <span class="chip active">All</span>
+        <span class="chip">Shelter</span>
+        <span class="chip">Housing</span>
+        <span class="chip">Palmer Court</span>
+        <span class="chip">Family</span>
+      </div>
+    </div>
+    <div class="stories-grid">
+      <a href="#" class="story-card">
+        <div class="cover" style="background-image:url('https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=900&q=80')"></div>
+        <div class="meta">
+          <div class="tag">Housing · 2 yr</div>
+          <h3>Alex and Taylor</h3>
+          <p>For the past couple of years, Alex and Taylor have been searching to provide stability for their family — and found it at Midvale Family Resource Center.</p>
+          <span class="arrow">Read story →</span>
+        </div>
+      </a>
+      <a href="#" class="story-card">
+        <div class="cover" style="background-image:url('https://images.unsplash.com/photo-1502767089025-6572583495b9?auto=format&fit=crop&w=900&q=80')"></div>
+        <div class="meta">
+          <div class="tag">Shelter · 1 yr</div>
+          <h3>Randall</h3>
+          <p>Randall has been experiencing homelessness for over a year. Here's what the journey into stable housing looked like for him.</p>
+          <span class="arrow">Read story →</span>
+        </div>
+      </a>
+      <a href="#" class="story-card">
+        <div class="cover" style="background-image:url('https://images.unsplash.com/photo-1541823709867-1b206113eafd?auto=format&fit=crop&w=900&q=80')"></div>
+        <div class="meta">
+          <div class="tag">Family · Midvale</div>
+          <h3>Amanda</h3>
+          <p>Amanda had fled an abusive relationship with her children. With nowhere else to turn, she found refuge at the Midvale Family Resource Center.</p>
+          <span class="arrow">Read story →</span>
+        </div>
+      </a>
+      <a href="#" class="story-card">
+        <div class="cover" style="background-image:url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80')"></div>
+        <div class="meta">
+          <div class="tag">Case management</div>
+          <h3>Cory</h3>
+          <p>Cory had been staying in emergency shelter for multiple years and was hesitant to engage in supportive services — until one conversation changed that.</p>
+          <span class="arrow">Read story →</span>
+        </div>
+      </a>
+      <a href="#" class="story-card">
+        <div class="cover" style="background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80')"></div>
+        <div class="meta">
+          <div class="tag">Workshop</div>
+          <h3>Communication is Key</h3>
+          <p>Case managers at the Men's Resource Center hosted a "Communication is Key" workshop to help with communication skills and boundaries.</p>
+          <span class="arrow">Read story →</span>
+        </div>
+      </a>
+      <a href="#" class="story-card">
+        <div class="cover" style="background-image:url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=900&q=80')"></div>
+        <div class="meta">
+          <div class="tag">Family · Housed</div>
+          <h3>The Nelsons</h3>
+          <p>After staying at the Midvale Family Resource Center for a while, the Nelson family successfully navigated their way into permanent housing.</p>
+          <span class="arrow">Read story →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="by-numbers">
+  <div class="by-numbers-inner">
+    <h2>By the numbers</h2>
+    <div class="by-numbers-grid">
+      <div class="bn-cell"><div class="n">33%</div><div class="l">Shelter</div></div>
+      <div class="bn-cell"><div class="n">28%</div><div class="l">Supportive services</div></div>
+      <div class="bn-cell"><div class="n">33%</div><div class="l">Housing assistance</div></div>
+      <div class="bn-cell"><div class="n">6%</div><div class="l">Operations &amp; fundraising</div></div>
+      <div class="bn-cell"><div class="n">1,550</div><div class="l">Housed any given night</div></div>
+      <div class="bn-cell"><div class="n">3,800</div><div class="l">Moved to housing · FY25</div></div>
+      <div class="bn-cell"><div class="n">★★★★</div><div class="l">Charity Navigator · 8 yr</div></div>
+      <div class="bn-cell"><div class="n">94¢</div><div class="l">Per dollar to services</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="share-story">
+  <div class="share-inner">
+    <div>
+      <p class="eyebrow">Contribute</p>
+      <h2>Have a story to tell?</h2>
+      <p>If you have been a guest, resident, volunteer, or staff member — we'd love to hear from you. Stories told with permission help donors, partners, and future neighbors understand what the work really looks like.</p>
+      <a href="#" class="btn">Share your story →</a>
+    </div>
+    <div style="aspect-ratio:4/3;background:var(--color-shelter);display:flex;align-items:center;justify-content:center;color:var(--color-paper);font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:48px">Photo slot · group photo from an Open House day</div>
+  </div>
+</section>
+
+<footer class="site"><div class="footer-inner">
+  <div class="footer-top">
+    <div class="footer-brand"><img src="../assets/logo.png" alt="The Road Home"><p>A century-old frontline homeless-services organization in Salt Lake City. Refuge. Resources. Relief.</p>
+      <div class="footer-phones">
+        <div class="footer-phone-row"><span class="l">Shelter</span><a href="tel:18019909999">801-990-9999</a></div>
+        <div class="footer-phone-row"><span class="l">Housing crisis</span><a href="tel:18013592444">801-359-2444</a></div>
+        <div class="footer-phone-row"><span class="l">Utah 2-1-1</span><a href="tel:211">211</a></div>
+      </div>
+    </div>
+    <div class="footer-col"><h3>Get Help</h3><ul><li><a href="shelter.html">Find a Shelter</a></li><li><a href="emergency-services.html">Emergency Services</a></li><li><a href="housing-programs.html">Housing Assistance</a></li><li><a href="resource-centers.html">Resource Centers</a></li><li><a href="palmer-court.html">Palmer Court</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+    <div class="footer-col"><h3>Give</h3><ul><li><a href="donate.html">One-time</a></li><li><a href="housing-champions.html">Monthly · Housing Champions</a></li><li><a href="legacy-planned.html">Legacy / Planned</a></li><li><a href="#">Employer matching</a></li><li><a href="#">Item donations</a></li><li><a href="where-does-it-go.html">Where does it go?</a></li></ul></div>
+    <div class="footer-col"><h3>About</h3><ul><li><a href="about-us.html">Our mission</a></li><li><a href="#">Our history</a></li><li><a href="meet-the-team.html">Meet the team</a></li><li><a href="board-of-trustees.html">Board</a></li><li><a href="annual-reports.html">Annual reports</a></li><li><a href="contact-us.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h3>Impact</h3><ul><li><a href="housing-stories.html">Housing stories</a></li><li><a href="where-does-it-go.html">By the numbers</a></li><li><a href="annual-reports.html">Reports</a></li><li><a href="#">Press</a></li><li><a href="#">Newsletter</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><div>© 1923–2026 The Road Home · Salt Lake City, UT · EIN 87-0212465</div><nav><a href="#">Privacy</a><a href="#">Accessibility</a><a href="#">Donor bill of rights</a></nav></div>
+</div></footer>
+
+</body>
+</html>

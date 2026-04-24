@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Meet the Team — The Road Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+  @import url("../prototypes/_tokens.css");
+
+  .team-hero{padding:var(--spacing-2xl) 0;border-bottom:1px solid var(--color-rule)}
+  .team-hero h1{font-size:var(--heading-xl);font-weight:900;text-transform:uppercase;line-height:0.98;letter-spacing:-.015em;margin-bottom:var(--spacing-md)}
+  .team-hero .sub{font-size:18px;color:var(--color-g22);line-height:1.55;max-width:60ch}
+
+  .filters{padding:var(--spacing-xl) 0;border-bottom:1px solid var(--color-rule)}
+  .filters-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .filters-label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:var(--color-g66);margin-right:8px}
+  .chip{padding:9px 16px;border:1px solid var(--color-ink);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;cursor:pointer;transition:all .2s;background:var(--color-paper);color:var(--color-ink)}
+  .chip.active{background:var(--color-ink);color:var(--color-paper)}
+  .chip:hover{background:var(--color-signal);color:var(--color-paper);border-color:var(--color-signal)}
+
+  .team-grid{padding:var(--section-padding) 0}
+  .team-grid-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:repeat(4,1fr);gap:var(--spacing-lg)}
+  .person{background:var(--color-paper);border:1px solid var(--color-rule)}
+  .person .portrait{aspect-ratio:1/1;background:var(--color-tint);display:flex;align-items:center;justify-content:center;position:relative}
+  .person .portrait.img{background-size:cover;background-position:center}
+  .person .portrait .initials{font-size:48px;font-weight:900;color:var(--color-signal);letter-spacing:-.03em}
+  .person .meta{padding:20px 22px 22px}
+  .person .name{font-size:16px;font-weight:900;text-transform:uppercase;letter-spacing:-.005em;margin-bottom:4px}
+  .person .role{font-size:12px;color:var(--color-signal);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+  .person .bio{font-size:13px;color:var(--color-g44);line-height:1.55}
+  .person .contact{font-size:12px;color:var(--color-g66);margin-top:10px;padding-top:10px;border-top:1px solid var(--color-rule)}
+  .person .contact a{color:var(--color-signal);font-weight:600}
+
+  .featured{grid-column:span 2;grid-row:span 2}
+  .featured .portrait{aspect-ratio:3/4}
+  .featured .name{font-size:24px}
+  .featured .role{font-size:13px}
+  .featured .bio{font-size:14px;line-height:1.65}
+
+  .work-with-us{padding:var(--section-padding) 0;background:var(--color-ink);color:var(--color-paper)}
+  .work-with-us-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:1fr 1fr;gap:var(--spacing-2xl);align-items:center}
+  .work-with-us h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;line-height:1.05;margin-bottom:var(--spacing-md);max-width:16ch}
+  .work-with-us p{color:rgba(255,255,255,.75);font-size:17px;line-height:1.6;max-width:50ch;margin-bottom:var(--spacing-lg)}
+  .work-with-us .btn{background:var(--color-signal)}
+  .work-with-us-right{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.16)}
+  .work-stat{background:var(--color-ink);padding:28px 24px}
+  .work-stat .n{font-size:42px;font-weight:900;color:var(--color-signal);letter-spacing:-.02em;line-height:1}
+  .work-stat .l{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.7);font-weight:600;margin-top:12px}
+
+  @media (max-width:1200px){
+    .team-grid-inner{grid-template-columns:repeat(3,1fr)}
+    .featured{grid-column:span 3}
+  }
+  @media (max-width:900px){
+    .team-grid-inner{grid-template-columns:repeat(2,1fr)}
+    .featured{grid-column:span 2;grid-row:span 1}
+    .featured .portrait{aspect-ratio:5/4}
+    .work-with-us-inner{grid-template-columns:1fr}
+  }
+  @media (max-width:520px){
+    .team-grid-inner,.featured{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<div class="utility"><div class="utility-inner"><div class="utility-left"><span><span class="dot"></span>Emergency Shelter Hotline · <a href="tel:18019909999">801-990-9999</a></span><span>Utah 2-1-1 · <a href="tel:211">Dial 211</a></span></div><div class="utility-right"><a href="contact-us.html">Español</a><a href="shelter.html">Find a location</a><a href="meet-the-team.html">Careers</a></div></div></div>
+<nav class="topnav"><div class="nav-inner"><a class="nav-logo" href="index.html"><img src="../assets/logo.png" alt=""></a><div class="nav-links"><a href="get-help.html">Get Help</a><a href="give-main.html">Give</a><a href="get-involved.html">Get Involved</a><a href="about-us.html" class="active">About</a></div><div class="nav-right"><a href="shelter.html" class="btn-ghost">Find a Shelter</a><a href="donate.html" class="btn">Donate</a></div></div></nav>
+<div class="breadcrumbs"><div class="inner"><a href="index.html">Home</a><span class="sep">/</span><a href="about-us.html">About</a><span class="sep">/</span>Meet the Team</div></div>
+
+<section class="team-hero">
+  <div class="inner">
+    <p class="eyebrow">About · Meet the Team</p>
+    <h1>The people who do the work.</h1>
+    <p class="sub">From our CEO to the case manager sitting with a family on intake night — meet the team that keeps The Road Home running, 365 days a year.</p>
+  </div>
+</section>
+
+<section class="filters">
+  <div class="filters-inner">
+    <span class="filters-label">Show</span>
+    <span class="chip active">All</span>
+    <span class="chip">Leadership</span>
+    <span class="chip">Case Management</span>
+    <span class="chip">Outreach</span>
+    <span class="chip">Resource Centers</span>
+    <span class="chip">Volunteer Coordination</span>
+    <span class="chip">Development</span>
+  </div>
+</section>
+
+<section class="team-grid">
+  <div class="team-grid-inner">
+    <a href="#" class="person featured">
+      <div class="portrait img" style="background-image:url('https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=900&q=80')"></div>
+      <div class="meta">
+        <div class="role">CEO</div>
+        <div class="name">Michelle Flynn</div>
+        <p class="bio">Michelle has led The Road Home through its centennial, steering the organization's shift toward Housing First as the default response to chronic homelessness. She has been with the organization for over 20 years and previously served as Chief Operating Officer.</p>
+        <div class="contact">Prefer email? <a href="#">mflynn@theroadhome.org</a></div>
+      </div>
+    </a>
+    <a href="#" class="person">
+      <div class="portrait"><div class="initials">HR</div></div>
+      <div class="meta">
+        <div class="role">Director of Development</div>
+        <div class="name">Holly Rogers</div>
+        <p class="bio">Runs the development team, recurring giving programs, and legacy gifts.</p>
+        <div class="contact"><a href="mailto:hrogers@theroadhome.org">hrogers@theroadhome.org</a> · 801-819-7294</div>
+      </div>
+    </a>
+    <a href="#" class="person">
+      <div class="portrait"><div class="initials">TK</div></div>
+      <div class="meta">
+        <div class="role">COO</div>
+        <div class="name">Tricia Knox</div>
+        <p class="bio">Operational oversight across resource centers, housing programs, and supportive services.</p>
+      </div>
+    </a>
+    <a href="#" class="person">
+      <div class="portrait"><div class="initials">DM</div></div>
+      <div class="meta">
+        <div class="role">Director · Resource Centers</div>
+        <div class="name">Darrell Mays</div>
+        <p class="bio">Oversees the South Salt Lake Men's Resource Center and Midvale Family Resource Center.</p>
+      </div>
+    </a>
+    <a href="#" class="person">
+      <div class="portrait"><div class="initials">JR</div></div>
+      <div class="meta">
+        <div class="role">Director · Housing Programs</div>
+        <div class="name">Jenna Russo</div>
+        <p class="bio">Leads rapid rehousing, permanent supportive housing, and landlord partnerships.</p>
+      </div>
+    </a>
+    <a href="#" class="person">
+      <div class="portrait"><div class="initials">AG</div></div>
+      <div class="meta">
+        <div class="role">Volunteer Coordinator</div>
+        <div class="name">Alicia Gleed</div>
+        <p class="bio">Schedules volunteer groups, onboards new volunteers, runs our Eagle Scout program.</p>
+        <div class="contact"><a href="mailto:volunteer@theroadhome.org">volunteer@theroadhome.org</a> · 385-351-2389</div>
+      </div>
+    </a>
+    <a href="#" class="person">
+      <div class="portrait"><div class="initials">CN</div></div>
+      <div class="meta">
+        <div class="role">Case Manager · Palmer Court</div>
+        <div class="name">Cami Nielsen</div>
+        <p class="bio">Works one-on-one with Palmer Court residents on housing stability and benefits.</p>
+      </div>
+    </a>
+    <a href="#" class="person">
+      <div class="portrait"><div class="initials">DB</div></div>
+      <div class="meta">
+        <div class="role">Outreach Coordinator</div>
+        <div class="name">Downy Bowles</div>
+        <p class="bio">Coordinates street-outreach teams and extreme-weather response.</p>
+      </div>
+    </a>
+    <a href="#" class="person">
+      <div class="portrait"><div class="initials">HA</div></div>
+      <div class="meta">
+        <div class="role">Communications Manager</div>
+        <div class="name">Haylee Allen</div>
+        <p class="bio">Press, media, and public-facing communications.</p>
+      </div>
+    </a>
+    <a href="#" class="person">
+      <div class="portrait"><div class="initials">TG</div></div>
+      <div class="meta">
+        <div class="role">Donor Relations</div>
+        <div class="name">Tyler Greer</div>
+        <p class="bio">Point of contact for major donors, Housing Champions, and stewardship.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="work-with-us">
+  <div class="work-with-us-inner">
+    <div>
+      <p class="eyebrow" style="color:var(--color-signal-soft)">Join the team</p>
+      <h2>Would you like to work with us?</h2>
+      <p>The Road Home relies on a diverse staff to provide excellent care and service to the hundreds of people we help each day. We hire case managers, outreach workers, facility staff, and senior leadership.</p>
+      <a href="#" class="btn">See open positions →</a>
+    </div>
+    <div class="work-with-us-right">
+      <div class="work-stat"><div class="n">185+</div><div class="l">Staff members</div></div>
+      <div class="work-stat"><div class="n">24</div><div class="l">Case managers</div></div>
+      <div class="work-stat"><div class="n">9</div><div class="l">Teams</div></div>
+      <div class="work-stat"><div class="n">365</div><div class="l">Days a year</div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site"><div class="footer-inner">
+  <div class="footer-top">
+    <div class="footer-brand"><img src="../assets/logo.png" alt="The Road Home"><p>A century-old frontline homeless-services organization in Salt Lake City. Refuge. Resources. Relief.</p>
+      <div class="footer-phones">
+        <div class="footer-phone-row"><span class="l">Shelter</span><a href="tel:18019909999">801-990-9999</a></div>
+        <div class="footer-phone-row"><span class="l">Housing crisis</span><a href="tel:18013592444">801-359-2444</a></div>
+        <div class="footer-phone-row"><span class="l">Utah 2-1-1</span><a href="tel:211">211</a></div>
+      </div>
+    </div>
+    <div class="footer-col"><h3>Get Help</h3><ul><li><a href="shelter.html">Find a Shelter</a></li><li><a href="emergency-services.html">Emergency Services</a></li><li><a href="housing-programs.html">Housing Assistance</a></li><li><a href="resource-centers.html">Resource Centers</a></li><li><a href="palmer-court.html">Palmer Court</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+    <div class="footer-col"><h3>Give</h3><ul><li><a href="donate.html">One-time</a></li><li><a href="housing-champions.html">Monthly · Housing Champions</a></li><li><a href="legacy-planned.html">Legacy / Planned</a></li><li><a href="#">Employer matching</a></li><li><a href="#">Item donations</a></li><li><a href="where-does-it-go.html">Where does it go?</a></li></ul></div>
+    <div class="footer-col"><h3>About</h3><ul><li><a href="about-us.html">Our mission</a></li><li><a href="#">Our history</a></li><li><a href="meet-the-team.html">Meet the team</a></li><li><a href="board-of-trustees.html">Board</a></li><li><a href="annual-reports.html">Annual reports</a></li><li><a href="contact-us.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h3>Impact</h3><ul><li><a href="housing-stories.html">Housing stories</a></li><li><a href="where-does-it-go.html">By the numbers</a></li><li><a href="annual-reports.html">Reports</a></li><li><a href="#">Press</a></li><li><a href="#">Newsletter</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><div>© 1923–2026 The Road Home · Salt Lake City, UT · EIN 87-0212465</div><nav><a href="#">Privacy</a><a href="#">Accessibility</a><a href="#">Donor bill of rights</a></nav></div>
+</div></footer>
+
+</body>
+</html>

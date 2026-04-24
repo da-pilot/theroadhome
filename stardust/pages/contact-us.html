@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact — The Road Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+  @import url("../prototypes/_tokens.css");
+
+  .contact-hero{padding:var(--spacing-2xl) 0;border-bottom:1px solid var(--color-rule)}
+  .contact-hero h1{font-size:var(--heading-xl);font-weight:900;text-transform:uppercase;line-height:0.98;letter-spacing:-.015em;margin-bottom:var(--spacing-md)}
+  .contact-hero .sub{font-size:18px;color:var(--color-g22);line-height:1.55;max-width:58ch}
+
+  .crisis-callout{background:var(--color-shelter);color:var(--color-paper);padding:28px 0}
+  .crisis-callout-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:1fr auto;gap:var(--spacing-lg);align-items:center}
+  .crisis-callout-text{font-size:17px;font-weight:600;line-height:1.45}
+  .crisis-callout-text strong{font-size:20px;font-weight:900}
+  .crisis-callout a.phone{font-size:28px;font-weight:900;letter-spacing:-.01em;color:var(--color-paper);padding:12px 24px;border:2px solid var(--color-paper)}
+  .crisis-callout a.phone:hover{background:var(--color-paper);color:var(--color-shelter)}
+
+  .contact-main{padding:var(--section-padding) 0}
+  .contact-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:1fr 1.4fr;gap:var(--spacing-2xl);align-items:start}
+
+  .contact-side dl{margin:0;display:grid;gap:var(--spacing-xl)}
+  .contact-side dt{font-size:11px;color:var(--color-g66);text-transform:uppercase;letter-spacing:.12em;font-weight:700;margin-bottom:8px}
+  .contact-side dd{margin:0;font-size:15px;color:var(--color-g22);line-height:1.6}
+  .contact-side dd strong{color:var(--color-ink);font-weight:700;display:block;font-size:16px;margin-bottom:2px}
+  .contact-side dd a{color:var(--color-signal);font-weight:600}
+  .contact-side .hours{font-size:13px;color:var(--color-g66);margin-top:var(--spacing-xl);padding-top:var(--spacing-md);border-top:1px solid var(--color-rule)}
+
+  .contact-form{background:var(--color-panel);border:1px solid var(--color-rule);padding:40px 44px}
+  .contact-form h2{font-size:var(--heading-md);font-weight:900;text-transform:uppercase;margin-bottom:var(--spacing-md)}
+  .contact-form p{color:var(--color-g44);font-size:15px;margin-bottom:var(--spacing-lg);max-width:48ch}
+  .contact-form label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--color-g66);margin-bottom:6px}
+  .contact-form input,.contact-form select,.contact-form textarea{width:100%;padding:14px;border:1px solid var(--color-rule);border-radius:0;background:var(--color-paper);font-family:inherit;font-size:15px;margin-bottom:var(--spacing-md)}
+  .contact-form textarea{min-height:140px;resize:vertical}
+  .contact-form .row{display:grid;grid-template-columns:1fr 1fr;gap:var(--spacing-md)}
+  .contact-form button{padding:18px 36px;background:var(--color-ink);color:var(--color-paper);font-weight:900;font-size:14px;letter-spacing:.08em;text-transform:uppercase;border:0;cursor:pointer}
+  .contact-form button:hover{background:var(--color-signal)}
+  .contact-form .meta{font-size:12px;color:var(--color-g66);margin-top:var(--spacing-md);line-height:1.5}
+
+  @media (max-width:900px){
+    .contact-inner{grid-template-columns:1fr}
+    .crisis-callout-inner{grid-template-columns:1fr;text-align:center}
+    .contact-form{padding:32px 24px}
+  }
+</style>
+</head>
+<body>
+
+<div class="utility"><div class="utility-inner"><div class="utility-left"><span><span class="dot"></span>Emergency Shelter Hotline · <a href="tel:18019909999">801-990-9999</a></span><span>Utah 2-1-1 · <a href="tel:211">Dial 211</a></span></div><div class="utility-right"><a href="contact-us.html">Español</a><a href="shelter.html">Find a location</a><a href="meet-the-team.html">Careers</a></div></div></div>
+<nav class="topnav"><div class="nav-inner"><a class="nav-logo" href="index.html"><img src="../assets/logo.png" alt=""></a><div class="nav-links"><a href="get-help.html">Get Help</a><a href="give-main.html">Give</a><a href="get-involved.html">Get Involved</a><a href="about-us.html">About</a></div><div class="nav-right"><a href="shelter.html" class="btn-ghost">Find a Shelter</a><a href="donate.html" class="btn">Donate</a></div></div></nav>
+<div class="breadcrumbs"><div class="inner"><a href="index.html">Home</a><span class="sep">/</span>Contact</div></div>
+
+<section class="contact-hero">
+  <div class="inner">
+    <p class="eyebrow">Contact</p>
+    <h1>Get in touch.</h1>
+    <p class="sub">Non-emergency questions, donation support, partnership inquiries, press requests. For shelter or crisis, use the hotline below.</p>
+  </div>
+</section>
+
+<section class="crisis-callout">
+  <div class="crisis-callout-inner">
+    <div class="crisis-callout-text"><strong>Need shelter tonight?</strong> Call the 24-hour Homeless Services Line — interpreters available.</div>
+    <a href="tel:18019909999" class="phone">801-990-9999</a>
+  </div>
+</section>
+
+<section class="contact-main">
+  <div class="contact-inner">
+    <aside class="contact-side">
+      <dl>
+        <div><dt>Main office</dt><dd><strong>The Road Home</strong>210 S. Rio Grande St.<br>Salt Lake City, UT 84101<br><a href="tel:18013594142">801-359-4142</a><br><a href="mailto:info@theroadhome.org">info@theroadhome.org</a></dd></div>
+        <div><dt>Development &amp; donations</dt><dd><strong>Holly Rogers · Director of Development</strong><a href="tel:18018197294">801-819-7294</a><br><a href="mailto:hrogers@theroadhome.org">hrogers@theroadhome.org</a></dd></div>
+        <div><dt>Volunteering</dt><dd><a href="mailto:volunteer@theroadhome.org">volunteer@theroadhome.org</a><br><a href="tel:13853512389">385-351-2389</a></dd></div>
+        <div><dt>Press &amp; media</dt><dd><a href="mailto:media-center@theroadhome.org">media-center@theroadhome.org</a></dd></div>
+        <div><dt>Mailing address</dt><dd>P.O. Box [mailing]<br>Salt Lake City, UT 84110</dd></div>
+      </dl>
+      <p class="hours">Office hours · Monday–Friday · 9am–5pm MT · non-emergency response within one business day.</p>
+    </aside>
+
+    <form class="contact-form" onsubmit="return false">
+      <h2>Send us a message</h2>
+      <p>Use this form for any non-emergency question — donation, partnership, press, research. We reply within one business day.</p>
+      <div class="row">
+        <div><label>First Name</label><input type="text" value=""></div>
+        <div><label>Last Name</label><input type="text" value=""></div>
+      </div>
+      <label>Email</label><input type="email" value="">
+      <div class="row">
+        <div><label>Postal Code (optional)</label><input type="text" value=""></div>
+        <div><label>Phone (optional)</label><input type="tel" value=""></div>
+      </div>
+      <label>What is this about?</label>
+      <select>
+        <option>Select a topic</option>
+        <option>Donation question</option>
+        <option>Partnership or referral</option>
+        <option>Volunteering</option>
+        <option>Press or media</option>
+        <option>Research or school project</option>
+        <option>Other</option>
+      </select>
+      <label>Message</label>
+      <textarea></textarea>
+      <button type="submit">Send message</button>
+      <p class="meta">By submitting this form you agree to The Road Home's privacy policy. We do not share personal information. For the shelter intake line, use 801-990-9999.</p>
+    </form>
+  </div>
+</section>
+
+<footer class="site"><div class="footer-inner">
+  <div class="footer-top">
+    <div class="footer-brand"><img src="../assets/logo.png" alt="The Road Home"><p>A century-old frontline homeless-services organization in Salt Lake City. Refuge. Resources. Relief.</p>
+      <div class="footer-phones">
+        <div class="footer-phone-row"><span class="l">Shelter</span><a href="tel:18019909999">801-990-9999</a></div>
+        <div class="footer-phone-row"><span class="l">Housing crisis</span><a href="tel:18013592444">801-359-2444</a></div>
+        <div class="footer-phone-row"><span class="l">Utah 2-1-1</span><a href="tel:211">211</a></div>
+      </div>
+    </div>
+    <div class="footer-col"><h3>Get Help</h3><ul><li><a href="shelter.html">Find a Shelter</a></li><li><a href="emergency-services.html">Emergency Services</a></li><li><a href="housing-programs.html">Housing Assistance</a></li><li><a href="resource-centers.html">Resource Centers</a></li><li><a href="palmer-court.html">Palmer Court</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+    <div class="footer-col"><h3>Give</h3><ul><li><a href="donate.html">One-time</a></li><li><a href="housing-champions.html">Monthly · Housing Champions</a></li><li><a href="legacy-planned.html">Legacy / Planned</a></li><li><a href="#">Employer matching</a></li><li><a href="#">Item donations</a></li><li><a href="where-does-it-go.html">Where does it go?</a></li></ul></div>
+    <div class="footer-col"><h3>About</h3><ul><li><a href="about-us.html">Our mission</a></li><li><a href="#">Our history</a></li><li><a href="meet-the-team.html">Meet the team</a></li><li><a href="board-of-trustees.html">Board</a></li><li><a href="annual-reports.html">Annual reports</a></li><li><a href="contact-us.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h3>Impact</h3><ul><li><a href="housing-stories.html">Housing stories</a></li><li><a href="where-does-it-go.html">By the numbers</a></li><li><a href="annual-reports.html">Reports</a></li><li><a href="#">Press</a></li><li><a href="#">Newsletter</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><div>© 1923–2026 The Road Home · Salt Lake City, UT · EIN 87-0212465</div><nav><a href="#">Privacy</a><a href="#">Accessibility</a><a href="#">Donor bill of rights</a></nav></div>
+</div></footer>
+
+</body>
+</html>

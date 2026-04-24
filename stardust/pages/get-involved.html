@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Get Involved — The Road Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+  @import url("../prototypes/_tokens.css");
+
+  .pillar-hero{padding:var(--spacing-2xl) 0 0}
+  .pillar-hero .inner{display:grid;grid-template-columns:1fr 1fr;gap:var(--spacing-2xl);align-items:center;padding-bottom:var(--spacing-2xl);border-bottom:1px solid var(--color-rule)}
+  .pillar-hero h1{font-size:var(--heading-xl);font-weight:900;text-transform:uppercase;line-height:0.98;letter-spacing:-.015em}
+  .pillar-hero .sub{font-size:18px;color:var(--color-g22);line-height:1.55;max-width:56ch;margin-top:var(--spacing-lg)}
+  .pillar-hero .art{aspect-ratio:5/4;background-size:cover;background-position:center}
+
+  .ways{padding:var(--section-padding) 0}
+  .ways-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+  .ways-head{margin-bottom:var(--spacing-2xl)}
+  .ways-head h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;margin-bottom:10px}
+  .ways-head p{color:var(--color-g44);font-size:16px;max-width:56ch}
+  .ways-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--color-rule);border:1px solid var(--color-rule)}
+  .way{background:var(--color-paper);padding:32px 28px 28px}
+  .way .tag{font-size:11px;color:var(--color-signal);font-weight:700;letter-spacing:.08em;margin-bottom:14px}
+  .way h3{font-size:20px;font-weight:900;text-transform:uppercase;margin-bottom:10px}
+  .way p{font-size:13px;color:var(--color-g44);line-height:1.55;margin-bottom:14px}
+  .way .arrow{font-size:12px;color:var(--color-signal);font-weight:700;letter-spacing:.06em}
+
+  .events{padding:var(--section-padding) 0;background:var(--color-panel);border-top:1px solid var(--color-rule);border-bottom:1px solid var(--color-rule)}
+  .events-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+  .events-head{display:grid;grid-template-columns:1fr auto;align-items:end;margin-bottom:var(--spacing-xl)}
+  .events-head h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase}
+  .events-head .see{font-size:13px;color:var(--color-signal);font-weight:700;text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--color-signal);padding-bottom:2px}
+  .events-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--spacing-lg)}
+  .event{background:var(--color-paper);border:1px solid var(--color-rule);padding:28px}
+  .event .date{display:inline-block;background:var(--color-ink);color:var(--color-paper);padding:10px 14px;margin-bottom:20px;font-weight:900;letter-spacing:-.01em;font-size:15px}
+  .event h3{font-size:18px;font-weight:900;text-transform:uppercase;margin-bottom:8px}
+  .event p{font-size:13px;color:var(--color-g44);line-height:1.55;margin-bottom:12px}
+  .event .meta{font-size:12px;color:var(--color-g66);text-transform:uppercase;letter-spacing:.08em}
+
+  .moments{padding:var(--section-padding) 0}
+  .moments-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+  .moments-head{margin-bottom:var(--spacing-xl)}
+  .moments-head h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;margin-bottom:10px}
+  .moments-head p{color:var(--color-g44);max-width:56ch}
+  .moments-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--spacing-lg)}
+  .moment{background:var(--color-paper);border:1px solid var(--color-rule)}
+  .moment .top{padding:28px 24px 16px}
+  .moment .name{font-size:11px;color:var(--color-signal);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+  .moment h3{font-size:22px;font-weight:900;margin-bottom:10px}
+  .moment p{font-size:13px;color:var(--color-g44);line-height:1.55;padding:0 24px 24px}
+
+  .contact-volunteer{padding:var(--section-padding) 0;background:var(--color-ink);color:var(--color-paper)}
+  .cv-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:1fr 1fr;gap:var(--spacing-2xl);align-items:center}
+  .cv-inner h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;margin-bottom:var(--spacing-md)}
+  .cv-inner p{color:rgba(255,255,255,.75);font-size:16px;line-height:1.6;max-width:48ch;margin-bottom:var(--spacing-lg)}
+  .cv-contact{background:var(--color-shelter);padding:32px;display:grid;gap:16px}
+  .cv-contact dt{font-size:11px;color:var(--color-signal-soft);text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:4px}
+  .cv-contact dd{margin:0;color:var(--color-paper);font-size:17px;font-weight:700}
+
+  @media (max-width:1100px){
+    .ways-grid{grid-template-columns:repeat(2,1fr)}
+    .events-grid{grid-template-columns:repeat(2,1fr)}
+    .moments-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:900px){
+    .pillar-hero .inner{grid-template-columns:1fr}
+    .pillar-hero .art{aspect-ratio:5/3;order:-1}
+    .cv-inner{grid-template-columns:1fr}
+  }
+  @media (max-width:520px){
+    .ways-grid,.events-grid,.moments-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<div class="utility"><div class="utility-inner"><div class="utility-left"><span><span class="dot"></span>Emergency Shelter Hotline · <a href="tel:18019909999">801-990-9999</a></span><span>Utah 2-1-1 · <a href="tel:211">Dial 211</a></span></div><div class="utility-right"><a href="contact-us.html">Español</a><a href="shelter.html">Find a location</a><a href="meet-the-team.html">Careers</a></div></div></div>
+<nav class="topnav"><div class="nav-inner"><a class="nav-logo" href="index.html"><img src="../assets/logo.png" alt=""></a><div class="nav-links"><a href="get-help.html">Get Help</a><a href="give-main.html">Give</a><a href="get-involved.html" class="active">Get Involved</a><a href="about-us.html">About</a></div><div class="nav-right"><a href="shelter.html" class="btn-ghost">Find a Shelter</a><a href="donate.html" class="btn">Donate</a></div></div></nav>
+<div class="breadcrumbs"><div class="inner"><a href="index.html">Home</a><span class="sep">/</span>Get Involved</div></div>
+
+<section class="pillar-hero">
+  <div class="inner">
+    <div>
+      <p class="eyebrow">Pillar · Get Involved</p>
+      <h1>When we work together, we can build a stronger community.</h1>
+      <p class="sub">The Road Home relies on volunteers to provide programs and services to individuals and families working to overcome homelessness. There are many ways to show up — as an individual, a family, a team, or a company.</p>
+    </div>
+    <div class="art" role="img" aria-label="A group of volunteers at a meal service"
+         style="background-image:linear-gradient(180deg,rgba(0,20,25,.05),rgba(0,40,50,.2)),url('https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=1600&q=80')"></div>
+  </div>
+</section>
+
+<section class="ways">
+  <div class="ways-inner">
+    <div class="ways-head">
+      <p class="eyebrow">How you can help</p>
+      <h2>Ways to show up.</h2>
+      <p>Each role has different time commitments and age minimums. Pick one and email our volunteer coordinators to schedule orientation.</p>
+    </div>
+    <div class="ways-grid">
+      <a href="#" class="way"><div class="tag">Weekly</div><h3>Volunteer</h3><p>Weekly one-hour commitments. Literacy nights, meal service, clothing-room sorting. Ages 16+.</p><span class="arrow">Volunteer calendar →</span></a>
+      <a href="#" class="way"><div class="tag">Group</div><h3>Group activities</h3><p>One-time team activities — families, companies, faith groups. Bring 5–50 people for a half-day.</p><span class="arrow">Schedule a group →</span></a>
+      <a href="#" class="way"><div class="tag">Eagle Scouts</div><h3>Eagle Scout projects</h3><p>We partner with local Eagle Scout candidates on facility improvements, drives, and supply organization.</p><span class="arrow">Project list →</span></a>
+      <a href="#" class="way"><div class="tag">Internship</div><h3>Internships</h3><p>Semester-long internships in case management, development, communications, and operations.</p><span class="arrow">Open positions →</span></a>
+      <a href="#" class="way"><div class="tag">Fundraise</div><h3>Host a drive</h3><p>Coat drives, hygiene drives, bedding drives. We supply the needs list; you supply the reach.</p><span class="arrow">Start a drive →</span></a>
+      <a href="#" class="way"><div class="tag">Fundraise</div><h3>Fundraiser events</h3><p>Run your own event for The Road Home — birthday party, 5K, golf outing, online campaign.</p><span class="arrow">Event kit →</span></a>
+      <a href="#" class="way"><div class="tag">Court-ordered</div><h3>Court-ordered service</h3><p>Participating in court-ordered community service? We accept referrals for eligible roles.</p><span class="arrow">Requirements →</span></a>
+      <a href="#" class="way"><div class="tag">Corporate</div><h3>Sponsor &amp; partner</h3><p>Corporate sponsorship, matching-gift programs, cause-marketing partnerships, and more.</p><span class="arrow">Partner options →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="events">
+  <div class="events-inner">
+    <div class="events-head">
+      <h2>Upcoming events</h2>
+      <a href="#" class="see">All events →</a>
+    </div>
+    <div class="events-grid">
+      <div class="event">
+        <div class="date">May 22</div>
+        <h3>Spring meal service · Men's RC</h3>
+        <p>Volunteers serve dinner at the Pamela Atkinson Men's Resource Center. Group size 6.</p>
+        <div class="meta">5:30–7:30pm · SSL</div>
+      </div>
+      <div class="event">
+        <div class="date">Jun 14</div>
+        <h3>Warehouse sort day</h3>
+        <p>Help sort incoming clothing and hygiene donations at the Connie Crosby warehouse.</p>
+        <div class="meta">9am–1pm · SLC</div>
+      </div>
+      <div class="event">
+        <div class="date">Sep 20</div>
+        <h3>Annual Mediathon</h3>
+        <p>Our annual live-radio fundraiser with KSL. Volunteer on-site or phone-banking from home.</p>
+        <div class="meta">All day · broadcast</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="moments">
+  <div class="moments-inner">
+    <div class="moments-head">
+      <p class="eyebrow">Moments that matter</p>
+      <h2>What a week looks like.</h2>
+      <p>Short notes from the resource centers — staff, guests, and volunteers making something happen.</p>
+    </div>
+    <div class="moments-grid">
+      <div class="moment">
+        <div class="top"><div class="name">Cory</div><h3>Opening up, slowly.</h3></div>
+        <p>Cory had been staying in emergency shelter for multiple years and was hesitant to engage in supportive services. Then a conversation about housing options opened the door.</p>
+      </div>
+      <div class="moment">
+        <div class="top"><div class="name">Jordan</div><h3>Communication is key.</h3></div>
+        <p>Case managers at the Men's Resource Center hosted a "Communication is Key" workshop to help with communication skills and boundary-setting.</p>
+      </div>
+      <div class="moment">
+        <div class="top"><div class="name">Sharon</div><h3>A family back on track.</h3></div>
+        <p>Sharon, a case manager at the Midvale Family Resource Center, worked with a family whose previous barriers included eviction history and credit. Now housed.</p>
+      </div>
+      <div class="moment">
+        <div class="top"><div class="name">The Nelsons</div><h3>Home for the holidays.</h3></div>
+        <p>After staying at the Midvale Family Resource Center for a while, the Nelson family successfully navigated into permanent housing before the holidays.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-volunteer">
+  <div class="cv-inner">
+    <div>
+      <p class="eyebrow" style="color:var(--color-signal-soft)">Ready to start</p>
+      <h2>Email the volunteer team.</h2>
+      <p>All weekly volunteers complete an orientation and background check before starting. We require a three-month commitment for weekly roles; one-time group activities can be scheduled with a week's notice.</p>
+      <a href="mailto:volunteer@theroadhome.org" class="btn">Email volunteer coordinators</a>
+    </div>
+    <dl class="cv-contact">
+      <div><dt>Volunteer coordinators</dt><dd><a href="mailto:volunteer@theroadhome.org">volunteer@theroadhome.org</a></dd></div>
+      <div><dt>Phone</dt><dd><a href="tel:13853512389">385-351-2389</a></dd></div>
+      <div><dt>Response time</dt><dd>Within two business days</dd></div>
+    </dl>
+  </div>
+</section>
+
+<footer class="site"><div class="footer-inner">
+  <div class="footer-top">
+    <div class="footer-brand"><img src="../assets/logo.png" alt="The Road Home"><p>A century-old frontline homeless-services organization in Salt Lake City. Refuge. Resources. Relief.</p>
+      <div class="footer-phones">
+        <div class="footer-phone-row"><span class="l">Shelter</span><a href="tel:18019909999">801-990-9999</a></div>
+        <div class="footer-phone-row"><span class="l">Housing crisis</span><a href="tel:18013592444">801-359-2444</a></div>
+        <div class="footer-phone-row"><span class="l">Utah 2-1-1</span><a href="tel:211">211</a></div>
+      </div>
+    </div>
+    <div class="footer-col"><h3>Get Help</h3><ul><li><a href="shelter.html">Find a Shelter</a></li><li><a href="emergency-services.html">Emergency Services</a></li><li><a href="housing-programs.html">Housing Assistance</a></li><li><a href="resource-centers.html">Resource Centers</a></li><li><a href="palmer-court.html">Palmer Court</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+    <div class="footer-col"><h3>Give</h3><ul><li><a href="donate.html">One-time</a></li><li><a href="housing-champions.html">Monthly · Housing Champions</a></li><li><a href="legacy-planned.html">Legacy / Planned</a></li><li><a href="#">Employer matching</a></li><li><a href="#">Item donations</a></li><li><a href="where-does-it-go.html">Where does it go?</a></li></ul></div>
+    <div class="footer-col"><h3>About</h3><ul><li><a href="about-us.html">Our mission</a></li><li><a href="#">Our history</a></li><li><a href="meet-the-team.html">Meet the team</a></li><li><a href="board-of-trustees.html">Board</a></li><li><a href="annual-reports.html">Annual reports</a></li><li><a href="contact-us.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h3>Impact</h3><ul><li><a href="housing-stories.html">Housing stories</a></li><li><a href="where-does-it-go.html">By the numbers</a></li><li><a href="annual-reports.html">Reports</a></li><li><a href="#">Press</a></li><li><a href="#">Newsletter</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><div>© 1923–2026 The Road Home · Salt Lake City, UT · EIN 87-0212465</div><nav><a href="#">Privacy</a><a href="#">Accessibility</a><a href="#">Donor bill of rights</a></nav></div>
+</div></footer>
+
+</body>
+</html>

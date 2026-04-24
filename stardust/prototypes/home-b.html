@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="en">
+<!-- stardust:provenance
+  generated_by: prototype
+  date: 2026-04-24
+  page: home
+  variant: b
+  variant_direction: "civic / data-led, denser — impact numbers lead early, tighter grid, photography supports type, operational-public-utility register"
+  brand_profile_source: stardust/brand-profile.json
+  briefing: absent (synthesized from live site theroadhome.org)
+  wireframe: absent (structure synthesized from brand + impeccable.md)
+  imagery_mode: placeholder_stock (Unsplash portraits used as prototype-only stand-ins; production needs real TRH client/staff portraits)
+  synthesized_copy_slots:
+    - hero.context_sentence
+    - triage_panel.labels
+    - services.card_descriptions
+    - impact.stat_labels
+    - story_section.quote (FICTIONAL — replace with a real client story)
+    - accountability.body
+-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Road Home — Refuge. Resources. Relief.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=Public+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap">
+<style>
+  :root{
+    /* Type */
+    --heading-font-family: 'Archivo', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --body-font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    --serif-font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+
+    --heading-xxl: 160px;
+    --heading-xl: 56px;
+    --heading-lg: 38px;
+    --heading-md: 26px;
+    --heading-sm: 20px;
+    --body: 16px;
+    --body-sm: 14px;
+    --micro: 11px;
+
+    --line-height-heading: 1.02;
+    --line-height-body: 1.55;
+    --tracking-display: -0.02em;
+    --tracking-eyebrow: 0.12em;
+
+    /* Color */
+    --color-signal: #008192;
+    --color-shelter: #005560;
+    --color-dusk: #105560;
+    --color-ink: #000;
+    --color-paper: #fff;
+    --color-g22: #222;
+    --color-g44: #444;
+    --color-g66: #666;
+    --color-g80: #808080;
+    --color-rule: #e9e9e9;
+    --color-tint: #f0f8f9;
+
+    /* Spacing (tighter than variant A) */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 40px;
+    --spacing-2xl: 72px;
+
+    --section-padding: 88px;
+    --max-width: 1320px;
+    --gutter: 32px;
+    --radius: 0;
+
+    --btn-primary-padding: 16px 30px;
+    --btn-primary-font-size: 13px;
+    --btn-primary-tracking: 0.08em;
+
+    --nav-h: 64px;
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--color-paper);
+    color:var(--color-ink);
+    font-family:var(--body-font-family);
+    font-size:var(--body);
+    line-height:var(--line-height-body);
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  h1,h2,h3,h4{font-family:var(--heading-font-family);margin:0;line-height:var(--line-height-heading);letter-spacing:var(--tracking-display)}
+  p{margin:0}
+  .eyebrow{font-size:var(--micro);text-transform:uppercase;letter-spacing:var(--tracking-eyebrow);font-weight:700;color:var(--color-g66);margin:0 0 var(--spacing-md)}
+
+  /* ─── Utility bar + nav ─── */
+  .utility{background:var(--color-ink);color:var(--color-paper);font-size:12px;letter-spacing:.04em;padding:10px 0}
+  .utility-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:flex;justify-content:space-between;align-items:center;gap:var(--spacing-lg)}
+  .utility-left{display:flex;gap:var(--spacing-xl);align-items:center;font-weight:600}
+  .utility-left a{color:#7fd3dc}
+  .utility-left .dot{width:6px;height:6px;background:#7fd3dc;display:inline-block;border-radius:50%;margin-right:8px;vertical-align:middle}
+  .utility-right{display:flex;gap:var(--spacing-lg);color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+
+  nav.topnav{
+    position:sticky;top:0;z-index:50;background:var(--color-paper);
+    border-bottom:1px solid var(--color-rule);
+    height:var(--nav-h);display:flex;align-items:center;padding:0 var(--gutter);
+  }
+  .nav-inner{max-width:var(--max-width);width:100%;margin:0 auto;display:flex;align-items:center;gap:var(--spacing-xl)}
+  .nav-logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:16px;margin-right:auto}
+  .nav-logo img{height:40px;width:auto}
+  .nav-links{display:flex;gap:var(--spacing-xl);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--color-g22)}
+  .nav-links a{padding:4px 0;border-bottom:2px solid transparent}
+  .nav-links a:hover, .nav-links a.active{color:var(--color-signal);border-bottom-color:var(--color-signal)}
+  .nav-right{display:flex;align-items:center;gap:var(--spacing-md)}
+  .btn{
+    display:inline-block;background:var(--color-signal);color:var(--color-paper);
+    padding:var(--btn-primary-padding);font-size:var(--btn-primary-font-size);
+    font-weight:900;text-transform:uppercase;letter-spacing:var(--btn-primary-tracking);
+    border:0;border-radius:var(--radius);cursor:pointer;transition:background .2s;
+  }
+  .btn:hover{background:var(--color-shelter)}
+  .btn-ghost{background:transparent;color:var(--color-ink);border:1px solid var(--color-ink);padding:11px 22px;font-size:12px}
+  .btn-ghost:hover{background:var(--color-ink);color:var(--color-paper)}
+
+  /* ─── Hero — split ─── */
+  section.hero{display:grid;grid-template-columns:1fr 1fr;min-height:620px;border-bottom:1px solid var(--color-rule)}
+  .hero-photo{
+    background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,20,25,.25)),
+      url("https://images.unsplash.com/photo-1514894780887-121968d00567?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+    position:relative;
+  }
+  .hero-photo::after{
+    content:"Photograph for prototype use only";
+    position:absolute;left:24px;bottom:20px;
+    font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;
+    color:rgba(255,255,255,.7);
+  }
+  .hero-photo .photo-tag{
+    position:absolute;top:32px;left:32px;
+    font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--color-paper);
+    background:var(--color-signal);padding:8px 14px;
+  }
+  .hero-copy{padding:72px 64px 56px;display:flex;flex-direction:column;justify-content:space-between;gap:var(--spacing-xl)}
+  .hero-copy h1{font-size:var(--heading-xl);font-weight:900;text-transform:uppercase;line-height:0.95;margin-bottom:var(--spacing-lg)}
+  .hero-copy h1 span{display:block}
+  .hero-copy h1 span:nth-child(2){color:var(--color-signal)}
+  .hero-copy .hero-sub{font-size:18px;color:var(--color-g22);line-height:1.55;max-width:46ch;margin-bottom:var(--spacing-lg)}
+  .hero-meta{display:grid;grid-template-columns:auto 1fr auto;gap:var(--spacing-lg) var(--spacing-xl);padding-top:24px;border-top:1px solid var(--color-rule);font-size:13px;color:var(--color-g66);align-items:center}
+  .hero-meta strong{color:var(--color-ink);font-weight:700;display:block;font-size:14px;margin-bottom:2px;text-transform:uppercase;letter-spacing:.04em}
+  .hero-meta .since{font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:var(--color-signal)}
+
+  /* ─── Triage panel — right-under-hero, full-width ─── */
+  section.triage{background:var(--color-shelter);color:var(--color-paper)}
+  .triage-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:300px 1fr;gap:var(--spacing-2xl);min-height:200px;align-items:stretch}
+  .triage-label{padding:40px 0;display:flex;flex-direction:column;justify-content:center;border-right:1px solid rgba(255,255,255,.15);padding-right:var(--spacing-xl)}
+  .triage-label .eyebrow{color:#7fd3dc;margin-bottom:8px}
+  .triage-label h2{font-size:26px;font-weight:900;text-transform:uppercase;line-height:1.05;color:var(--color-paper)}
+  .triage-lanes{display:grid;grid-template-columns:repeat(3,1fr);align-items:stretch}
+  .triage-lane{padding:40px 32px;border-right:1px solid rgba(255,255,255,.15);display:flex;flex-direction:column;gap:10px;transition:background .2s}
+  .triage-lane:last-child{border-right:0}
+  .triage-lane:hover{background:rgba(255,255,255,.04)}
+  .triage-lane .lane-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#7fd3dc}
+  .triage-lane .lane-title{font-size:14px;color:rgba(255,255,255,.85);line-height:1.45;max-width:34ch;margin-bottom:auto;padding-bottom:20px}
+  .triage-lane .lane-num{font-size:32px;font-weight:900;letter-spacing:-.01em;line-height:1;color:var(--color-paper)}
+
+  /* ─── Impact — numeric lead ─── */
+  section.impact{padding:var(--spacing-2xl) 0 var(--section-padding)}
+  .impact-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+  .impact-head{display:grid;grid-template-columns:1fr 1fr;gap:var(--spacing-xl);padding-bottom:var(--spacing-xl);border-bottom:1px solid var(--color-rule);margin-bottom:var(--spacing-xl);align-items:end}
+  .impact-head h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;line-height:1.05;max-width:14ch}
+  .impact-head p{font-size:16px;color:var(--color-g44);max-width:54ch;line-height:1.6}
+  .impact-hero{display:grid;grid-template-columns:1.2fr 1fr;gap:var(--spacing-2xl);padding:var(--spacing-xl) 0;align-items:center}
+  .impact-big{font-size:var(--heading-xxl);font-weight:900;line-height:.82;letter-spacing:-.05em;color:var(--color-shelter)}
+  .impact-big small{display:block;font-size:16px;color:var(--color-g44);font-weight:500;text-transform:uppercase;letter-spacing:.04em;margin-top:20px;line-height:1.5;max-width:34ch}
+  .impact-side p{font-size:17px;color:var(--color-g22);line-height:1.6;margin-bottom:var(--spacing-md);max-width:48ch}
+  .impact-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--color-rule);margin-top:var(--spacing-xl);border:1px solid var(--color-rule)}
+  .impact-stat{background:var(--color-paper);padding:32px 24px}
+  .impact-stat .n{font-size:44px;font-weight:900;color:var(--color-signal);letter-spacing:-.02em;line-height:1}
+  .impact-stat .l{font-size:12px;color:var(--color-g44);text-transform:uppercase;letter-spacing:.08em;margin-top:10px;font-weight:600;line-height:1.45}
+  .impact-stat .s{font-size:11px;color:var(--color-g80);margin-top:6px}
+
+  /* ─── Services grid ─── */
+  section.services{background:#f7f7f7;padding:var(--section-padding) 0;border-top:1px solid var(--color-rule);border-bottom:1px solid var(--color-rule)}
+  .services-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+  .services-header{display:grid;grid-template-columns:1fr 1fr;gap:var(--spacing-xl);margin-bottom:var(--spacing-2xl);align-items:end}
+  .services-header h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;line-height:1.05;max-width:10ch}
+  .services-header p{font-size:16px;color:var(--color-g44);line-height:1.6;max-width:52ch}
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--spacing-lg)}
+  .service-card{background:var(--color-paper);border:1px solid var(--color-rule);padding:36px 32px 32px;display:flex;flex-direction:column;min-height:300px}
+  .service-card:hover{border-color:var(--color-signal)}
+  .service-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--spacing-lg);padding-bottom:var(--spacing-md);border-bottom:1px dashed var(--color-rule)}
+  .service-meta .code{font-size:12px;color:var(--color-signal);font-weight:700;letter-spacing:.08em}
+  .service-meta .mini{font-size:11px;color:var(--color-g66);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+  .service-title{font-size:24px;font-weight:900;text-transform:uppercase;line-height:1.05;margin-bottom:12px}
+  .service-body{color:var(--color-g44);font-size:14px;line-height:1.6;flex:1;margin-bottom:var(--spacing-lg)}
+  .service-foot{display:flex;justify-content:space-between;align-items:center;padding-top:var(--spacing-md);border-top:1px solid var(--color-rule);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+  .service-foot .people{color:var(--color-g66);font-weight:600}
+  .service-foot .arrow{color:var(--color-signal);font-weight:700}
+
+  /* ─── Story (tighter) ─── */
+  section.story{padding:var(--section-padding) 0}
+  .story-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:1fr 1.6fr;gap:var(--spacing-2xl);align-items:center}
+  .story-portrait{aspect-ratio:3/4;background-size:cover;background-position:center;background-image:url("https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=80")}
+  .story-text blockquote{
+    font-size:30px;font-weight:700;line-height:1.28;letter-spacing:-.01em;
+    margin:0 0 var(--spacing-lg);color:var(--color-ink);max-width:32ch
+  }
+  .story-text blockquote::before{content:"\201C";font-size:60px;color:var(--color-signal);line-height:0;margin-right:4px;vertical-align:-.28em;font-family:Georgia,serif}
+  .story-attr{display:grid;grid-template-columns:auto auto auto 1fr;gap:var(--spacing-md);align-items:center;padding:16px 0;border-top:1px solid var(--color-rule);border-bottom:1px solid var(--color-rule);margin-bottom:var(--spacing-lg);font-size:13px;color:var(--color-g44)}
+  .story-attr strong{color:var(--color-ink);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+  .story-body p{font-size:15px;color:var(--color-g22);line-height:1.65;margin-bottom:12px;max-width:60ch}
+  .story-body a{color:var(--color-signal);font-weight:700;border-bottom:1px solid var(--color-signal)}
+
+  /* ─── Ways to help — horizontal ─── */
+  section.help{padding:var(--section-padding) 0;background:var(--color-ink);color:var(--color-paper)}
+  .help-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+  .help-head{display:grid;grid-template-columns:1fr 1fr;gap:var(--spacing-xl);margin-bottom:var(--spacing-2xl);align-items:end}
+  .help-head h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;line-height:1.05}
+  .help-head p{color:rgba(255,255,255,.72);font-size:16px;line-height:1.6;max-width:54ch}
+  .help-rows{display:grid;gap:1px;background:rgba(255,255,255,.16)}
+  .help-row{display:grid;grid-template-columns:80px 1fr 2fr 200px 40px;align-items:center;gap:var(--spacing-lg);padding:28px 24px;background:var(--color-ink);transition:background .2s}
+  .help-row:hover{background:#0d0d0d}
+  .help-row .code{font-size:11px;color:var(--color-signal);font-weight:700;letter-spacing:.12em}
+  .help-row .title{font-size:24px;font-weight:900;text-transform:uppercase;letter-spacing:-.01em;color:var(--color-paper)}
+  .help-row .desc{color:rgba(255,255,255,.7);font-size:14px;line-height:1.55;max-width:60ch}
+  .help-row .metric{font-size:13px;color:rgba(255,255,255,.7);text-align:right;font-weight:500}
+  .help-row .metric strong{color:var(--color-paper);font-size:26px;font-weight:900;display:block;margin-bottom:4px;letter-spacing:-.01em}
+  .help-row .arrow{color:var(--color-signal);font-size:22px;font-weight:900;text-align:right}
+
+  /* ─── Accountability / badges ─── */
+  section.trust{padding:var(--section-padding) 0;background:var(--color-paper)}
+  .trust-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:1fr 1.5fr;gap:var(--spacing-2xl);align-items:center}
+  .trust-inner h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;line-height:1.05;margin-bottom:var(--spacing-md);max-width:14ch}
+  .trust-inner p{color:var(--color-g44);font-size:15px;line-height:1.6;margin-bottom:var(--spacing-lg);max-width:50ch}
+  .trust-inner .btn-ghost{font-size:11px;padding:10px 20px}
+  .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--color-rule);border:1px solid var(--color-rule)}
+  .trust-tile{background:var(--color-paper);padding:32px 24px}
+  .trust-tile .eyebrow{margin-bottom:16px;color:var(--color-signal)}
+  .trust-tile .n{font-size:36px;font-weight:900;color:var(--color-shelter);letter-spacing:-.02em;line-height:1;margin-bottom:8px}
+  .trust-tile .l{font-size:13px;color:var(--color-g22);font-weight:600;line-height:1.45}
+  .trust-tile .s{font-size:11px;color:var(--color-g66);margin-top:10px;text-transform:uppercase;letter-spacing:.08em}
+
+  /* ─── Footer ─── */
+  footer{background:var(--color-shelter);color:var(--color-paper);padding:64px 0 32px}
+  .footer-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+  .footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;gap:40px;padding-bottom:var(--spacing-xl);border-bottom:1px solid rgba(255,255,255,.18)}
+  .footer-brand img{height:52px;width:auto;filter:brightness(0) invert(1);margin-bottom:16px}
+  .footer-brand p{color:rgba(255,255,255,.75);font-size:13px;line-height:1.55;max-width:34ch}
+  .footer-phones{margin-top:20px;display:grid;gap:14px}
+  .footer-phone-row{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:baseline;padding-top:12px;border-top:1px solid rgba(255,255,255,.1)}
+  .footer-phone-row .l{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:700}
+  .footer-phone-row a{font-size:17px;font-weight:900;color:var(--color-paper);letter-spacing:-.01em}
+  .footer-col h4{font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;margin-bottom:14px;color:rgba(255,255,255,.65)}
+  .footer-col ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+  .footer-col a{color:var(--color-paper);font-size:13px;font-weight:500}
+  .footer-col a:hover{color:#7fd3dc}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;font-size:11px;color:rgba(255,255,255,.55);letter-spacing:.04em}
+  .footer-bottom nav{display:flex;gap:var(--spacing-lg)}
+
+  a:focus-visible,.btn:focus-visible{outline:2px solid var(--color-signal);outline-offset:3px}
+
+  /* ─── Responsive ─── */
+
+  /* Tablet landscape · squish */
+  @media (max-width: 1200px){
+    :root{
+      --heading-xxl: 120px;
+      --heading-xl: 48px;
+      --heading-lg: 32px;
+      --section-padding: 72px;
+      --spacing-2xl: 60px;
+      --gutter: 28px;
+    }
+    .triage-inner{grid-template-columns:260px 1fr;gap:var(--spacing-xl)}
+    .help-row{grid-template-columns:60px 1fr 2fr 160px 32px}
+    .services-header,.impact-head,.help-head{gap:var(--spacing-lg)}
+  }
+
+  /* Tablet portrait · 900px ─ most grids collapse */
+  @media (max-width: 900px){
+    :root{
+      --heading-xxl: 88px;
+      --heading-xl: 40px;
+      --heading-lg: 28px;
+      --heading-md: 22px;
+      --section-padding: 56px;
+      --spacing-2xl: 48px;
+      --spacing-xl: 32px;
+      --gutter: 20px;
+      --nav-h: 60px;
+    }
+
+    /* Utility bar — hide the right cluster */
+    .utility{padding:8px 0;font-size:11px}
+    .utility-right{display:none}
+    .utility-left{gap:var(--spacing-lg);flex-wrap:wrap}
+
+    /* Nav — links become a horizontal scroll strip; ghost button hides */
+    .nav-inner{gap:var(--spacing-md)}
+    .nav-logo img{height:34px}
+    .nav-links{
+      display:flex;gap:var(--spacing-lg);
+      overflow-x:auto;-webkit-overflow-scrolling:touch;
+      scrollbar-width:none;flex:1;min-width:0;
+    }
+    .nav-links::-webkit-scrollbar{display:none}
+    .nav-links a{white-space:nowrap;padding:4px 0}
+    .nav-right .btn-ghost{display:none !important}
+    .nav-right{flex-shrink:0}
+
+    /* Hero — stack photo on top */
+    section.hero{grid-template-columns:1fr;min-height:auto}
+    .hero-photo{min-height:320px;aspect-ratio:5/3}
+    .hero-copy{padding:44px 28px 40px;gap:var(--spacing-lg)}
+    .hero-meta{grid-template-columns:auto 1fr;row-gap:var(--spacing-md);column-gap:var(--spacing-lg)}
+    .hero-meta .since{grid-row:1;grid-column:1}
+    .hero-meta > div:nth-child(2){grid-row:1;grid-column:2}
+    .hero-meta > div:nth-child(3){grid-column:1/-1;padding-top:12px;border-top:1px solid var(--color-rule)}
+
+    /* Triage — stack to one column */
+    .triage-inner{grid-template-columns:1fr;gap:0;min-height:auto}
+    .triage-label{padding:32px 0 16px;border-right:0;padding-right:0}
+    .triage-lanes{grid-template-columns:1fr}
+    .triage-lane{padding:24px 0;border-right:0;border-top:1px solid rgba(255,255,255,.15)}
+    .triage-lane:first-child{border-top:1px solid rgba(255,255,255,.15)}
+    .triage-lane .lane-title{max-width:none;padding-bottom:10px}
+
+    /* Impact */
+    .impact-head{grid-template-columns:1fr}
+    .impact-hero{grid-template-columns:1fr;gap:var(--spacing-xl);padding:var(--spacing-lg) 0}
+    .impact-stats{grid-template-columns:repeat(2,1fr)}
+    .impact-stat{padding:24px 20px}
+    .impact-stat .n{font-size:34px}
+
+    /* Services */
+    .services-header{grid-template-columns:1fr}
+    .services-grid{grid-template-columns:1fr;gap:var(--spacing-md)}
+    .service-card{min-height:auto}
+
+    /* Story */
+    .story-inner{grid-template-columns:1fr;gap:var(--spacing-xl)}
+    .story-portrait{aspect-ratio:4/5;max-width:480px}
+    .story-text blockquote{font-size:24px;max-width:none}
+    .story-attr{grid-template-columns:1fr;gap:4px;padding:14px 0}
+
+    /* Help rows — stack each row vertically */
+    .help-head{grid-template-columns:1fr}
+    .help-row{
+      grid-template-columns:1fr auto;
+      grid-template-areas:
+        "code arrow"
+        "title title"
+        "desc desc"
+        "metric metric";
+      row-gap:12px;padding:24px 0;
+    }
+    .help-row .code{grid-area:code}
+    .help-row .arrow{grid-area:arrow;text-align:right}
+    .help-row .title{grid-area:title;font-size:22px}
+    .help-row .desc{grid-area:desc;max-width:none}
+    .help-row .metric{grid-area:metric;text-align:left;padding-top:10px;border-top:1px solid rgba(255,255,255,.16);font-size:12px}
+    .help-row .metric strong{display:inline;font-size:20px;margin-right:8px}
+
+    /* Trust */
+    .trust-inner{grid-template-columns:1fr;gap:var(--spacing-xl)}
+    .trust-grid{grid-template-columns:1fr}
+
+    /* Footer — 2 columns */
+    .footer-top{grid-template-columns:1fr 1fr;gap:32px}
+    .footer-brand{grid-column:1/-1}
+    .footer-bottom{flex-direction:column;gap:12px;align-items:flex-start}
+  }
+
+  /* Mobile · ≤520px */
+  @media (max-width: 520px){
+    :root{
+      --heading-xxl: 56px;
+      --heading-xl: 32px;
+      --heading-lg: 24px;
+      --heading-md: 20px;
+      --body: 15px;
+      --body-sm: 13px;
+      --section-padding: 44px;
+      --spacing-2xl: 36px;
+      --spacing-xl: 24px;
+      --gutter: 16px;
+    }
+
+    /* Utility bar — just the hotline */
+    .utility-inner{padding:0 var(--gutter)}
+    .utility-left{gap:0}
+    .utility-left > span:nth-child(2){display:none}
+
+    /* Nav — logo + Donate only */
+    .topnav{padding:0 var(--gutter)}
+    .nav-logo{font-size:14px}
+    .nav-logo img{height:28px}
+    .btn{padding:12px 18px;font-size:12px}
+
+    /* Hero */
+    .hero-photo{min-height:260px}
+    .hero-copy{padding:32px 20px 28px}
+    .hero-copy h1{font-size:var(--heading-xxl)}
+    .hero-copy .hero-sub{font-size:15px}
+    .hero-meta{font-size:12px;padding-top:16px}
+    .hero-meta .since{font-size:10px}
+    .hero-meta strong{font-size:13px}
+
+    /* Triage */
+    .triage-label h2{font-size:22px}
+    .triage-lane .lane-num{font-size:26px}
+
+    /* Impact */
+    .impact-big{font-size:96px}
+    .impact-big small{font-size:13px;margin-top:14px}
+    .impact-stats{grid-template-columns:1fr}
+    .impact-side p{font-size:15px}
+
+    /* Services */
+    .service-card{padding:28px 22px 26px}
+    .service-title{font-size:22px}
+    .service-body{font-size:14px}
+
+    /* Story */
+    .story-text blockquote{font-size:21px}
+    .story-text blockquote::before{font-size:44px}
+
+    /* Trust */
+    .trust-grid{grid-template-columns:1fr}
+    .trust-tile{padding:24px 20px}
+    .trust-tile .n{font-size:30px}
+
+    /* Footer */
+    footer{padding:48px 0 24px}
+    .footer-top{grid-template-columns:1fr;gap:28px;padding-bottom:32px}
+    .footer-brand img{height:44px}
+    .footer-phone-row{grid-template-columns:100px 1fr;gap:12px}
+    .footer-phone-row a{font-size:15px}
+    .footer-col h4{margin-bottom:10px}
+    .footer-bottom{font-size:10px}
+    .footer-bottom nav{gap:var(--spacing-md);flex-wrap:wrap}
+  }
+</style>
+</head>
+<body>
+
+<div class="utility" aria-label="Utility bar">
+  <div class="utility-inner">
+    <div class="utility-left">
+      <span><span class="dot"></span>Emergency Shelter Hotline · <a href="tel:18019909999">801-990-9999</a></span>
+      <span>Utah 2-1-1 · <a href="tel:211">Dial 211</a></span>
+    </div>
+    <div class="utility-right">
+      <a href="#">Español</a>
+      <a href="#">Find a location</a>
+      <a href="#">Careers</a>
+    </div>
+  </div>
+</div>
+
+<nav class="topnav" aria-label="Primary">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/" aria-label="The Road Home">
+      <img src="../assets/logo.png" alt="">
+    </a>
+    <div class="nav-links">
+      <a href="#get-help" class="active">Get Help</a>
+      <a href="#give">Give</a>
+      <a href="#involved">Get Involved</a>
+      <a href="#impact">Impact</a>
+      <a href="#about">About</a>
+    </div>
+    <div class="nav-right">
+      <a href="#shelter" class="btn-ghost" style="display:inline-block">Find a Shelter</a>
+      <a href="#donate" class="btn">Donate</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" data-section="hero" data-intent="split · photo + type" data-layout="50-50">
+  <div class="hero-photo" role="img" aria-label="A young woman in a warm parka and knit beanie sitting on a stone ledge, downtown Salt Lake City skyline behind her.">
+    <span class="photo-tag">Palmer Court · SLC</span>
+  </div>
+  <div class="hero-copy">
+    <div>
+      <p class="eyebrow">Salt Lake City · since 1923</p>
+      <h1>
+        <span>Refuge.</span>
+        <span>Resources.</span>
+        <span>Relief.</span>
+      </h1>
+      <p class="hero-sub">Emergency shelter, supportive services, and housing assistance for individuals and families in Salt Lake County — every night of the year.</p>
+    </div>
+    <div class="hero-meta">
+      <span class="since">100<br>years</span>
+      <div>
+        <strong>Three programs</strong>
+        <span>Emergency shelter · Supportive services · Housing assistance</span>
+      </div>
+      <div>
+        <strong>1,550</strong>
+        <span style="font-size:12px">housed tonight</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="triage" data-section="triage" data-intent="service-first phone triage">
+  <div class="triage-inner">
+    <div class="triage-label">
+      <p class="eyebrow">Need help now</p>
+      <h2>Shelter tonight. Call the line.</h2>
+    </div>
+    <div class="triage-lanes">
+      <a href="tel:18019909999" class="triage-lane">
+        <span class="lane-label">Homeless Services</span>
+        <span class="lane-title">Shelter intake, bed availability, family services. 24 hours.</span>
+        <span class="lane-num">801-990-9999</span>
+      </a>
+      <a href="tel:18013592444" class="triage-lane">
+        <span class="lane-label">Housing Crisis</span>
+        <span class="lane-title">Facing eviction or a housing emergency. Our team can help.</span>
+        <span class="lane-num">801-359-2444</span>
+      </a>
+      <a href="tel:211" class="triage-lane">
+        <span class="lane-label">Utah 2-1-1</span>
+        <span class="lane-title">Utilities, employment, food, transportation — statewide resource line.</span>
+        <span class="lane-num">Dial 211</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="impact" id="impact" data-section="impact" data-intent="numeric lead">
+  <div class="impact-inner">
+    <div class="impact-head">
+      <h2>Numbers that add up to neighbors.</h2>
+      <p>We measure what matters: nights of shelter, individuals moved into housing, families kept together, veterans stabilized. Every figure represents a person with a name.</p>
+    </div>
+    <div class="impact-hero">
+      <div class="impact-big">1,550<small>People housed by The Road Home on any given night, in the community</small></div>
+      <div class="impact-side">
+        <p>On any given night, more than a thousand and a half people sleep in a bed we help them keep — not a shelter cot, a bed.</p>
+        <p>And last year, 3,800 more found their way off the street through our emergency, supportive, and housing programs combined.</p>
+      </div>
+    </div>
+    <div class="impact-stats">
+      <div class="impact-stat"><div class="n">21,000+</div><div class="l">People served</div><div class="s">last fiscal year</div></div>
+      <div class="impact-stat"><div class="n">3,800</div><div class="l">Moved to housing</div><div class="s">last fiscal year</div></div>
+      <div class="impact-stat"><div class="n">94¢</div><div class="l">Per dollar to services</div><div class="s">audited 2025</div></div>
+      <div class="impact-stat"><div class="n">4 ★</div><div class="l">Charity Navigator</div><div class="s">eight years running</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="get-help" data-section="services" data-intent="pillar triptych · data-aware">
+  <div class="services-inner">
+    <div class="services-header">
+      <h2>What we do</h2>
+      <p>Three programs, one path out. Each program meets someone at the moment of their greatest need — and stays with them through the one after that.</p>
+    </div>
+    <div class="services-grid">
+      <a href="#" class="service-card">
+        <div class="service-meta"><span class="code">01 · Emergency</span><span class="mini">Intake 24 hr</span></div>
+        <h3 class="service-title">Emergency Shelter</h3>
+        <p class="service-body">A safe bed, a warm meal, and a team trained to help. Resource centers serve individuals, couples, and families every night of the year.</p>
+        <div class="service-foot"><span class="people">1,100 + beds nightly</span><span class="arrow">Find a shelter →</span></div>
+      </a>
+      <a href="#" class="service-card">
+        <div class="service-meta"><span class="code">02 · Supportive</span><span class="mini">By referral</span></div>
+        <h3 class="service-title">Supportive Services</h3>
+        <p class="service-body">Case management, mental-health support, employment assistance, and help navigating benefits — stabilization after the crisis.</p>
+        <div class="service-foot"><span class="people">7,200 + served yearly</span><span class="arrow">See services →</span></div>
+      </a>
+      <a href="#" class="service-card">
+        <div class="service-meta"><span class="code">03 · Housing</span><span class="mini">Application-based</span></div>
+        <h3 class="service-title">Housing Assistance</h3>
+        <p class="service-body">Rapid rehousing, permanent supportive housing, rental assistance. The fastest way out is a home, and the fastest way to stay housed is support.</p>
+        <div class="service-foot"><span class="people">1,550 in housing</span><span class="arrow">Housing programs →</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="story" data-section="story" data-intent="human-first named subject">
+  <div class="story-inner">
+    <div class="story-portrait" role="img" aria-label="Darnell, a man in his forties with a close-cropped beard, in an olive jacket, standing on a sidewalk in the golden late-afternoon light of downtown Salt Lake City."></div>
+    <div class="story-text">
+      <p class="eyebrow" style="color:var(--color-signal)">A story · Palmer Court</p>
+      <blockquote>The hardest thing about being unhoused wasn't sleeping outside. It was the paperwork. The Road Home sat with me through every form.</blockquote>
+      <div class="story-attr">
+        <strong>Darnell H.</strong>
+        <span>Permanent supportive housing</span>
+        <span>4 yr</span>
+        <span style="text-align:right;color:var(--color-signal);font-weight:700">Read full story →</span>
+      </div>
+      <div class="story-body">
+        <p>Darnell moved into Palmer Court in 2022 after eight months in and out of emergency shelter. His caseworker, Theresa, helped him replace his ID, enroll in Medicaid, and find part-time work at a hardware store in Sugar House.</p>
+        <p>Today he's working toward a CDL. He wants to drive for a delivery company. <a href="#">Read more stories →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="help" id="give" data-section="help" data-intent="donor + volunteer + advocate, horizontal rows">
+  <div class="help-inner">
+    <div class="help-head">
+      <h2>Three ways to move the work forward.</h2>
+      <p>Every gift, hour, and letter adds up. Here's where to start — and what it buys.</p>
+    </div>
+    <div class="help-rows">
+      <a href="#" class="help-row">
+        <span class="code">01</span>
+        <span class="title">Give</span>
+        <span class="desc">One-time, monthly (Housing Champions), employer matching, or legacy. 94¢ of every dollar reaches services — the rest keeps the lights on and the audits clean.</span>
+        <span class="metric"><strong>$85</strong>a night of shelter</span>
+        <span class="arrow">→</span>
+      </a>
+      <a href="#" class="help-row">
+        <span class="code">02</span>
+        <span class="title">Volunteer</span>
+        <span class="desc">Meal service, kids' tutoring, winter-gear drives, facility work. Individual and team schedules — bring your company, bring your family.</span>
+        <span class="metric"><strong>2,400</strong>volunteers in 2025</span>
+        <span class="arrow">→</span>
+      </a>
+      <a href="#" class="help-row">
+        <span class="code">03</span>
+        <span class="title">Advocate</span>
+        <span class="desc">Homelessness ends at the ballot and in the statehouse. Join our policy list; we send short, specific updates — never more than once a month.</span>
+        <span class="metric"><strong>1×/mo</strong>newsletter, nothing more</span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="trust" id="about" data-section="trust">
+  <div class="trust-inner">
+    <div>
+      <p class="eyebrow">Accountability</p>
+      <h2>One hundred years in, audited every one.</h2>
+      <p>The Road Home has served Salt Lake City since 1923. Our financials are public, our outcomes are measured, and our board publishes its charter.</p>
+      <a href="#" class="btn-ghost">See our financials →</a>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-tile">
+        <p class="eyebrow">Rated</p>
+        <div class="n">★★★★</div>
+        <div class="l">Charity Navigator four-star</div>
+        <div class="s">8 years running</div>
+      </div>
+      <div class="trust-tile">
+        <p class="eyebrow">Rated</p>
+        <div class="n">A+</div>
+        <div class="l">CharityWatch top-rated</div>
+        <div class="s">2025</div>
+      </div>
+      <div class="trust-tile">
+        <p class="eyebrow">Founded</p>
+        <div class="n">1923</div>
+        <div class="l">100 years in Salt Lake City</div>
+        <div class="s">501(c)(3) · EIN 87-0214867</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="../assets/logo.png" alt="The Road Home">
+        <p>A century-old frontline homeless-services organization in Salt Lake City. Refuge. Resources. Relief.</p>
+        <div class="footer-phones">
+          <div class="footer-phone-row"><span class="l">Shelter</span><a href="tel:18019909999">801-990-9999</a></div>
+          <div class="footer-phone-row"><span class="l">Housing crisis</span><a href="tel:18013592444">801-359-2444</a></div>
+          <div class="footer-phone-row"><span class="l">Utah 2-1-1</span><a href="tel:211">211</a></div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Get Help</h4>
+        <ul>
+          <li><a href="#">Find a Shelter</a></li>
+          <li><a href="#">Emergency Services</a></li>
+          <li><a href="#">Housing Assistance</a></li>
+          <li><a href="#">Supportive Services</a></li>
+          <li><a href="#">For Families</a></li>
+          <li><a href="#">For Veterans</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Give</h4>
+        <ul>
+          <li><a href="#">One-time donation</a></li>
+          <li><a href="#">Housing Champions</a></li>
+          <li><a href="#">Employer matching</a></li>
+          <li><a href="#">Legacy / planned</a></li>
+          <li><a href="#">Item donations</a></li>
+          <li><a href="#">Where does it go?</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="#">Our history</a></li>
+          <li><a href="#">Leadership</a></li>
+          <li><a href="#">Annual reports</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Impact</h4>
+        <ul>
+          <li><a href="#">Numbers</a></li>
+          <li><a href="#">Stories</a></li>
+          <li><a href="#">Research</a></li>
+          <li><a href="#">Policy briefs</a></li>
+          <li><a href="#">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 1923–2026 The Road Home · Salt Lake City, UT · EIN 87-0214867</div>
+      <nav>
+        <a href="#">Privacy</a>
+        <a href="#">Accessibility</a>
+        <a href="#">Donor bill of rights</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

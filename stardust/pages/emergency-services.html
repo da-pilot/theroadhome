@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Emergency Services — The Road Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+  @import url("../prototypes/_tokens.css");
+
+  .service-hero{padding:var(--spacing-2xl) 0 0}
+  .service-hero .inner{display:grid;grid-template-columns:1.2fr 1fr;gap:var(--spacing-2xl);align-items:end;padding-bottom:var(--spacing-2xl);border-bottom:1px solid var(--color-rule)}
+  .service-hero h1{font-size:var(--heading-xl);font-weight:900;text-transform:uppercase;line-height:0.98;letter-spacing:-.015em;margin-bottom:var(--spacing-md)}
+  .service-hero .sub{font-size:19px;color:var(--color-g22);line-height:1.55;max-width:52ch;margin-bottom:var(--spacing-lg)}
+  .service-hero .phone-cta{display:inline-flex;align-items:center;gap:14px;padding:18px 28px;background:var(--color-signal);color:var(--color-paper);font-weight:900;font-size:18px;letter-spacing:-.01em}
+  .service-hero .phone-cta small{font-weight:600;font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+  .service-hero .art{aspect-ratio:4/5;background-size:cover;background-position:center;background-image:linear-gradient(180deg,rgba(0,20,25,.05),rgba(0,20,25,.4)),url('https://images.unsplash.com/photo-1518623489648-a173ef7824f3?auto=format&fit=crop&w=1200&q=80')}
+
+  .what{padding:var(--section-padding) 0}
+  .what-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:2fr 1fr;gap:var(--spacing-2xl)}
+  .what-main h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;line-height:1.05;margin-bottom:var(--spacing-md)}
+  .what-main p{font-size:17px;color:var(--color-g22);line-height:1.7;margin-bottom:var(--spacing-md);max-width:58ch}
+  .what-side{padding:32px 28px;background:var(--color-panel);border:1px solid var(--color-rule);align-self:start;position:sticky;top:calc(var(--nav-h) + 20px)}
+  .what-side .eyebrow{margin-bottom:var(--spacing-md)}
+  .what-side dl{margin:0;display:grid;gap:16px}
+  .what-side dt{font-size:11px;color:var(--color-g66);text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:4px}
+  .what-side dd{margin:0;font-size:15px;font-weight:600;color:var(--color-ink)}
+
+  .pillars{padding:var(--section-padding) 0;background:var(--color-panel);border-top:1px solid var(--color-rule);border-bottom:1px solid var(--color-rule)}
+  .pillars-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter)}
+  .pillars-head{margin-bottom:var(--spacing-xl)}
+  .pillars-head h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;margin-bottom:8px}
+  .pillars-head p{color:var(--color-g44);max-width:54ch}
+  .pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--color-rule);border:1px solid var(--color-rule)}
+  .pillar{background:var(--color-paper);padding:44px 36px 40px}
+  .pillar .num{font-size:42px;font-weight:900;color:var(--color-signal);letter-spacing:-.02em;margin-bottom:20px;line-height:1}
+  .pillar h3{font-size:22px;font-weight:900;text-transform:uppercase;margin-bottom:12px}
+  .pillar p{font-size:14px;color:var(--color-g44);line-height:1.6}
+
+  .weather{padding:var(--section-padding) 0;background:var(--color-shelter);color:var(--color-paper)}
+  .weather-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:1fr 1fr;gap:var(--spacing-2xl);align-items:center}
+  .weather h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;line-height:1.02;margin-bottom:var(--spacing-md)}
+  .weather p{color:rgba(255,255,255,.85);font-size:17px;line-height:1.6;max-width:50ch;margin-bottom:var(--spacing-md)}
+  .weather .thresholds{background:rgba(255,255,255,.06);padding:28px;display:grid;gap:16px}
+  .weather .thresholds .eyebrow{color:var(--color-signal-soft)}
+  .weather .thresholds .row{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;padding:12px 0;border-top:1px solid rgba(255,255,255,.14)}
+  .weather .thresholds .temp{font-size:28px;font-weight:900;letter-spacing:-.01em}
+  .weather .thresholds .desc{font-size:13px;color:rgba(255,255,255,.85);line-height:1.45}
+
+  .partner{padding:var(--section-padding) 0}
+  .partner-inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--gutter);display:grid;grid-template-columns:1fr 1fr;gap:var(--spacing-2xl);align-items:center}
+  .partner h2{font-size:var(--heading-lg);font-weight:900;text-transform:uppercase;margin-bottom:var(--spacing-md)}
+  .partner p{color:var(--color-g22);font-size:16px;line-height:1.65;margin-bottom:var(--spacing-md);max-width:50ch}
+  .partner .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--color-rule);border:1px solid var(--color-rule)}
+  .partner .stats div{background:var(--color-paper);padding:28px 24px}
+  .partner .stats .n{font-size:32px;font-weight:900;color:var(--color-shelter);letter-spacing:-.01em;line-height:1}
+  .partner .stats .l{font-size:12px;color:var(--color-g44);text-transform:uppercase;letter-spacing:.08em;margin-top:10px;font-weight:600}
+
+  @media (max-width:900px){
+    .service-hero .inner{grid-template-columns:1fr}
+    .service-hero .art{aspect-ratio:5/3;order:-1}
+    .what-inner{grid-template-columns:1fr}
+    .what-side{position:static}
+    .pillars-grid{grid-template-columns:1fr}
+    .weather-inner,.partner-inner{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<div class="utility"><div class="utility-inner"><div class="utility-left"><span><span class="dot"></span>Emergency Shelter Hotline · <a href="tel:18019909999">801-990-9999</a></span><span>Utah 2-1-1 · <a href="tel:211">Dial 211</a></span></div><div class="utility-right"><a href="contact-us.html">Español</a><a href="shelter.html">Find a location</a><a href="meet-the-team.html">Careers</a></div></div></div>
+<nav class="topnav"><div class="nav-inner"><a class="nav-logo" href="index.html"><img src="../assets/logo.png" alt=""></a><div class="nav-links"><a href="get-help.html" class="active">Get Help</a><a href="give-main.html">Give</a><a href="get-involved.html">Get Involved</a><a href="about-us.html">About</a></div><div class="nav-right"><a href="shelter.html" class="btn-ghost">Find a Shelter</a><a href="donate.html" class="btn">Donate</a></div></div></nav>
+<div class="breadcrumbs"><div class="inner"><a href="index.html">Home</a><span class="sep">/</span><a href="get-help.html">Get Help</a><span class="sep">/</span>Emergency Services</div></div>
+
+<section class="service-hero">
+  <div class="inner">
+    <div>
+      <p class="eyebrow">Get Help · Emergency Services</p>
+      <h1>A human on the phone. A bed tonight. Help now.</h1>
+      <p class="sub">When hours matter, The Road Home's emergency services team is the fastest way to connect with shelter, outreach, and crisis support in Salt Lake County.</p>
+      <a href="tel:18019909999" class="phone-cta"><span>801-990-9999</span><small>Homeless Services Line · 24 hours</small></a>
+    </div>
+    <div class="art" role="img" aria-label="Outreach team member speaking with a community member at night."></div>
+  </div>
+</section>
+
+<section class="what">
+  <div class="what-inner">
+    <div class="what-main">
+      <h2>The front of every other program.</h2>
+      <p>Emergency services sit at the front of every other program we run. Whether someone is calling for the first time, being referred by a hospital discharge planner, or found outside in a freezing night, the emergency-services team is the first voice they hear.</p>
+      <p>We meet people where they are — on the phone, on the street, at the hospital bedside, or walking through the resource-center doors.</p>
+      <p>No intake paperwork is required to start. No ID is required. What we need first is a conversation.</p>
+    </div>
+    <aside class="what-side">
+      <p class="eyebrow">At a glance</p>
+      <dl>
+        <div><dt>Who we help</dt><dd>Anyone in immediate housing crisis in Salt Lake County</dd></div>
+        <div><dt>When</dt><dd>24 hours · 365 days</dd></div>
+        <div><dt>How to access</dt><dd>Call 801-990-9999 · or ask a partner to refer</dd></div>
+        <div><dt>Cost</dt><dd>Free. No ID required.</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section class="pillars">
+  <div class="pillars-inner">
+    <div class="pillars-head">
+      <p class="eyebrow">Three ways we respond</p>
+      <h2>What emergency services covers.</h2>
+      <p>One phone number, three response modes. The team dispatches based on what's needed and where the person is.</p>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar"><div class="num">01</div><h3>Phone intake</h3><p>24-hour Homeless Services Line. Interpreters available. First triage, bed availability, family services, partner referrals.</p></div>
+      <div class="pillar"><div class="num">02</div><h3>Street outreach</h3><p>Teams that visit encampments and unsheltered individuals to connect them with shelter, medical care, and case management.</p></div>
+      <div class="pillar"><div class="num">03</div><h3>Weather response</h3><p>Expanded capacity during extreme weather. Emergency hotel placement for the medically vulnerable.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="weather">
+  <div class="weather-inner">
+    <div>
+      <p class="eyebrow" style="color:var(--color-signal-soft)">Extreme weather</p>
+      <h2>If the weather turns dangerous, so do we.</h2>
+      <p>Below freezing or above one hundred degrees, we expand shelter capacity and activate outreach. If you see someone outside in dangerous weather, call 801-990-9999 — or 911 if it's a medical emergency.</p>
+    </div>
+    <div class="thresholds">
+      <p class="eyebrow">Activation thresholds</p>
+      <div class="row"><div class="temp">≤ 32°</div><div class="desc">Cold-weather protocol activates: expanded capacity, outreach doubles, hotel placement for medically vulnerable.</div></div>
+      <div class="row"><div class="temp">≥ 100°</div><div class="desc">Heat-wave protocol: cooling stations at resource centers, water-distribution outreach, hotel placement on request.</div></div>
+      <div class="row"><div class="temp">Flash</div><div class="desc">Storm / flood / air-quality events: coordinated response with Salt Lake County emergency management.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="partner">
+  <div class="partner-inner">
+    <div>
+      <p class="eyebrow">For partners</p>
+      <h2>Making a referral?</h2>
+      <p>Hospitals, jails, law enforcement, and partner nonprofits can make referrals directly. We respond within one hour during business hours; within four hours overnight.</p>
+      <p>Partner portal available at <a href="#" style="color:var(--color-signal);font-weight:700">partners.theroadhome.org</a> for secure, pre-filled referrals.</p>
+      <a href="#" class="btn">Partner referral →</a>
+    </div>
+    <div class="stats">
+      <div><div class="n">24 hr</div><div class="l">Response time</div></div>
+      <div><div class="n">1,100+</div><div class="l">Beds nightly</div></div>
+      <div><div class="n">365</div><div class="l">Days a year</div></div>
+      <div><div class="n">60 sec</div><div class="l">Average phone wait</div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site"><div class="footer-inner">
+  <div class="footer-top">
+    <div class="footer-brand"><img src="../assets/logo.png" alt="The Road Home"><p>A century-old frontline homeless-services organization in Salt Lake City. Refuge. Resources. Relief.</p>
+      <div class="footer-phones">
+        <div class="footer-phone-row"><span class="l">Shelter</span><a href="tel:18019909999">801-990-9999</a></div>
+        <div class="footer-phone-row"><span class="l">Housing crisis</span><a href="tel:18013592444">801-359-2444</a></div>
+        <div class="footer-phone-row"><span class="l">Utah 2-1-1</span><a href="tel:211">211</a></div>
+      </div>
+    </div>
+    <div class="footer-col"><h3>Get Help</h3><ul><li><a href="shelter.html">Find a Shelter</a></li><li><a href="emergency-services.html">Emergency Services</a></li><li><a href="housing-programs.html">Housing Assistance</a></li><li><a href="resource-centers.html">Resource Centers</a></li><li><a href="palmer-court.html">Palmer Court</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+    <div class="footer-col"><h3>Give</h3><ul><li><a href="donate.html">One-time</a></li><li><a href="housing-champions.html">Monthly · Housing Champions</a></li><li><a href="legacy-planned.html">Legacy / Planned</a></li><li><a href="#">Employer matching</a></li><li><a href="#">Item donations</a></li><li><a href="where-does-it-go.html">Where does it go?</a></li></ul></div>
+    <div class="footer-col"><h3>About</h3><ul><li><a href="about-us.html">Our mission</a></li><li><a href="#">Our history</a></li><li><a href="meet-the-team.html">Meet the team</a></li><li><a href="board-of-trustees.html">Board</a></li><li><a href="annual-reports.html">Annual reports</a></li><li><a href="contact-us.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h3>Impact</h3><ul><li><a href="housing-stories.html">Housing stories</a></li><li><a href="where-does-it-go.html">By the numbers</a></li><li><a href="annual-reports.html">Reports</a></li><li><a href="#">Press</a></li><li><a href="#">Newsletter</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><div>© 1923–2026 The Road Home · Salt Lake City, UT · EIN 87-0212465</div><nav><a href="#">Privacy</a><a href="#">Accessibility</a><a href="#">Donor bill of rights</a></nav></div>
+</div></footer>
+
+</body>
+</html>
