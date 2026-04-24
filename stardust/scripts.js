@@ -1,20 +1,20 @@
 /* stardust / scripts.js
    Entry + inlined DOM helpers. Pipeline (in order):
-     1. loadHead()         — fetch /head.html, append styles/links/meta to <head>
-     2. decorateSections() — tag every `main > div` with class="section"
-     3. hydrateChrome()    — move body-chrome HTML out of the .snowflake <pre><code>
-     4. loadBlocks()       — dynamic-import blocks/{name}/{name}.js, call decorate()
+     1. hydrateChrome()    — move body-chrome HTML (+ <style>/<link>/<meta>)
+                             out of the .snowflake <pre><code>, then remove
+                             the snowflake block and its section wrapper.
+     2. decorateSections() — tag every remaining `main > div` with class="section".
+     3. loadBlocks()       — dynamic-import blocks/{name}/{name}.js, call decorate().
+   Head is expected to be part of the page already (no runtime fetch).
 */
 
 const KNOWN_BLOCKS = ['hero', 'triage', 'impact', 'services', 'story', 'help', 'trust'];
 
 const blockURL = (name) => new URL(`./blocks/${name}/${name}.js`, import.meta.url).href;
-const headURL = new URL('../head.html', import.meta.url).href;
 
 ready(async () => {
-  await loadHead();
-  decorateSections();
   hydrateChrome();
+  decorateSections();
   await loadBlocks();
 });
 
@@ -26,52 +26,30 @@ function ready(fn) {
   }
 }
 
-/* ─── 1. head.html ─────────────────────────────────────────────────── */
-
-async function loadHead() {
-  // If head.html has already been injected (e.g. server-side in EDS),
-  // the head will already contain its link/style tags — skip to avoid dupes.
-  if (document.head.querySelector('link[rel="stylesheet"], style')) return;
-  try {
-    const res = await fetch(headURL);
-    if (!res.ok) return;
-    const tpl = document.createElement('template');
-    tpl.innerHTML = await res.text();
-    tpl.content.querySelectorAll('link, style, meta').forEach((node) => {
-      document.head.appendChild(node);
-    });
-  } catch (err) {
-    console.error('[head.html] failed to load', err);
-  }
-}
-
-/* ─── 2. Sections ──────────────────────────────────────────────────── */
-
-function decorateSections() {
-  const main = document.querySelector('main');
-  if (!main) return;
-  Array.from(main.children).forEach((child) => {
-    if (child.tagName !== 'DIV') return;
-    if (child.classList.contains('snowflake')) return;
-    child.classList.add('section');
-  });
-}
-
-/* ─── 3. Body chrome ───────────────────────────────────────────────── */
+/* ─── 1. Body chrome ───────────────────────────────────────────────── */
 
 function hydrateChrome() {
   const snowflake = document.querySelector('.snowflake');
   if (!snowflake) return;
 
   const code = snowflake.querySelector('pre code');
-  if (!code) { snowflake.remove(); return; }
+  const sectionWrapper = snowflake.parentElement && snowflake.parentElement.tagName === 'DIV'
+    && snowflake.parentElement.parentElement && snowflake.parentElement.parentElement.tagName === 'MAIN'
+    ? snowflake.parentElement
+    : null;
+
+  if (!code) {
+    snowflake.remove();
+    if (sectionWrapper && sectionWrapper.children.length === 0) sectionWrapper.remove();
+    return;
+  }
 
   const tpl = document.createElement('template');
   tpl.innerHTML = code.textContent;
   const src = tpl.content;
 
-  // Head-bound tags (styles, fonts, meta, scripts declared inside the chrome).
-  src.querySelectorAll('style, link, meta, script').forEach((node) => {
+  // Head-bound tags (styles, fonts, meta).
+  src.querySelectorAll('style, link, meta').forEach((node) => {
     document.head.appendChild(node);
   });
 
@@ -93,9 +71,22 @@ function hydrateChrome() {
   moveTo('footer', 'after-main');
 
   snowflake.remove();
+  if (sectionWrapper && sectionWrapper.children.length === 0) sectionWrapper.remove();
 }
 
-/* ─── 4. Blocks ────────────────────────────────────────────────────── */
+/* ─── 2. Sections ──────────────────────────────────────────────────── */
+
+function decorateSections() {
+  const main = document.querySelector('main');
+  if (!main) return;
+  Array.from(main.children).forEach((child) => {
+    if (child.tagName !== 'DIV') return;
+    if (child.classList.contains('snowflake')) return;
+    child.classList.add('section');
+  });
+}
+
+/* ─── 3. Blocks ────────────────────────────────────────────────────── */
 
 async function loadBlocks() {
   const jobs = [];
