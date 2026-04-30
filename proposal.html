@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Website Uplift Proposal — The Road Home × Adobe × Modelic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* ─── Tokens */
+:root {
+  --color-signal:      #008192;
+  --color-shelter:     #005560;
+  --color-dusk:        #105560;
+  --color-ink:         #000000;
+  --color-paper:       #ffffff;
+  --color-g22:         #222222;
+  --color-g44:         #444444;
+  --color-g66:         #666666;
+  --color-g80:         #808080;
+  --color-rule:        #e9e9e9;
+  --color-tint:        #f0f8f9;
+  --color-panel:       #f7f7f7;
+  --color-signal-soft: #7fd3dc;
+
+  --heading-font: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --body-font:    'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --max-width:  1160px;
+  --gutter:     40px;
+  --section-v:  96px;
+}
+
+*, *::before, *::after { box-sizing: border-box }
+html, body { margin: 0; padding: 0 }
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--body-font);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+a { color: var(--color-signal); text-decoration: none }
+p { margin: 0 }
+h1,h2,h3,h4 { font-family: var(--heading-font); margin: 0; line-height: 1.05; letter-spacing: -0.01em }
+img { max-width: 100%; display: block }
+
+.inner { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--gutter) }
+.eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; color: var(--color-g66); margin: 0 0 16px }
+
+/* ─── Cover */
+.cover {
+  background: var(--color-shelter);
+  color: var(--color-paper);
+  padding: 80px 0 72px;
+  border-bottom: 4px solid var(--color-signal);
+}
+.cover-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
+  align-items: end;
+}
+.cover-logo {
+  height: 52px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  margin-bottom: 48px;
+}
+.cover h1 {
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.96;
+  color: var(--color-paper);
+  margin-bottom: 24px;
+}
+.cover h1 em {
+  font-style: normal;
+  color: var(--color-signal-soft);
+}
+.cover-sub {
+  font-size: 18px;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.55;
+  max-width: 54ch;
+  margin-bottom: 40px;
+}
+.cover-parties {
+  display: flex;
+  gap: 0;
+  border: 1px solid rgba(255,255,255,0.2);
+  width: fit-content;
+}
+.cover-party {
+  padding: 16px 28px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: rgba(255,255,255,0.65);
+  border-right: 1px solid rgba(255,255,255,0.2);
+}
+.cover-party:last-child { border-right: 0 }
+.cover-party strong { display: block; font-size: 15px; color: var(--color-paper); margin-top: 4px; font-weight: 900; letter-spacing: 0.02em }
+.cover-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  text-align: right;
+  padding-bottom: 4px;
+}
+.cover-meta .label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgba(255,255,255,0.5);
+  font-weight: 700;
+}
+.cover-meta .value {
+  font-size: 14px;
+  color: rgba(255,255,255,0.85);
+  font-weight: 600;
+}
+.cover-meta-block { line-height: 1.3 }
+
+/* ─── Executive summary */
+.exec {
+  padding: var(--section-v) 0;
+  border-bottom: 1px solid var(--color-rule);
+}
+.exec-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.exec h2 {
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  line-height: 1.02;
+}
+.exec-lede {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--color-g22);
+  max-width: 58ch;
+}
+.summary-cards {
+  display: grid;
+  gap: 16px;
+}
+.summary-card {
+  border: 1px solid var(--color-rule);
+  padding: 28px 32px;
+}
+.summary-card.gets { border-top: 3px solid var(--color-signal) }
+.summary-card.requires { border-top: 3px solid var(--color-g80) }
+.summary-card .card-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.summary-card.gets .card-label { color: var(--color-signal) }
+.summary-card.requires .card-label { color: var(--color-g66) }
+.summary-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+.summary-card li {
+  font-size: 14px;
+  color: var(--color-g22);
+  line-height: 1.45;
+  padding-left: 20px;
+  position: relative;
+}
+.summary-card li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 8px;
+  height: 2px;
+  background: currentColor;
+}
+.summary-card.gets li::before { background: var(--color-signal) }
+.summary-card.requires li::before { background: var(--color-g80) }
+
+/* ─── Roles */
+.roles {
+  padding: var(--section-v) 0;
+  background: var(--color-panel);
+  border-bottom: 1px solid var(--color-rule);
+  border-top: 1px solid var(--color-rule);
+}
+.roles-head {
+  margin-bottom: 56px;
+}
+.roles-head h2 {
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.roles-head p {
+  font-size: 16px;
+  color: var(--color-g44);
+  max-width: 56ch;
+}
+.roles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--color-rule);
+  border: 1px solid var(--color-rule);
+}
+.role-card {
+  background: var(--color-paper);
+  padding: 40px 36px;
+}
+.role-card .role-num {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--color-signal);
+  margin-bottom: 8px;
+}
+.role-card .role-entity {
+  font-family: var(--heading-font);
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+.role-card .role-tagline {
+  font-size: 12px;
+  color: var(--color-g66);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--color-rule);
+}
+.role-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 14px;
+}
+.role-card li {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-g22);
+  padding-left: 16px;
+  position: relative;
+}
+.role-card li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-signal);
+  opacity: 0.6;
+}
+
+/* ─── Key Drivers */
+.drivers {
+  padding: var(--section-v) 0;
+  border-bottom: 1px solid var(--color-rule);
+}
+.drivers-head {
+  margin-bottom: 56px;
+}
+.drivers-head h2 {
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.drivers-head p {
+  font-size: 16px;
+  color: var(--color-g44);
+  max-width: 56ch;
+}
+.drivers-list {
+  display: grid;
+  gap: 2px;
+}
+.driver {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 0;
+  border: 1px solid var(--color-rule);
+  transition: border-color 0.2s;
+}
+.driver:hover { border-color: var(--color-signal) }
+.driver-num {
+  background: var(--color-shelter);
+  color: var(--color-paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--heading-font);
+  font-size: 48px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: rgba(255,255,255,0.25);
+  padding: 40px 32px;
+  border-right: 0;
+}
+.driver-body {
+  padding: 40px 40px;
+}
+.driver-body h3 {
+  font-size: 20px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+  color: var(--color-ink);
+}
+.driver-body p {
+  font-size: 15px;
+  color: var(--color-g44);
+  line-height: 1.6;
+  max-width: 64ch;
+}
+.driver-body .highlight {
+  color: var(--color-signal);
+  font-weight: 700;
+}
+
+/* ─── Closing band */
+.closing {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  padding: 80px 0;
+}
+.closing-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 64px;
+  align-items: center;
+}
+.closing h2 {
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.02;
+  margin-bottom: 16px;
+}
+.closing h2 em {
+  font-style: normal;
+  color: var(--color-signal-soft);
+}
+.closing p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.7);
+  max-width: 52ch;
+  line-height: 1.6;
+}
+.closing-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+.btn {
+  display: inline-block;
+  background: var(--color-signal);
+  color: var(--color-paper);
+  padding: 16px 32px;
+  font-family: var(--heading-font);
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: 0;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.btn:hover { background: var(--color-shelter) }
+.btn-ghost-dark {
+  display: inline-block;
+  background: transparent;
+  color: var(--color-paper);
+  border: 1px solid rgba(255,255,255,0.35);
+  padding: 14px 32px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+.btn-ghost-dark:hover { background: var(--color-paper); color: var(--color-ink) }
+
+/* ─── Footer */
+footer {
+  background: var(--color-shelter);
+  color: var(--color-paper);
+  padding: 36px 0;
+  font-size: 12px;
+  color: rgba(255,255,255,0.55);
+}
+footer .footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+footer img {
+  height: 32px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.7;
+}
+footer .footer-right {
+  text-align: right;
+  line-height: 1.6;
+}
+
+/* ─── Responsive */
+@media (max-width: 960px) {
+  :root {
+    --section-v: 72px;
+    --gutter: 28px;
+  }
+  .cover-inner { grid-template-columns: 1fr; gap: 40px }
+  .cover-meta { align-items: flex-start; text-align: left }
+  .exec-grid { grid-template-columns: 1fr; gap: 48px }
+  .roles-grid { grid-template-columns: 1fr }
+  .closing-inner { grid-template-columns: 1fr; gap: 40px }
+  .closing-cta { align-items: flex-start }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --section-v: 56px;
+    --gutter: 20px;
+  }
+  .cover { padding: 56px 0 48px }
+  .cover-parties { flex-direction: column; width: 100% }
+  .cover-party { border-right: 0; border-bottom: 1px solid rgba(255,255,255,0.2) }
+  .cover-party:last-child { border-bottom: 0 }
+  .driver { grid-template-columns: 72px 1fr }
+  .driver-num { font-size: 32px; padding: 24px 16px }
+  .driver-body { padding: 24px 20px }
+  footer .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px }
+  footer .footer-right { text-align: left }
+}
+</style>
+</head>
+<body>
+
+<!-- Cover -->
+<section class="cover">
+  <div class="cover-inner">
+    <div>
+      <img src="stardust/assets/logo.png" alt="The Road Home" class="cover-logo">
+      <h1>Website<br><em>Uplift</em><br>Proposal</h1>
+      <p class="cover-sub">A no-cost migration from WordPress to Adobe Experience Manager, delivered as a tri-party partnership between The Road Home, Adobe, and Modelic.</p>
+      <div class="cover-parties">
+        <div class="cover-party">
+          <span>Prepared for</span>
+          <strong>The Road Home</strong>
+        </div>
+        <div class="cover-party">
+          <span>Technology by</span>
+          <strong>Adobe</strong>
+        </div>
+        <div class="cover-party">
+          <span>Code maintenance</span>
+          <strong>Modelic</strong>
+        </div>
+      </div>
+    </div>
+    <div class="cover-meta">
+      <div class="cover-meta-block">
+        <div class="label">Date</div>
+        <div class="value">April 2026</div>
+      </div>
+      <div class="cover-meta-block">
+        <div class="label">Version</div>
+        <div class="value">1.0 · Draft</div>
+      </div>
+      <div class="cover-meta-block">
+        <div class="label">Cost to TRH</div>
+        <div class="value" style="color: var(--color-signal-soft); font-size: 18px; font-weight: 900">$0</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Executive Review -->
+<section class="exec">
+  <div class="inner">
+    <div class="exec-grid">
+      <div>
+        <div class="eyebrow">01 · Executive Review</div>
+        <h2>Enterprise technology.<br>Zero cost.</h2>
+        <p class="exec-lede" style="margin-top: 16px">Adobe proposes a no-cost website uplift for The Road Home, migrating theroadhome.com from WordPress to Adobe Experience Manager (AEM). This tri-party partnership delivers enterprise-grade technology to TRH while enabling Adobe to showcase next-generation tools in a real-world nonprofit context.</p>
+        <p class="exec-lede" style="margin-top: 16px">This partnership creates mutual value: TRH receives enterprise technology at no cost, Adobe gains real-world insights for product development, Modelic receives training on Adobe content management technologies.</p>
+      </div>
+      <div class="summary-cards">
+        <div class="summary-card gets">
+          <div class="card-label">What TRH Gets</div>
+          <ul>
+            <li>Modern, SEO-optimized platform with better search rankings (Core Web Vitals + GEO)</li>
+            <li>Document-based content management requiring no technical expertise</li>
+            <li>Zero migration and hosting costs through Adobe's community licensing</li>
+          </ul>
+        </div>
+        <div class="summary-card requires">
+          <div class="card-label">What's Required from TRH</div>
+          <ul>
+            <li>Validate content and commit to 2-month go-live post-approval</li>
+            <li>Maintain ongoing content and share feedback with Adobe</li>
+            <li>Participate in a shared Microsoft Teams channel with all parties</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Roles & Responsibilities -->
+<section class="roles">
+  <div class="inner">
+    <div class="roles-head">
+      <div class="eyebrow">02 · Roles &amp; Responsibilities</div>
+      <h2>Who does what</h2>
+      <p>Three parties, three clear lanes. Each entity has defined responsibilities so the engagement stays focused and on-schedule.</p>
+    </div>
+    <div class="roles-grid">
+      <div class="role-card">
+        <div class="role-num">01 · Technology partner</div>
+        <div class="role-entity">Adobe</div>
+        <div class="role-tagline">Providing the platform, at no cost</div>
+        <ul>
+          <li>Performs the full site uplift — a light UX modernization from WordPress to AEM</li>
+          <li>Covers all migration and on-going hosting costs via Adobe's community licensing program</li>
+          <li>Delivers 3× 1-hour authoring training sessions for TRH staff during handoff</li>
+          <li>Augments Modelic staff for the first six months post-launch</li>
+          <li>Maintains a shared Microsoft Teams channel for ongoing support questions</li>
+        </ul>
+      </div>
+      <div class="role-card">
+        <div class="role-num">02 · Client</div>
+        <div class="role-entity">The Road Home</div>
+        <div class="role-tagline">Content owner &amp; feedback source</div>
+        <ul>
+          <li>Reviews and validates all uplifted content, making edits as necessary</li>
+          <li>Commits to go-live within two months after prototype approval</li>
+          <li>Manages ongoing content maintenance after launch</li>
+          <li>Shares product feedback with Adobe to support continued learning and improvement</li>
+          <li>Participates in shared Teams channel for run-the-business questions</li>
+        </ul>
+      </div>
+      <div class="role-card">
+        <div class="role-num">03 · Code partner</div>
+        <div class="role-entity">Modelic</div>
+        <div class="role-tagline">Long-term code stewardship</div>
+        <ul>
+          <li>Receives 3× 2-hour in-person AEM developer training sessions from Adobe</li>
+          <li>Responsible for all ongoing code maintenance after handoff</li>
+          <li>Supported by Adobe augmentation staff for the first six months</li>
+          <li>Participates in shared Teams channel for technical coordination</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Key Drivers -->
+<section class="drivers">
+  <div class="inner">
+    <div class="drivers-head">
+      <div class="eyebrow">03 · Key Drivers</div>
+      <h2>Why this, why now</h2>
+      <p>Three concrete outcomes that make this uplift worth doing — not aspirational, measurable.</p>
+    </div>
+    <div class="drivers-list">
+      <div class="driver">
+        <div class="driver-num">01</div>
+        <div class="driver-body">
+          <h3>Better SEO &amp; GEO</h3>
+          <p>The new site will achieve passing <span class="highlight">Core Web Vitals</span> scores, now a direct signal for search ranking. It will also be automatically optimized for <span class="highlight">AI-based citations and searches</span> (Generative Engine Optimization), positioning TRH in front of people seeking help through tools like ChatGPT and Perplexity.</p>
+        </div>
+      </div>
+      <div class="driver">
+        <div class="driver-num">02</div>
+        <div class="driver-body">
+          <h3>Low-effort modernization</h3>
+          <p>The goal is uplift, not reinvention. The new site delivers a refreshed visitor experience — cleaner layout, faster load times, improved accessibility — <span class="highlight">without requiring heavy investment</span> from TRH or disrupting the site's proven information architecture.</p>
+        </div>
+      </div>
+      <div class="driver">
+        <div class="driver-num">03</div>
+        <div class="driver-body">
+          <h3>Document-based authoring</h3>
+          <p>Adobe Experience Manager gives TRH staff a <span class="highlight">Microsoft Word or Google Docs-style</span> editing experience. No CMS training required, no developer dependency for routine content updates. Any non-technical team member can publish and edit pages independently.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Closing band -->
+<section class="closing">
+  <div class="closing-inner">
+    <div>
+      <div class="eyebrow" style="color: var(--color-signal-soft); margin-bottom: 20px">Next step</div>
+      <h2>Ready to move<br><em>forward?</em></h2>
+      <p style="margin-top: 16px">If the proposal is accepted, TRH commits to go-live within two months of prototype approval. Adobe and Modelic are ready to begin on your timeline.</p>
+    </div>
+    <div class="closing-cta">
+      <a href="mailto:theroadhome@adobe.com" class="btn">Accept proposal</a>
+      <a href="#" class="btn-ghost-dark">Request a walkthrough</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <img src="stardust/assets/logo.png" alt="The Road Home">
+    <div class="footer-right">
+      <div>theroadhome.org · Salt Lake City, UT</div>
+      <div style="margin-top: 4px">Proposal prepared April 2026 · Confidential</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
